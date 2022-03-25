@@ -4,10 +4,6 @@
  */
 package Projeto.IntegradorII.Telas;
 
-import java.awt.Color;
-import javax.swing.JPanel;
-import keeptoo.KGradientPanel;
-
 /**
  *
  * @author felip
@@ -15,17 +11,11 @@ import keeptoo.KGradientPanel;
 public class Login extends javax.swing.JFrame {
 
     /**
-     * Creates new form Login
+     * Creates new form TelaLogin
      */
     public Login() {
         initComponents();
-        
-       
     }
-    
-    public void teste(){
-        
-    } 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,23 +26,23 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.JPanel jPanel1 = new javax.swing.JPanel();
-        keeptoo.KGradientPanel pnlGradiente = new keeptoo.KGradientPanel();
-        javax.swing.JPanel jPanel2 = new javax.swing.JPanel();
-        javax.swing.JLabel lblEmail = new javax.swing.JLabel();
-        javax.swing.JLabel lblLogin = new javax.swing.JLabel();
-        javax.swing.JTextField txtEmail = new javax.swing.JTextField();
-        javax.swing.JSeparator jSeparator1 = new javax.swing.JSeparator();
-        javax.swing.JLabel lblSenha = new javax.swing.JLabel();
-        javax.swing.JSeparator jSeparator2 = new javax.swing.JSeparator();
-        javax.swing.JPasswordField txtSenha = new javax.swing.JPasswordField();
-        com.k33ptoo.components.KButton btnEntrar = new com.k33ptoo.components.KButton();
-        javax.swing.JLabel lblOu = new javax.swing.JLabel();
-        javax.swing.JButton btnRegistrar = new javax.swing.JButton();
-        javax.swing.JButton btnEsquecisenha = new javax.swing.JButton();
-        javax.swing.JLabel jLabel1 = new javax.swing.JLabel();
-        javax.swing.JLabel jLabel2 = new javax.swing.JLabel();
-        javax.swing.JLabel lblLogoBeauty = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        pnlGradiente = new keeptoo.KGradientPanel();
+        jPanel2 = new javax.swing.JPanel();
+        lblEmail = new javax.swing.JLabel();
+        lblLogin = new javax.swing.JLabel();
+        txtEmail = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
+        lblSenha = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        txtSenha = new javax.swing.JPasswordField();
+        btnEntrar = new com.k33ptoo.components.KButton();
+        lblOu = new javax.swing.JLabel();
+        btnRegistrar = new javax.swing.JButton();
+        btnEsquecisenha = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        lblLogoBeauty = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -250,17 +240,18 @@ public class Login extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnEsquecisenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEsquecisenhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEsquecisenhaActionPerformed
-
-    private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEntrarActionPerformed
-
     private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSenhaActionPerformed
+
+    private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
+        // TODO add your handling code here:
+        lblLogoBeauty.setSize(getSize().width, getWidth() - 10);
+    }//GEN-LAST:event_btnEntrarActionPerformed
+
+    private void btnEsquecisenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEsquecisenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEsquecisenhaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -288,6 +279,7 @@ public class Login extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -298,5 +290,22 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.k33ptoo.components.KButton btnEntrar;
+    private javax.swing.JButton btnEsquecisenha;
+    private javax.swing.JButton btnRegistrar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblLogin;
+    private javax.swing.JLabel lblLogoBeauty;
+    private javax.swing.JLabel lblOu;
+    private javax.swing.JLabel lblSenha;
+    private keeptoo.KGradientPanel pnlGradiente;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JPasswordField txtSenha;
     // End of variables declaration//GEN-END:variables
 }

@@ -28,7 +28,7 @@ public class Main {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
     }
         
-        MenuPrincipal telaLogin = new MenuPrincipal();
+        Login telaLogin = new Login();
         telaLogin.setVisible(true);
 
 }
