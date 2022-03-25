@@ -8,12 +8,12 @@ package Projeto.IntegradorII.Telas;
  *
  * @author Lenovo
  */
-public class Produtos extends javax.swing.JPanel {
+public class CadastroClientes extends javax.swing.JPanel {
 
     /**
-     * Creates new form Produtos
+     * Creates new form Cliente
      */
-    public Produtos() {
+    public CadastroClientes() {
         initComponents();
     }
 
