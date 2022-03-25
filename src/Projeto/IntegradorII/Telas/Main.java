@@ -5,6 +5,7 @@
 package Projeto.IntegradorII.Telas;
 
 import com.formdev.flatlaf.FlatIntelliJLaf;
+import java.awt.Component;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
@@ -29,6 +30,7 @@ public class Main {
         
         Login telaLogin = new Login();
         telaLogin.setVisible(true);
+
     }
     
 }
