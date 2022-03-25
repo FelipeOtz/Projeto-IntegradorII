@@ -4,6 +4,10 @@
  */
 package Projeto.IntegradorII.Telas;
 
+import java.awt.Color;
+import javax.swing.JPanel;
+import keeptoo.KGradientPanel;
+
 /**
  *
  * @author felip
@@ -15,7 +19,13 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        
+       
     }
+    
+    public void teste(){
+        
+    } 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,7 +37,7 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         javax.swing.JPanel jPanel1 = new javax.swing.JPanel();
-        keeptoo.KGradientPanel kGradientPanel1 = new keeptoo.KGradientPanel();
+        keeptoo.KGradientPanel pnlGradiente = new keeptoo.KGradientPanel();
         javax.swing.JPanel jPanel2 = new javax.swing.JPanel();
         javax.swing.JLabel lblEmail = new javax.swing.JLabel();
         javax.swing.JLabel lblLogin = new javax.swing.JLabel();
@@ -47,9 +57,9 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        kGradientPanel1.setkEndColor(new java.awt.Color(0, 191, 233));
-        kGradientPanel1.setkStartColor(new java.awt.Color(24, 109, 147));
-        kGradientPanel1.setPreferredSize(new java.awt.Dimension(1200, 600));
+        pnlGradiente.setkEndColor(new java.awt.Color(0, 191, 233));
+        pnlGradiente.setkStartColor(new java.awt.Color(24, 109, 147));
+        pnlGradiente.setPreferredSize(new java.awt.Dimension(1200, 600));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -61,7 +71,7 @@ public class Login extends javax.swing.JFrame {
         lblLogin.setText("Login");
 
         txtEmail.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
-        txtEmail.setText("Felipe");
+        txtEmail.setText("teste@gmail.com");
         txtEmail.setBorder(null);
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
@@ -78,7 +88,7 @@ public class Login extends javax.swing.JFrame {
         jSeparator2.setName(""); // NOI18N
 
         txtSenha.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        txtSenha.setText("jPasswordField1");
+        txtSenha.setText("teste1234");
         txtSenha.setBorder(null);
         txtSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,24 +210,24 @@ public class Login extends javax.swing.JFrame {
 
         lblLogoBeauty.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/4Beauty.png"))); // NOI18N
 
-        javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
-        kGradientPanel1.setLayout(kGradientPanel1Layout);
-        kGradientPanel1Layout.setHorizontalGroup(
-            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addContainerGap(101, Short.MAX_VALUE)
+        javax.swing.GroupLayout pnlGradienteLayout = new javax.swing.GroupLayout(pnlGradiente);
+        pnlGradiente.setLayout(pnlGradienteLayout);
+        pnlGradienteLayout.setHorizontalGroup(
+            pnlGradienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlGradienteLayout.createSequentialGroup()
+                .addContainerGap(110, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(91, 91, 91)
+                .addGap(82, 82, 82)
                 .addComponent(lblLogoBeauty, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
         );
-        kGradientPanel1Layout.setVerticalGroup(
-            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+        pnlGradienteLayout.setVerticalGroup(
+            pnlGradienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlGradienteLayout.createSequentialGroup()
                 .addGap(69, 69, 69)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(72, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlGradienteLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblLogoBeauty, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(160, 160, 160))
@@ -227,11 +237,11 @@ public class Login extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlGradiente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
+            .addComponent(pnlGradiente, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
