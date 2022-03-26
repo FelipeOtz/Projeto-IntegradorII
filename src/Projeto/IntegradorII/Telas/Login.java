@@ -246,7 +246,10 @@ public class Login extends javax.swing.JFrame {
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
         // TODO add your handling code here:
-        lblLogoBeauty.setSize(getSize().width, getWidth() - 10);
+        this.dispose();
+        MenuPrincipal principal =  new MenuPrincipal();
+    
+        principal.setVisible(true);
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     private void btnEsquecisenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEsquecisenhaActionPerformed
