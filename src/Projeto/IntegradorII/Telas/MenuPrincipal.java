@@ -33,7 +33,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         gpMenu = new javax.swing.ButtonGroup();
-        jMenu1 = new javax.swing.JMenu();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -48,8 +47,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jToggleButton7 = new javax.swing.JToggleButton();
         jToggleButton8 = new javax.swing.JToggleButton();
         pnlBody = new javax.swing.JPanel();
-
-        jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -110,6 +107,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        gpMenu.add(jToggleButton3);
         jToggleButton3.setText("Deletar cliente");
         jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,7 +115,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
+        gpMenu.add(jToggleButton4);
         jToggleButton4.setText("Editar cliente");
+        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton4ActionPerformed(evt);
+            }
+        });
 
         gpMenu.add(jToggleButton5);
         jToggleButton5.setText("Visualizar produto");
@@ -127,9 +131,21 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
+        gpMenu.add(jToggleButton6);
         jToggleButton6.setText("Editar produto");
+        jToggleButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton6ActionPerformed(evt);
+            }
+        });
 
+        gpMenu.add(jToggleButton7);
         jToggleButton7.setText("Deletar produto");
+        jToggleButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton7ActionPerformed(evt);
+            }
+        });
 
         gpMenu.add(jToggleButton8);
         jToggleButton8.setText("Cadastrar produto");
@@ -229,16 +245,33 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
         // TODO add your handling code here:
+        showForm(new VisualizarProdutos());
     }//GEN-LAST:event_jToggleButton5ActionPerformed
 
     private void jToggleButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton8ActionPerformed
         // TODO add your handling code here:
+        showForm(new CadastrarProdutos());
     }//GEN-LAST:event_jToggleButton8ActionPerformed
 
     private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
         // TODO add your handling code here:
-        
+        showForm(new DeletarClientes());
     }//GEN-LAST:event_jToggleButton3ActionPerformed
+
+    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
+        // TODO add your handling code here:
+        showForm(new EditarClientes());
+    }//GEN-LAST:event_jToggleButton4ActionPerformed
+
+    private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7ActionPerformed
+        // TODO add your handling code here:
+        showForm(new DeletarProdutos());
+    }//GEN-LAST:event_jToggleButton7ActionPerformed
+
+    private void jToggleButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton6ActionPerformed
+        // TODO add your handling code here:
+        showForm(new EditarProdutos());
+    }//GEN-LAST:event_jToggleButton6ActionPerformed
 
     public void showForm(Component com) {
         pnlBody.removeAll();
@@ -284,7 +317,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup gpMenu;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
