@@ -33,6 +33,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         gpMenu = new javax.swing.ButtonGroup();
+        jMenu1 = new javax.swing.JMenu();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -47,6 +48,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jToggleButton7 = new javax.swing.JToggleButton();
         jToggleButton8 = new javax.swing.JToggleButton();
         pnlBody = new javax.swing.JPanel();
+
+        jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -108,6 +111,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         );
 
         jToggleButton3.setText("Deletar cliente");
+        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton3ActionPerformed(evt);
+            }
+        });
 
         jToggleButton4.setText("Editar cliente");
 
@@ -160,15 +168,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addComponent(jToggleButton3)
                 .addGap(18, 18, 18)
                 .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jToggleButton2)
-                .addGap(18, 18, 18)
+                .addGap(12, 12, 12)
                 .addComponent(jToggleButton8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jToggleButton7)
-                .addGap(18, 18, 18)
-                .addComponent(jToggleButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jToggleButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jToggleButton5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -227,6 +235,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton8ActionPerformed
 
+    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jToggleButton3ActionPerformed
+
     public void showForm(Component com) {
         pnlBody.removeAll();
         pnlBody.add(com);
@@ -271,6 +284,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup gpMenu;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

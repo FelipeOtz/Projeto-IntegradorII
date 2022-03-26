@@ -6,14 +6,14 @@ package Projeto.IntegradorII.Telas;
 
 /**
  *
- * @author Lenovo
+ * @author felip
  */
-public class CadastrarProdutos extends javax.swing.JPanel {
+public class DeletarClientes extends javax.swing.JPanel {
 
     /**
-     * Creates new form Produtos
+     * Creates new form DeletarCliente
      */
-    public CadastrarProdutos() {
+    public DeletarClientes() {
         initComponents();
     }
 
