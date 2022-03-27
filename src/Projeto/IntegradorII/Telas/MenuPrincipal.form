@@ -38,23 +38,24 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jPanel2" max="32767" attributes="0"/>
-              <Group type="102" attributes="0">
-                  <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="pnlMenu" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                  <Component id="pnlBody" pref="937" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jPanel2" alignment="1" max="32767" attributes="0"/>
+                      <Component id="pnlBody" pref="957" max="32767" attributes="0"/>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jPanel3" max="32767" attributes="0"/>
-                      <Component id="pnlBody" pref="581" max="32767" attributes="0"/>
-                  </Group>
+                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                  <Component id="pnlBody" pref="568" max="32767" attributes="0"/>
               </Group>
+              <Component id="pnlMenu" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -62,58 +63,113 @@
         <Container class="javax.swing.JPanel" name="jPanel2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="99" type="rgb"/>
+              <Color blue="c7" green="9e" red="9" type="rgb"/>
             </Property>
           </Properties>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="62" max="32767" attributes="0"/>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-        </Container>
-        <Container class="javax.swing.JPanel" name="jPanel3">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
-            </Property>
-          </Properties>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanel4" alignment="0" max="32767" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jToggleButton6" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jToggleButton7" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jToggleButton8" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jToggleButton5" alignment="0" min="-2" pref="192" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jToggleButton4" max="32767" attributes="0"/>
-                              <Component id="jToggleButton3" max="32767" attributes="0"/>
-                              <Component id="jToggleButton1" pref="192" max="32767" attributes="0"/>
-                              <Component id="jToggleButton2" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace pref="34" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel6" alignment="0" pref="75" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel6">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei" size="20" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Projeto/IntegradorII/Imagens/Logout.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Logout"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel6MouseClicked"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="pnlMenu">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="f3" green="f3" red="f3" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
+                <MatteColorBorder>
+                  <Color PropertyName="color" blue="cc" green="cc" red="cc" type="rgb"/>
+                </MatteColorBorder>
+              </Border>
+            </Property>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="23" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jToggleButton6" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jToggleButton7" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jToggleButton8" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jToggleButton5" alignment="0" min="-2" pref="192" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jToggleButton4" max="32767" attributes="0"/>
+                              <Component id="jToggleButton3" max="32767" attributes="0"/>
+                              <Component id="jToggleButton1" max="32767" attributes="0"/>
+                              <Component id="jToggleButton2" min="-2" pref="192" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
+                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Component id="jLabel1" alignment="1" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                       <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jToggleButton3" min="-2" max="-2" attributes="0"/>
@@ -130,8 +186,8 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jToggleButton5" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
+                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -159,39 +215,6 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton2ActionPerformed"/>
               </Events>
             </Component>
-            <Container class="javax.swing.JPanel" name="jPanel4">
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanel4MouseClicked"/>
-              </Events>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel1">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="teste"/>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
             <Component class="javax.swing.JToggleButton" name="jToggleButton3">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
@@ -257,6 +280,45 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton8ActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel4">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei" size="12" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="2022 - Four Beauty | Grupo Matrix"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel1">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Projeto/IntegradorII/Imagens/User.png"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel2">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="nome!"/>
+              </Properties>
+              <AccessibilityProperties>
+                <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="nome!"/>
+              </AccessibilityProperties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel3">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Seja bem vindo(a)"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
