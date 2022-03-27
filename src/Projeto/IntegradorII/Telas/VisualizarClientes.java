@@ -35,17 +35,42 @@ public class VisualizarClientes extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(923, 584));
         setLayout(new java.awt.BorderLayout());
 
+        jTable1.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {"Paulo Fernando Sérgio Santos", "paulo-santos89@fibran.com.br", "M", "(48) 2768-9361", "Casado", "331.460.230-83", "18/03/1977", "Rua Capitão Adelino Platt", "603", "88101-080", "SC", "Kobrasol"},
+                {"Giovanna Sara Gomes", "giovanna-gomes89@boldcron.com.br", "F", "(27) 3523-2208", "Casada", "075.938.770-27", "10/02/1980", "Rua Manoel Gomes Brandão", "547", "29075-525", "ES", "Boa Vista"},
+                {"Helena Olivia Gonçalves", "helena.olivia.goncalves@ppe.ufrj.br", "F", "(51) 3834-6974", "Casada", "075.938.770-27", "22/03/2000", "Rua Vigia", "932", "93330-060", "RS", "Liberdade"},
+                {"Clara Emanuelly Fátima da Silva", "clara_dasilva@kmspublicidade.com.br", "F", "(91) 3803-8351", "Solteiro", "505.431.490-30", "13/02/1957", "Passagem Nossa Senhora da Conceição", "441", "66630-380", "PA", "Bengui"},
+                {"Edson Yuri Victor Fernandes", "edson_fernandes@sobraer.com.br", "M", "(98) 2873-7731", "Casado", "562.059.660-50", "05/02/1962", "Travessa Jerusalém", "517", "65068-092", "MA", "Divinéia"},
+                {"Martin Bento Erick Baptista", "martin_baptista@valeguinchos.com.br", "M", "(11) 2615-3384", "Solteiro", "562.059.660-50", "01/02/1988", "Rua Maranhão", "888", "07144-750", "SP", "Recreio São Jorge"},
+                {"Fernanda Sueli Nunes", "fernanda_sueli_nunes@azevedoalves.com.br", "F", "(61) 3899-1382", "Solteiro", "562.059.660-50", "24/03/1998", "Rua Rua 3B Chácara 38", "474", "72005-585", "DF", "Setor Habitacional Vicente Pires"},
+                {"Bento Diego Bruno Pires", "bentodiegopires@daou.com.br", "M", "(47) 3511-1557", "Casado", "998.038.760-23", "18/01/1981", "Rua Augusto Schlegel", "619", "89203-260", "SC", "Atiradores"},
+                {"João Raul Alves", "joao-alves92@santacasasjc.com.br", "M", "(86) 2660-6942", "Casado", "580.988.410-57", "23/01/1969", "Travessa Vila Nova", "684", "64216-830", "PI", "Igaraçu"},
+                {"Helena Emanuelly dos Santos", "helena_dossantos@yazigi.com", "F", "(84) 3535-4833", "Casado", "930.996.630-00", "24/03/1960", "Rua Vereador José Leite", "387", "59625-031", "RN", "Ilha de Santa Luzia"},
+                {"Luna Bianca Lima", "luna-lima99@djapan.com.br", "F", "(47) 2550-7194", "Casado", "413.889.590-62", "06/03/1979", "Servidão 334", "655", "89255-672", "SC", "Amizade"},
+                {"Stella Bruna Sarah Galvão", "stella_galvao@sygma.com.br", "F", "(85) 2901-8795", "Solteiro", "274.658.650-93", "11/02/2000", "Vila Humberto", "151", "60762-081", "CE", "Mondubim"},
+                {"Manuela Carolina Nicole Pinto", "manuela_carolina_pinto@imoveisvillani.com.br", "F", "(83) 2798-5253", "Solteiro", "806.406.380-90", "13/03/2002", "Rua da Linha", "911", "58306-140", "PB", "Sesi"}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Nome Completo", "E-mail", "Sexo", "Telefone", "Estado Civil", "CPF", "Data de Nascimento", "Logradouro", "Número", "CEP", "Estado", "Bairro"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jLabel1.setText("Pesquisar:");
@@ -63,8 +88,8 @@ public class VisualizarClientes extends javax.swing.JPanel {
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(334, 334, 334))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 827, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35))))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

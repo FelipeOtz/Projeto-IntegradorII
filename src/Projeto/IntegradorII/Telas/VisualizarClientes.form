@@ -41,8 +41,8 @@
                           <EmptySpace min="-2" pref="334" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jScrollPane1" min="-2" pref="827" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" min="-2" pref="850" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -73,12 +73,191 @@
           <SubComponents>
             <Component class="javax.swing.JTable" name="jTable1">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei" size="12" style="0"/>
+                </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="4" rowCount="4">
-                    <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                    <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                    <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                    <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                  <Table columnCount="12" rowCount="13">
+                    <Column editable="false" title="Nome Completo" type="java.lang.String">
+                      <Data value="Paulo Fernando S&#xe9;rgio Santos"/>
+                      <Data value="Giovanna Sara Gomes"/>
+                      <Data value="Helena Olivia Gon&#xe7;alves"/>
+                      <Data value="Clara Emanuelly F&#xe1;tima da Silva"/>
+                      <Data value="Edson Yuri Victor Fernandes"/>
+                      <Data value="Martin Bento Erick Baptista"/>
+                      <Data value="Fernanda Sueli Nunes"/>
+                      <Data value="Bento Diego Bruno Pires"/>
+                      <Data value="Jo&#xe3;o Raul Alves"/>
+                      <Data value="Helena Emanuelly dos Santos"/>
+                      <Data value="Luna Bianca Lima"/>
+                      <Data value="Stella Bruna Sarah Galv&#xe3;o"/>
+                      <Data value="Manuela Carolina Nicole Pinto"/>
+                    </Column>
+                    <Column editable="false" title="E-mail" type="java.lang.String">
+                      <Data value="paulo-santos89@fibran.com.br"/>
+                      <Data value="giovanna-gomes89@boldcron.com.br"/>
+                      <Data value="helena.olivia.goncalves@ppe.ufrj.br"/>
+                      <Data value="clara_dasilva@kmspublicidade.com.br"/>
+                      <Data value="edson_fernandes@sobraer.com.br"/>
+                      <Data value="martin_baptista@valeguinchos.com.br"/>
+                      <Data value="fernanda_sueli_nunes@azevedoalves.com.br"/>
+                      <Data value="bentodiegopires@daou.com.br"/>
+                      <Data value="joao-alves92@santacasasjc.com.br"/>
+                      <Data value="helena_dossantos@yazigi.com"/>
+                      <Data value="luna-lima99@djapan.com.br"/>
+                      <Data value="stella_galvao@sygma.com.br"/>
+                      <Data value="manuela_carolina_pinto@imoveisvillani.com.br"/>
+                    </Column>
+                    <Column editable="false" title="Sexo" type="java.lang.String">
+                      <Data value="M"/>
+                      <Data value="F"/>
+                      <Data value="F"/>
+                      <Data value="F"/>
+                      <Data value="M"/>
+                      <Data value="M"/>
+                      <Data value="F"/>
+                      <Data value="M"/>
+                      <Data value="M"/>
+                      <Data value="F"/>
+                      <Data value="F"/>
+                      <Data value="F"/>
+                      <Data value="F"/>
+                    </Column>
+                    <Column editable="false" title="Telefone" type="java.lang.String">
+                      <Data value="(48) 2768-9361"/>
+                      <Data value="(27) 3523-2208"/>
+                      <Data value="(51) 3834-6974"/>
+                      <Data value="(91) 3803-8351"/>
+                      <Data value="(98) 2873-7731"/>
+                      <Data value="(11) 2615-3384"/>
+                      <Data value="(61) 3899-1382"/>
+                      <Data value="(47) 3511-1557"/>
+                      <Data value="(86) 2660-6942"/>
+                      <Data value="(84) 3535-4833"/>
+                      <Data value="(47) 2550-7194"/>
+                      <Data value="(85) 2901-8795"/>
+                      <Data value="(83) 2798-5253"/>
+                    </Column>
+                    <Column editable="false" title="Estado Civil" type="java.lang.String">
+                      <Data value="Casado"/>
+                      <Data value="Casada"/>
+                      <Data value="Casada"/>
+                      <Data value="Solteiro"/>
+                      <Data value="Casado"/>
+                      <Data value="Solteiro"/>
+                      <Data value="Solteiro"/>
+                      <Data value="Casado"/>
+                      <Data value="Casado"/>
+                      <Data value="Casado"/>
+                      <Data value="Casado"/>
+                      <Data value="Solteiro"/>
+                      <Data value="Solteiro"/>
+                    </Column>
+                    <Column editable="false" title="CPF" type="java.lang.String">
+                      <Data value="331.460.230-83"/>
+                      <Data value="075.938.770-27"/>
+                      <Data value="075.938.770-27"/>
+                      <Data value="505.431.490-30"/>
+                      <Data value="562.059.660-50"/>
+                      <Data value="562.059.660-50"/>
+                      <Data value="562.059.660-50"/>
+                      <Data value="998.038.760-23"/>
+                      <Data value="580.988.410-57"/>
+                      <Data value="930.996.630-00"/>
+                      <Data value="413.889.590-62"/>
+                      <Data value="274.658.650-93"/>
+                      <Data value="806.406.380-90"/>
+                    </Column>
+                    <Column editable="false" title="Data de Nascimento" type="java.lang.String">
+                      <Data value="18/03/1977"/>
+                      <Data value="10/02/1980"/>
+                      <Data value="22/03/2000"/>
+                      <Data value="13/02/1957"/>
+                      <Data value="05/02/1962"/>
+                      <Data value="01/02/1988"/>
+                      <Data value="24/03/1998"/>
+                      <Data value="18/01/1981"/>
+                      <Data value="23/01/1969"/>
+                      <Data value="24/03/1960"/>
+                      <Data value="06/03/1979"/>
+                      <Data value="11/02/2000"/>
+                      <Data value="13/03/2002"/>
+                    </Column>
+                    <Column editable="false" title="Logradouro" type="java.lang.String">
+                      <Data value="Rua Capit&#xe3;o Adelino Platt"/>
+                      <Data value="Rua Manoel Gomes Brand&#xe3;o"/>
+                      <Data value="Rua Vigia"/>
+                      <Data value="Passagem Nossa Senhora da Concei&#xe7;&#xe3;o"/>
+                      <Data value="Travessa Jerusal&#xe9;m"/>
+                      <Data value="Rua Maranh&#xe3;o"/>
+                      <Data value="Rua Rua 3B Ch&#xe1;cara 38"/>
+                      <Data value="Rua Augusto Schlegel"/>
+                      <Data value="Travessa Vila Nova"/>
+                      <Data value="Rua Vereador Jos&#xe9; Leite"/>
+                      <Data value="Servid&#xe3;o 334"/>
+                      <Data value="Vila Humberto"/>
+                      <Data value="Rua da Linha"/>
+                    </Column>
+                    <Column editable="false" title="N&#xfa;mero" type="java.lang.String">
+                      <Data value="603"/>
+                      <Data value="547"/>
+                      <Data value="932"/>
+                      <Data value="441"/>
+                      <Data value="517"/>
+                      <Data value="888"/>
+                      <Data value="474"/>
+                      <Data value="619"/>
+                      <Data value="684"/>
+                      <Data value="387"/>
+                      <Data value="655"/>
+                      <Data value="151"/>
+                      <Data value="911"/>
+                    </Column>
+                    <Column editable="false" title="CEP" type="java.lang.String">
+                      <Data value="88101-080"/>
+                      <Data value="29075-525"/>
+                      <Data value="93330-060"/>
+                      <Data value="66630-380"/>
+                      <Data value="65068-092"/>
+                      <Data value="07144-750"/>
+                      <Data value="72005-585"/>
+                      <Data value="89203-260"/>
+                      <Data value="64216-830"/>
+                      <Data value="59625-031"/>
+                      <Data value="89255-672"/>
+                      <Data value="60762-081"/>
+                      <Data value="58306-140"/>
+                    </Column>
+                    <Column editable="false" title="Estado" type="java.lang.String">
+                      <Data value="SC"/>
+                      <Data value="ES"/>
+                      <Data value="RS"/>
+                      <Data value="PA"/>
+                      <Data value="MA"/>
+                      <Data value="SP"/>
+                      <Data value="DF"/>
+                      <Data value="SC"/>
+                      <Data value="PI"/>
+                      <Data value="RN"/>
+                      <Data value="SC"/>
+                      <Data value="CE"/>
+                      <Data value="PB"/>
+                    </Column>
+                    <Column editable="false" title="Bairro" type="java.lang.String">
+                      <Data value="Kobrasol"/>
+                      <Data value="Boa Vista"/>
+                      <Data value="Liberdade"/>
+                      <Data value="Bengui"/>
+                      <Data value="Divin&#xe9;ia"/>
+                      <Data value="Recreio S&#xe3;o Jorge"/>
+                      <Data value="Setor Habitacional Vicente Pires"/>
+                      <Data value="Atiradores"/>
+                      <Data value="Igara&#xe7;u"/>
+                      <Data value="Ilha de Santa Luzia"/>
+                      <Data value="Amizade"/>
+                      <Data value="Mondubim"/>
+                      <Data value="Sesi"/>
+                    </Column>
                   </Table>
                 </Property>
               </Properties>
