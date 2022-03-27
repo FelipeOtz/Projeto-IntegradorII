@@ -256,8 +256,6 @@
                     </Column>
                   </Table>
                 </Property>
-                <Property name="rowHeight" type="int" value="30"/>
-                <Property name="rowMargin" type="int" value="20"/>
               </Properties>
             </Component>
           </SubComponents>

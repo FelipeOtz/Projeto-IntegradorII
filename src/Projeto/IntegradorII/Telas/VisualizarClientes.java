@@ -73,8 +73,6 @@ public class VisualizarClientes extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setRowHeight(30);
-        jTable1.setRowMargin(20);
         jScrollPane1.setViewportView(jTable1);
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -114,6 +112,7 @@ public class VisualizarClientes extends javax.swing.JPanel {
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
+       
     }//GEN-LAST:event_jTextField1ActionPerformed
 
 
