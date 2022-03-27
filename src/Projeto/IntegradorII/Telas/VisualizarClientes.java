@@ -92,7 +92,7 @@ public class VisualizarClientes extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Malgun Gothic Semilight", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 214, 210));
-        jLabel2.setText("Visualizar Clientes");
+        jLabel2.setText("VISUALIZAR CLIENTES");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);

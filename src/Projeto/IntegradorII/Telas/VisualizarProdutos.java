@@ -41,12 +41,12 @@ public class VisualizarProdutos extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Perfume ", "Burberry Her", "Burberry", null, null, null, null, null, null, null, null},
-                {"Perfume ", "Burberry Her", "Burberry", null, null, null, null, null, null, null, null},
-                {"Perfume ", null, null, null, null, null, null, null, null, null, null},
-                {"Perfume ", null, null, null, null, null, null, null, null, null, null},
-                {"Perfume ", null, null, null, null, null, null, null, null, null, null},
-                {"Esmalte", null, null, null, null, null, null, null, null, null, null},
+                {"Perfume ", "Burberry Her", "Burberry", "Perfume", "R$ 269", "89327", "Nda", "30", "ml", "24/12/2040", null},
+                {"Perfume ", "Burberry Her", "Burberry", "Perfume", null, null, "Nda", null, "ml", "21/11/2067", null},
+                {"Perfume ", null, null, "Perfume", null, null, "Nda", null, "g", "12/02/2032", null},
+                {"Perfume ", null, null, "Perfume", null, null, "Nda", null, "ml", "10/01/2025", null},
+                {"Perfume ", null, null, "Perfume", null, null, "Nda", null, "ml", null, null},
+                {"Esmalte", null, null, null, null, null, null, null, "ml", null, null},
                 {"Esmalte", null, null, null, null, null, null, null, null, null, null},
                 {"Esmalte", null, null, null, null, null, null, null, null, null, null},
                 {"Esmalte", null, null, null, null, null, null, null, null, null, null},
@@ -90,9 +90,16 @@ public class VisualizarProdutos extends javax.swing.JPanel {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         jScrollPane1.setViewportView(jTable1);
@@ -101,7 +108,7 @@ public class VisualizarProdutos extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Malgun Gothic Semilight", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 214, 210));
-        jLabel2.setText("Pesquisar Produtos");
+        jLabel2.setText("PESQUISAR PRODUTOS");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
