@@ -52,6 +52,7 @@ public class VisualizarProdutos extends javax.swing.JPanel {
         jTextField1 = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -70,13 +71,13 @@ public class VisualizarProdutos extends javax.swing.JPanel {
                 {"Esmalte", "Esmalte Natural Colorama ", "Colorama", "Esmalte", "R$ 4,75", "281", "Petala", "8", "ml", "05/04/2024", null},
                 {"Esmalte", "Granado Pink SOS 7 em 1 - Base Fortalecedora para Unhas", "Granda", "Esmalte", "R$ 29,99", "4967", "Incolor", "10", "ml", "24/06/2026", null},
                 {"Esmalte", "Esmalte Risqué Cremoso - Lavanda Alma", "Risqué", "Esmalte", "R$ 3,99", "19183", "Lavanda Alma", "8", "ml", "09/01/2027", null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
+                {"Sabonete", "Sephora Collection Bath Bar Soap", "Sephora", "Higiene", "R$ 39,00", "24", "Nda", "150", "g", "29/04/2027", null},
+                {"Sabonete", "Sabonete Líquido Korres Jasmim", "Korres", "Higiene", "R$ 28,99", "623", "Nda", "250", "ml", "12/01/2024", null},
+                {"Sabonete", "Sabonete Líquido Essências do Brasil Vitória Régia", "Lux", "Higiene", "R$ 11,49", "2873", "Nda", "300", "ml", "08/07/2029", null},
+                {"Sabonete", "Sabonete Líquido Nutrição Profunda", "Dove", "Higiene", "R$ 10,39", "29485", "Nda", "250", "ml", "10/02/2040", null},
+                {"Sabonete", "Sabonete Mandarina Asiática", "Phebo", "Higiene", "R$ 6,49", "0", "Nda", "100", "g", "20/12/2044", null},
+                {"Sabonete ", "Sabonete Líquido Fisher-Price Bebê", "Biotropic", "Higiene", "R$ 14,49", "20439", "Nda", "400", "ml", "06/08/2028", null},
+                {"Sabonete ", "Sabonete Barra Lavanda", "Vyedas", "Higiene", "R$ 17.80", "23495", "Nda", "120", "g", null, null},
                 {null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null},
@@ -164,6 +165,8 @@ public class VisualizarProdutos extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/icons8_box_24px.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -173,7 +176,9 @@ public class VisualizarProdutos extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(408, 408, 408))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addGap(380, 380, 380))
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jScrollPane1)
         );
@@ -181,10 +186,12 @@ public class VisualizarProdutos extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel1)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -208,10 +215,9 @@ public class VisualizarProdutos extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;

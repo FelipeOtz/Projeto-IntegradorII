@@ -31,7 +31,9 @@
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jTextField1" min="-2" pref="184" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="408" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="380" max="-2" attributes="0"/>
               </Group>
               <Component id="jPanel5" alignment="0" max="32767" attributes="0"/>
               <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
@@ -41,10 +43,13 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="37" max="32767" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="452" max="-2" attributes="0"/>
@@ -83,13 +88,13 @@
                       <Data value="Esmalte"/>
                       <Data value="Esmalte"/>
                       <Data value="Esmalte"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
+                      <Data value="Sabonete"/>
+                      <Data value="Sabonete"/>
+                      <Data value="Sabonete"/>
+                      <Data value="Sabonete"/>
+                      <Data value="Sabonete"/>
+                      <Data value="Sabonete "/>
+                      <Data value="Sabonete "/>
                       <Data value="null"/>
                       <Data value="null"/>
                       <Data value="null"/>
@@ -126,13 +131,13 @@
                       <Data value="Esmalte Natural Colorama "/>
                       <Data value="Granado Pink SOS 7 em 1 - Base Fortalecedora para Unhas"/>
                       <Data value="Esmalte Risqu&#xe9; Cremoso - Lavanda Alma"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
+                      <Data value="Sephora Collection Bath Bar Soap"/>
+                      <Data value="Sabonete L&#xed;quido Korres Jasmim"/>
+                      <Data value="Sabonete L&#xed;quido Ess&#xea;ncias do Brasil Vit&#xf3;ria R&#xe9;gia"/>
+                      <Data value="Sabonete L&#xed;quido Nutri&#xe7;&#xe3;o Profunda"/>
+                      <Data value="Sabonete Mandarina Asi&#xe1;tica"/>
+                      <Data value="Sabonete L&#xed;quido Fisher-Price Beb&#xea;"/>
+                      <Data value="Sabonete Barra Lavanda"/>
                       <Data value="null"/>
                       <Data value="null"/>
                       <Data value="null"/>
@@ -169,13 +174,13 @@
                       <Data value="Colorama"/>
                       <Data value="Granda"/>
                       <Data value="Risqu&#xe9;"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
+                      <Data value="Sephora"/>
+                      <Data value="Korres"/>
+                      <Data value="Lux"/>
+                      <Data value="Dove"/>
+                      <Data value="Phebo"/>
+                      <Data value="Biotropic"/>
+                      <Data value="Vyedas"/>
                       <Data value="null"/>
                       <Data value="null"/>
                       <Data value="null"/>
@@ -212,13 +217,13 @@
                       <Data value="Esmalte"/>
                       <Data value="Esmalte"/>
                       <Data value="Esmalte"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
+                      <Data value="Higiene"/>
+                      <Data value="Higiene"/>
+                      <Data value="Higiene"/>
+                      <Data value="Higiene"/>
+                      <Data value="Higiene"/>
+                      <Data value="Higiene"/>
+                      <Data value="Higiene"/>
                       <Data value="null"/>
                       <Data value="null"/>
                       <Data value="null"/>
@@ -255,13 +260,13 @@
                       <Data value="R$ 4,75"/>
                       <Data value="R$ 29,99"/>
                       <Data value="R$ 3,99"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
+                      <Data value="R$ 39,00"/>
+                      <Data value="R$ 28,99"/>
+                      <Data value="R$ 11,49"/>
+                      <Data value="R$ 10,39"/>
+                      <Data value="R$ 6,49"/>
+                      <Data value="R$ 14,49"/>
+                      <Data value="R$ 17.80"/>
                       <Data value="null"/>
                       <Data value="null"/>
                       <Data value="null"/>
@@ -298,13 +303,13 @@
                       <Data value="281"/>
                       <Data value="4967"/>
                       <Data value="19183"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
+                      <Data value="24"/>
+                      <Data value="623"/>
+                      <Data value="2873"/>
+                      <Data value="29485"/>
+                      <Data value="0"/>
+                      <Data value="20439"/>
+                      <Data value="23495"/>
                       <Data value="null"/>
                       <Data value="null"/>
                       <Data value="null"/>
@@ -341,13 +346,13 @@
                       <Data value="Petala"/>
                       <Data value="Incolor"/>
                       <Data value="Lavanda Alma"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
+                      <Data value="Nda"/>
+                      <Data value="Nda"/>
+                      <Data value="Nda"/>
+                      <Data value="Nda"/>
+                      <Data value="Nda"/>
+                      <Data value="Nda"/>
+                      <Data value="Nda"/>
                       <Data value="null"/>
                       <Data value="null"/>
                       <Data value="null"/>
@@ -384,13 +389,13 @@
                       <Data value="8"/>
                       <Data value="10"/>
                       <Data value="8"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
+                      <Data value="150"/>
+                      <Data value="250"/>
+                      <Data value="300"/>
+                      <Data value="250"/>
+                      <Data value="100"/>
+                      <Data value="400"/>
+                      <Data value="120"/>
                       <Data value="null"/>
                       <Data value="null"/>
                       <Data value="null"/>
@@ -427,13 +432,13 @@
                       <Data value="ml"/>
                       <Data value="ml"/>
                       <Data value="ml"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
+                      <Data value="g"/>
+                      <Data value="ml"/>
+                      <Data value="ml"/>
+                      <Data value="ml"/>
+                      <Data value="g"/>
+                      <Data value="ml"/>
+                      <Data value="g"/>
                       <Data value="null"/>
                       <Data value="null"/>
                       <Data value="null"/>
@@ -470,12 +475,12 @@
                       <Data value="05/04/2024"/>
                       <Data value="24/06/2026"/>
                       <Data value="09/01/2027"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
+                      <Data value="29/04/2027"/>
+                      <Data value="12/01/2024"/>
+                      <Data value="08/07/2029"/>
+                      <Data value="10/02/2040"/>
+                      <Data value="20/12/2044"/>
+                      <Data value="06/08/2028"/>
                       <Data value="null"/>
                       <Data value="null"/>
                       <Data value="null"/>
@@ -569,6 +574,13 @@
             </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Projeto/IntegradorII/Imagens/icons8_box_24px.png"/>
+            </Property>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>
