@@ -104,7 +104,7 @@ public class VisualizarClientes extends javax.swing.JPanel {
         jTable1.setFocusable(false);
         jTable1.setIntercellSpacing(new java.awt.Dimension(0, 0));
         jTable1.setRowHeight(25);
-        jTable1.setSelectionBackground(new java.awt.Color(175, 195, 198));
+        jTable1.setSelectionBackground(new java.awt.Color(205, 203, 203));
         jTable1.setShowVerticalLines(false);
         jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);

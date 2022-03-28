@@ -516,7 +516,7 @@
                 </Property>
                 <Property name="rowHeight" type="int" value="25"/>
                 <Property name="selectionBackground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="c6" green="c3" red="af" type="rgb"/>
+                  <Color blue="cb" green="cb" red="cd" type="rgb"/>
                 </Property>
                 <Property name="showVerticalLines" type="boolean" value="false"/>
                 <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
