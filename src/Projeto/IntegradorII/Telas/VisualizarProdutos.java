@@ -6,6 +6,9 @@ package Projeto.IntegradorII.Telas;
 
 import java.awt.Color;
 import java.awt.Font;
+import javax.swing.RowFilter;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -27,8 +30,8 @@ public class VisualizarProdutos extends javax.swing.JPanel {
         
             jTable1.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD,12));
             jTable1.getTableHeader().setOpaque(false);
-            jTable1.getTableHeader().setBackground(new Color(32,136,203));
-            jTable1.getTableHeader().setForeground(new Color(255,255,255));
+            jTable1.getTableHeader().setBackground(new Color(0,0,0,60));
+            jTable1.getTableHeader().setForeground(new Color(0,0,0,60));
             jTable1.setRowHeight(25);
         }
     }
@@ -121,10 +124,21 @@ public class VisualizarProdutos extends javax.swing.JPanel {
         jTable1.setFocusable(false);
         jTable1.setIntercellSpacing(new java.awt.Dimension(0, 0));
         jTable1.setRowHeight(25);
-        jTable1.setSelectionBackground(new java.awt.Color(255, 214, 210));
+        jTable1.setSelectionBackground(new java.awt.Color(175, 195, 198));
         jTable1.setShowVerticalLines(false);
         jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField1KeyReleased(evt);
+            }
+        });
 
         jPanel5.setBackground(new java.awt.Color(9, 158, 199));
         jPanel5.setAutoscrolls(true);
@@ -177,6 +191,19 @@ public class VisualizarProdutos extends javax.swing.JPanel {
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
+        // TODO add your handling code here:
+        DefaultTableModel table = (DefaultTableModel)jTable1.getModel();
+        String search = jTextField1.getText();
+        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(table);
+        jTable1.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(search));
+    }//GEN-LAST:event_jTextField1KeyReleased
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
