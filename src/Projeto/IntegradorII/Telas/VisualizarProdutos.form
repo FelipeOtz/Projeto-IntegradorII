@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -11,7 +11,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,72,0,0,3,-101"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,72,0,0,3,-5"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
@@ -26,29 +26,28 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="219" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <EmptySpace pref="293" max="32767" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jTextField1" min="-2" pref="184" max="-2" attributes="0"/>
-                  <EmptySpace pref="385" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="408" max="-2" attributes="0"/>
               </Group>
-              <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
+              <Component id="jPanel5" alignment="0" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="24" max="32767" attributes="0"/>
+                  <EmptySpace pref="37" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="452" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -119,14 +118,14 @@
                     <Column editable="false" title="Nome" type="java.lang.String">
                       <Data value="Burberry Her"/>
                       <Data value="Burberry Her"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
+                      <Data value="Bad Boy Carolina Herrera Eau de Toilette"/>
+                      <Data value="Bad Boy Carolina Herrera Eau de Toilette"/>
+                      <Data value="Id&#xf4;le Lanc&#xf4;me Eau de Parfum"/>
+                      <Data value="o Botic&#xe1;rio Intense by Manu Gavassi Azul Claro Cute - Esmalte 7ml"/>
+                      <Data value="Esmalte Impala Cremoso Preto"/>
+                      <Data value="Esmalte Natural Colorama "/>
+                      <Data value="Granado Pink SOS 7 em 1 - Base Fortalecedora para Unhas"/>
+                      <Data value="Esmalte Risqu&#xe9; Cremoso - Lavanda Alma"/>
                       <Data value="null"/>
                       <Data value="null"/>
                       <Data value="null"/>
@@ -162,14 +161,14 @@
                     <Column editable="false" title="Marca" type="java.lang.String">
                       <Data value="Burberry"/>
                       <Data value="Burberry"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
+                      <Data value="Carolina Herrera"/>
+                      <Data value="Carolina Herrera"/>
+                      <Data value="Lanc&#xf4;me"/>
+                      <Data value="O Botic&#xe1;rio"/>
+                      <Data value="Impala"/>
+                      <Data value="Colorama"/>
+                      <Data value="Granda"/>
+                      <Data value="Risqu&#xe9;"/>
                       <Data value="null"/>
                       <Data value="null"/>
                       <Data value="null"/>
@@ -208,11 +207,11 @@
                       <Data value="Perfume"/>
                       <Data value="Perfume"/>
                       <Data value="Perfume"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
+                      <Data value="Esmalte"/>
+                      <Data value="Esmalte"/>
+                      <Data value="Esmalte"/>
+                      <Data value="Esmalte"/>
+                      <Data value="Esmalte"/>
                       <Data value="null"/>
                       <Data value="null"/>
                       <Data value="null"/>
@@ -247,15 +246,15 @@
                     </Column>
                     <Column editable="false" title="Pre&#xe7;o" type="java.lang.String">
                       <Data value="R$ 269"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
+                      <Data value="R$ 300"/>
+                      <Data value="R$ 738.90"/>
+                      <Data value="R$ 598.90"/>
+                      <Data value="R$ 720"/>
+                      <Data value="R$ 7,99"/>
+                      <Data value="R$ 2,59"/>
+                      <Data value="R$ 4,75"/>
+                      <Data value="R$ 29,99"/>
+                      <Data value="R$ 3,99"/>
                       <Data value="null"/>
                       <Data value="null"/>
                       <Data value="null"/>
@@ -290,15 +289,15 @@
                     </Column>
                     <Column editable="false" title="Qtd. em estoque" type="java.lang.String">
                       <Data value="89327"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
+                      <Data value="30485"/>
+                      <Data value="49202"/>
+                      <Data value="3947"/>
+                      <Data value="1045"/>
+                      <Data value="1245"/>
+                      <Data value="2918"/>
+                      <Data value="281"/>
+                      <Data value="4967"/>
+                      <Data value="19183"/>
                       <Data value="null"/>
                       <Data value="null"/>
                       <Data value="null"/>
@@ -337,11 +336,11 @@
                       <Data value="Nda"/>
                       <Data value="Nda"/>
                       <Data value="Nda"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
+                      <Data value="Azul claro Cute"/>
+                      <Data value="Preto"/>
+                      <Data value="Petala"/>
+                      <Data value="Incolor"/>
+                      <Data value="Lavanda Alma"/>
                       <Data value="null"/>
                       <Data value="null"/>
                       <Data value="null"/>
@@ -376,15 +375,15 @@
                     </Column>
                     <Column editable="false" title="Tamanho" type="java.lang.String">
                       <Data value="30"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
+                      <Data value="50"/>
+                      <Data value="150"/>
+                      <Data value="100"/>
+                      <Data value="399"/>
+                      <Data value="7"/>
+                      <Data value="7,5"/>
+                      <Data value="8"/>
+                      <Data value="10"/>
+                      <Data value="8"/>
                       <Data value="null"/>
                       <Data value="null"/>
                       <Data value="null"/>
@@ -424,10 +423,10 @@
                       <Data value="ml"/>
                       <Data value="ml"/>
                       <Data value="ml"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
+                      <Data value="ml"/>
+                      <Data value="ml"/>
+                      <Data value="ml"/>
+                      <Data value="ml"/>
                       <Data value="null"/>
                       <Data value="null"/>
                       <Data value="null"/>
@@ -465,12 +464,12 @@
                       <Data value="21/11/2067"/>
                       <Data value="12/02/2032"/>
                       <Data value="10/01/2025"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
+                      <Data value="01/01/2054"/>
+                      <Data value="12/12/2025"/>
+                      <Data value="23/11/2025"/>
+                      <Data value="05/04/2024"/>
+                      <Data value="24/06/2026"/>
+                      <Data value="09/01/2027"/>
                       <Data value="null"/>
                       <Data value="null"/>
                       <Data value="null"/>
@@ -506,17 +505,30 @@
                     <Column editable="false" title="Descri&#xe7;&#xe3;o" type="java.lang.Object"/>
                   </Table>
                 </Property>
+                <Property name="focusable" type="boolean" value="false"/>
+                <Property name="intercellSpacing" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[0, 0]"/>
+                </Property>
+                <Property name="rowHeight" type="int" value="25"/>
+                <Property name="selectionBackground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="d2" green="d6" red="ff" type="rgb"/>
+                </Property>
+                <Property name="showVerticalLines" type="boolean" value="false"/>
+                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                  <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
+                </Property>
               </Properties>
             </Component>
           </SubComponents>
         </Container>
         <Component class="javax.swing.JTextField" name="jTextField1">
         </Component>
-        <Container class="javax.swing.JPanel" name="jPanel3">
+        <Container class="javax.swing.JPanel" name="jPanel5">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="af" red="0" type="rgb"/>
+              <Color blue="c7" green="9e" red="9" type="rgb"/>
             </Property>
+            <Property name="autoscrolls" type="boolean" value="true"/>
           </Properties>
 
           <Layout>
@@ -524,7 +536,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -533,14 +545,14 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel2">
+            <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Malgun Gothic Semilight" size="24" style="1"/>
@@ -548,7 +560,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="d2" green="d6" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="PESQUISAR PRODUTOS"/>
+                <Property name="text" type="java.lang.String" value="VISUALIZAR PRODUTOS"/>
               </Properties>
             </Component>
           </SubComponents>

@@ -4,6 +4,9 @@
  */
 package Projeto.IntegradorII.Telas;
 
+import java.awt.Color;
+import java.awt.Font;
+
 /**
  *
  * @author felip
@@ -15,6 +18,19 @@ public class VisualizarProdutos extends javax.swing.JPanel {
      */
     public VisualizarProdutos() {
         initComponents();
+    }
+    
+    public class tabel extends javax.swing.JFrame{
+        public tabel (){
+            initComponents();
+            setBackground(new Color(0,0,0,0));
+        
+            jTable1.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD,12));
+            jTable1.getTableHeader().setOpaque(false);
+            jTable1.getTableHeader().setBackground(new Color(32,136,203));
+            jTable1.getTableHeader().setForeground(new Color(255,255,255));
+            jTable1.setRowHeight(25);
+        }
     }
 
     /**
@@ -31,8 +47,8 @@ public class VisualizarProdutos extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jTextField1 = new javax.swing.JTextField();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -42,15 +58,15 @@ public class VisualizarProdutos extends javax.swing.JPanel {
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Perfume ", "Burberry Her", "Burberry", "Perfume", "R$ 269", "89327", "Nda", "30", "ml", "24/12/2040", null},
-                {"Perfume ", "Burberry Her", "Burberry", "Perfume", null, null, "Nda", null, "ml", "21/11/2067", null},
-                {"Perfume ", null, null, "Perfume", null, null, "Nda", null, "g", "12/02/2032", null},
-                {"Perfume ", null, null, "Perfume", null, null, "Nda", null, "ml", "10/01/2025", null},
-                {"Perfume ", null, null, "Perfume", null, null, "Nda", null, "ml", null, null},
-                {"Esmalte", null, null, null, null, null, null, null, "ml", null, null},
-                {"Esmalte", null, null, null, null, null, null, null, null, null, null},
-                {"Esmalte", null, null, null, null, null, null, null, null, null, null},
-                {"Esmalte", null, null, null, null, null, null, null, null, null, null},
-                {"Esmalte", null, null, null, null, null, null, null, null, null, null},
+                {"Perfume ", "Burberry Her", "Burberry", "Perfume", "R$ 300", "30485", "Nda", "50", "ml", "21/11/2067", null},
+                {"Perfume ", "Bad Boy Carolina Herrera Eau de Toilette", "Carolina Herrera", "Perfume", "R$ 738.90", "49202", "Nda", "150", "g", "12/02/2032", null},
+                {"Perfume ", "Bad Boy Carolina Herrera Eau de Toilette", "Carolina Herrera", "Perfume", "R$ 598.90", "3947", "Nda", "100", "ml", "10/01/2025", null},
+                {"Perfume ", "Idôle Lancôme Eau de Parfum", "Lancôme", "Perfume", "R$ 720", "1045", "Nda", "399", "ml", "01/01/2054", null},
+                {"Esmalte", "o Boticário Intense by Manu Gavassi Azul Claro Cute - Esmalte 7ml", "O Boticário", "Esmalte", "R$ 7,99", "1245", "Azul claro Cute", "7", "ml", "12/12/2025", null},
+                {"Esmalte", "Esmalte Impala Cremoso Preto", "Impala", "Esmalte", "R$ 2,59", "2918", "Preto", "7,5", "ml", "23/11/2025", null},
+                {"Esmalte", "Esmalte Natural Colorama ", "Colorama", "Esmalte", "R$ 4,75", "281", "Petala", "8", "ml", "05/04/2024", null},
+                {"Esmalte", "Granado Pink SOS 7 em 1 - Base Fortalecedora para Unhas", "Granda", "Esmalte", "R$ 29,99", "4967", "Incolor", "10", "ml", "24/06/2026", null},
+                {"Esmalte", "Esmalte Risqué Cremoso - Lavanda Alma", "Risqué", "Esmalte", "R$ 3,99", "19183", "Lavanda Alma", "8", "ml", "09/01/2027", null},
                 {null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null},
@@ -102,28 +118,35 @@ public class VisualizarProdutos extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        jTable1.setFocusable(false);
+        jTable1.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        jTable1.setRowHeight(25);
+        jTable1.setSelectionBackground(new java.awt.Color(255, 214, 210));
+        jTable1.setShowVerticalLines(false);
+        jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel3.setBackground(new java.awt.Color(0, 175, 255));
+        jPanel5.setBackground(new java.awt.Color(9, 158, 199));
+        jPanel5.setAutoscrolls(true);
 
-        jLabel2.setFont(new java.awt.Font("Malgun Gothic Semilight", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 214, 210));
-        jLabel2.setText("PESQUISAR PRODUTOS");
+        jLabel4.setFont(new java.awt.Font("Malgun Gothic Semilight", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 214, 210));
+        jLabel4.setText("VISUALIZAR PRODUTOS");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
+                .addComponent(jLabel4)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
+                .addComponent(jLabel4)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -131,26 +154,25 @@ public class VisualizarProdutos extends javax.swing.JPanel {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(219, 219, 219)
+                .addContainerGap(293, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(385, Short.MAX_VALUE))
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(408, 408, 408))
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
@@ -159,9 +181,11 @@ public class VisualizarProdutos extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;

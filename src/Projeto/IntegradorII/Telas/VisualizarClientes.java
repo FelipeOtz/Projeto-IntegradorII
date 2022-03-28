@@ -5,6 +5,8 @@
 package Projeto.IntegradorII.Telas;
 
 
+import java.awt.Color;
+import java.awt.Font;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -18,6 +20,19 @@ public class VisualizarClientes extends javax.swing.JPanel {
     public VisualizarClientes() {
         initComponents();
     }
+    
+    public class tabel extends javax.swing.JFrame{
+        public tabel (){
+            initComponents();
+            setBackground(new Color(0,0,0,0));
+        
+            jTable1.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD,12));
+            jTable1.getTableHeader().setOpaque(false);
+            jTable1.getTableHeader().setBackground(new Color(32,136,203));
+            jTable1.getTableHeader().setForeground(new Color(255,255,255));
+            jTable1.setRowHeight(25);
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,19 +45,19 @@ public class VisualizarClientes extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblPesquisar = new javax.swing.JTable();
+        jTable1 = new javax.swing.JTable();
         jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(923, 584));
         setLayout(new java.awt.BorderLayout());
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
 
-        tblPesquisar.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
-        tblPesquisar.setModel(new javax.swing.table.DefaultTableModel(
+        jTable1.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Paulo Fernando Sérgio Santos", "paulo-santos89@fibran.com.br", "M", "(48) 2768-9361", "Casado", "331.460.230-83", "18/03/1977", "Rua Capitão Adelino Platt", "603", "88101-080", "SC", "Kobrasol"},
                 {"Giovanna Sara Gomes", "giovanna-gomes89@boldcron.com.br", "F", "(27) 3523-2208", "Casada", "075.938.770-27", "10/02/1980", "Rua Manoel Gomes Brandão", "547", "29075-525", "ES", "Boa Vista"},
@@ -77,7 +92,13 @@ public class VisualizarClientes extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tblPesquisar);
+        jTable1.setFocusable(false);
+        jTable1.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        jTable1.setRowHeight(25);
+        jTable1.setSelectionBackground(new java.awt.Color(255, 214, 210));
+        jTable1.setShowVerticalLines(false);
+        jTable1.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(jTable1);
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,26 +109,27 @@ public class VisualizarClientes extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("Pesquisar:");
 
-        jPanel3.setBackground(new java.awt.Color(0, 175, 255));
+        jPanel4.setBackground(new java.awt.Color(9, 158, 199));
+        jPanel4.setAutoscrolls(true);
 
-        jLabel2.setFont(new java.awt.Font("Malgun Gothic Semilight", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 214, 210));
-        jLabel2.setText("VISUALIZAR CLIENTES");
+        jLabel3.setFont(new java.awt.Font("Malgun Gothic Semilight", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 214, 210));
+        jLabel3.setText("VISUALIZAR CLIENTES");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
+                .addComponent(jLabel3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
+                .addComponent(jLabel3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -115,25 +137,25 @@ public class VisualizarClientes extends javax.swing.JPanel {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 923, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(212, Short.MAX_VALUE)
+                .addGap(233, 233, 233)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(404, 404, 404))
-            .addComponent(jScrollPane1)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 526, Short.MAX_VALUE))
         );
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
@@ -147,11 +169,11 @@ public class VisualizarClientes extends javax.swing.JPanel {
  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTable tblPesquisar;
     // End of variables declaration//GEN-END:variables
 }
