@@ -193,7 +193,7 @@ public class VisualizarClientes extends javax.swing.JPanel {
     private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
         // TODO add your handling code here:
         DefaultTableModel table = (DefaultTableModel)jTable1.getModel();
-        String search = jTextField1.getText();
+        String search = jTextField1.getText().toLowerCase();
         TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(table);
         jTable1.setRowSorter(tr);
         tr.setRowFilter(RowFilter.regexFilter(search));
