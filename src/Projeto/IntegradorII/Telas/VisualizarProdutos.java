@@ -78,8 +78,8 @@ public class VisualizarProdutos extends javax.swing.JPanel {
                 {"Sabonete", "Sabonete Mandarina Asiática", "Phebo", "Higiene", "R$ 6,49", "0", "Nda", "100", "g", "20/12/2044", null},
                 {"Sabonete ", "Sabonete Líquido Fisher-Price Bebê", "Biotropic", "Higiene", "R$ 14,49", "20439", "Nda", "400", "ml", "06/08/2028", null},
                 {"Sabonete ", "Sabonete Barra Lavanda", "Vyedas", "Higiene", "R$ 17.80", "23495", "Nda", "120", "g", null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
+                {"", null, null, null, null, null, null, null, null, null, null},
+                {"", null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null},
@@ -202,7 +202,7 @@ public class VisualizarProdutos extends javax.swing.JPanel {
     private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
         // TODO add your handling code here:
         DefaultTableModel table = (DefaultTableModel)jTable1.getModel();
-        String search = jTextField1.getText().toLowerCase();
+        String search = jTextField1.getText();
         TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(table);
         jTable1.setRowSorter(tr);
         tr.setRowFilter(RowFilter.regexFilter(search));
