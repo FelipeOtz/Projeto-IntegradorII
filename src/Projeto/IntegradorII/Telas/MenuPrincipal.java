@@ -4,6 +4,9 @@
  */
 package Projeto.IntegradorII.Telas;
 import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Timer;
 
 /**
  *
@@ -17,6 +20,50 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public MenuPrincipal() {
         initComponents();
         init();
+        pnlCima = pnlClientes;
+        pnlBaixo = pnlBaixoclientes;
+        btnCadCliente.doClick();
+    }
+    
+    //Variaveis de animação
+    private boolean menuAberto = false;
+    private javax.swing.JPanel pnlCima, pnlBaixo;
+    private int tempo = 10;
+    
+    //Timer que executa a animação em um determinado tempo
+    private Timer timer = new Timer(10, new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (menuAberto) {
+                animarFechar(pnlCima, pnlBaixo, tempo);
+            } else {
+                animarAbrir(pnlCima, pnlBaixo, tempo);
+            }
+
+        }
+
+    });
+    
+    private void animarAbrir(javax.swing.JPanel pnlCima, javax.swing.JPanel pnlBaixo, int tempo) {
+        if (pnlCima.getHeight() >= 140) {
+            menuAberto = true;
+            timer.stop();
+        } else {
+            pnlCima.setSize(pnlCima.getWidth(), pnlCima.getHeight() + tempo);
+            pnlBaixo.setBounds(pnlBaixo.getX(), pnlBaixo.getY() + tempo, pnlBaixo.getWidth(), pnlBaixo.getHeight());
+        }
+    }
+
+    private void animarFechar(javax.swing.JPanel pnlCima, javax.swing.JPanel pnlBaixo, int tempo) {
+        if (pnlCima.getHeight() <= 0) {
+            timer.stop();
+            menuAberto = false;
+            gpSubmenu.clearSelection();
+            
+        } else {
+            pnlCima.setSize(pnlCima.getWidth(), pnlCima.getHeight() - tempo);
+            pnlBaixo.setBounds(pnlBaixo.getX(), pnlBaixo.getY() - tempo, pnlBaixo.getWidth(), pnlBaixo.getHeight());
+        }
     }
 
     /**
@@ -33,23 +80,44 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         gpMenu = new javax.swing.ButtonGroup();
+        gpSubmenu = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
+        pnlBody = new javax.swing.JPanel();
         pnlMenu = new javax.swing.JPanel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
-        jToggleButton5 = new javax.swing.JToggleButton();
-        jToggleButton6 = new javax.swing.JToggleButton();
-        jToggleButton7 = new javax.swing.JToggleButton();
-        jToggleButton8 = new javax.swing.JToggleButton();
-        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        pnlBody = new javax.swing.JPanel();
+        pnlClientes = new javax.swing.JPanel();
+        btnCadCliente = new javax.swing.JToggleButton();
+        btnDelCliente = new javax.swing.JToggleButton();
+        btnEditCliente = new javax.swing.JToggleButton();
+        btnVisuCliente = new javax.swing.JToggleButton();
+        btnClientes = new javax.swing.JToggleButton();
+        pnlBaixoclientes = new javax.swing.JPanel();
+        btnProdutos = new javax.swing.JToggleButton();
+        pnlProdutos = new javax.swing.JPanel();
+        btnCadProduto = new javax.swing.JToggleButton();
+        btnDelProduto = new javax.swing.JToggleButton();
+        btnEditarProduto = new javax.swing.JToggleButton();
+        btnVisuProduto = new javax.swing.JToggleButton();
+        pnlBaixoprodutos = new javax.swing.JPanel();
+        pnlVendas = new javax.swing.JPanel();
+        btnCriarVendas = new javax.swing.JToggleButton();
+        btnDelProduto2 = new javax.swing.JToggleButton();
+        outros = new javax.swing.JToggleButton();
+        outros2 = new javax.swing.JToggleButton();
+        btnVendas = new javax.swing.JToggleButton();
+        pnlBaixovendas = new javax.swing.JPanel();
+        btnOutros = new javax.swing.JToggleButton();
+        pnlOutros = new javax.swing.JPanel();
+        btnDelProduto3 = new javax.swing.JToggleButton();
+        btnEditarProduto3 = new javax.swing.JToggleButton();
+        btnVisuProduto3 = new javax.swing.JToggleButton();
+        btnCadProduto3 = new javax.swing.JToggleButton();
+        pnlBaixooutros = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -82,116 +150,575 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
         );
 
+        pnlBody.setPreferredSize(new java.awt.Dimension(923, 584));
+        pnlBody.setLayout(new java.awt.BorderLayout());
+
         pnlMenu.setBackground(new java.awt.Color(243, 243, 243));
-        pnlMenu.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 204, 204)));
-
-        gpMenu.add(jToggleButton1);
-        jToggleButton1.setText("Cadastrar cliente");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
-            }
-        });
-
-        gpMenu.add(jToggleButton2);
-        jToggleButton2.setText("Visualizar cliente");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
-            }
-        });
-
-        gpMenu.add(jToggleButton3);
-        jToggleButton3.setText("Deletar cliente");
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
-            }
-        });
-
-        gpMenu.add(jToggleButton4);
-        jToggleButton4.setText("Editar cliente");
-        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton4ActionPerformed(evt);
-            }
-        });
-
-        gpMenu.add(jToggleButton5);
-        jToggleButton5.setText("Visualizar produto");
-        jToggleButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton5ActionPerformed(evt);
-            }
-        });
-
-        gpMenu.add(jToggleButton6);
-        jToggleButton6.setText("Editar produto");
-        jToggleButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton6ActionPerformed(evt);
-            }
-        });
-
-        gpMenu.add(jToggleButton7);
-        jToggleButton7.setText("Deletar produto");
-        jToggleButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton7ActionPerformed(evt);
-            }
-        });
-
-        gpMenu.add(jToggleButton8);
-        jToggleButton8.setText("Cadastrar produto");
-        jToggleButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton8ActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("2022 - Four Beauty | Grupo Matrix");
+        pnlMenu.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/User.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Microsoft YaHei", 1, 12)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("nome!");
 
         jLabel3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Seja bem vindo(a)");
+
+        pnlClientes.setBackground(new java.awt.Color(243, 243, 243));
+        pnlClientes.setPreferredSize(new java.awt.Dimension(233, 0));
+
+        btnCadCliente.setBackground(new java.awt.Color(255, 255, 255));
+        btnCadCliente.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        btnCadCliente.setForeground(new java.awt.Color(51, 51, 51));
+        btnCadCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
+        btnCadCliente.setText("Cadastrar cliente");
+        btnCadCliente.setBorder(null);
+        btnCadCliente.setBorderPainted(false);
+        btnCadCliente.setContentAreaFilled(false);
+        btnCadCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnCadCliente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnCadCliente.setPreferredSize(new java.awt.Dimension(100, 25));
+        btnCadCliente.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotaoselionado.png"))); // NOI18N
+        btnCadCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadClienteActionPerformed(evt);
+            }
+        });
+
+        btnDelCliente.setBackground(new java.awt.Color(255, 255, 255));
+        btnDelCliente.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        btnDelCliente.setForeground(new java.awt.Color(51, 51, 51));
+        btnDelCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
+        btnDelCliente.setText("Deletar cliente");
+        btnDelCliente.setBorder(null);
+        btnDelCliente.setBorderPainted(false);
+        btnDelCliente.setContentAreaFilled(false);
+        btnDelCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnDelCliente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnDelCliente.setPreferredSize(new java.awt.Dimension(100, 25));
+        btnDelCliente.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotaoselionado.png"))); // NOI18N
+        btnDelCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDelClienteActionPerformed(evt);
+            }
+        });
+
+        btnEditCliente.setBackground(new java.awt.Color(255, 255, 255));
+        btnEditCliente.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        btnEditCliente.setForeground(new java.awt.Color(51, 51, 51));
+        btnEditCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
+        btnEditCliente.setText("Editar cliente");
+        btnEditCliente.setBorder(null);
+        btnEditCliente.setBorderPainted(false);
+        btnEditCliente.setContentAreaFilled(false);
+        btnEditCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnEditCliente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnEditCliente.setPreferredSize(new java.awt.Dimension(100, 25));
+        btnEditCliente.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotaoselionado.png"))); // NOI18N
+        btnEditCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditClienteActionPerformed(evt);
+            }
+        });
+
+        btnVisuCliente.setBackground(new java.awt.Color(255, 255, 255));
+        btnVisuCliente.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        btnVisuCliente.setForeground(new java.awt.Color(51, 51, 51));
+        btnVisuCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
+        btnVisuCliente.setText("Visualizar clientes");
+        btnVisuCliente.setBorder(null);
+        btnVisuCliente.setBorderPainted(false);
+        btnVisuCliente.setContentAreaFilled(false);
+        btnVisuCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnVisuCliente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnVisuCliente.setPreferredSize(new java.awt.Dimension(100, 25));
+        btnVisuCliente.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotaoselionado.png"))); // NOI18N
+        btnVisuCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVisuClienteActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlClientesLayout = new javax.swing.GroupLayout(pnlClientes);
+        pnlClientes.setLayout(pnlClientesLayout);
+        pnlClientesLayout.setHorizontalGroup(
+            pnlClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlClientesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnVisuCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnDelCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEditCliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCadCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        pnlClientesLayout.setVerticalGroup(
+            pnlClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlClientesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnCadCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnDelCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnEditCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnVisuCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        btnClientes.setBackground(new java.awt.Color(255, 255, 255));
+        gpSubmenu.add(btnClientes);
+        btnClientes.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
+        btnClientes.setForeground(new java.awt.Color(74, 74, 74));
+        btnClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/arrow.png"))); // NOI18N
+        btnClientes.setText("Clientes");
+        btnClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnClientes.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        btnClientes.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        btnClientes.setIconTextGap(65);
+        btnClientes.setOpaque(true);
+        btnClientes.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/arrowcima.png"))); // NOI18N
+        btnClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClientesActionPerformed(evt);
+            }
+        });
+
+        btnProdutos.setBackground(new java.awt.Color(255, 255, 255));
+        gpSubmenu.add(btnProdutos);
+        btnProdutos.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
+        btnProdutos.setForeground(new java.awt.Color(74, 74, 74));
+        btnProdutos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/arrow.png"))); // NOI18N
+        btnProdutos.setText("Produtos");
+        btnProdutos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnProdutos.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        btnProdutos.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        btnProdutos.setIconTextGap(60);
+        btnProdutos.setOpaque(true);
+        btnProdutos.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/arrowcima.png"))); // NOI18N
+        btnProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProdutosActionPerformed(evt);
+            }
+        });
+
+        pnlProdutos.setPreferredSize(new java.awt.Dimension(209, 0));
+
+        btnCadProduto.setBackground(new java.awt.Color(255, 255, 255));
+        btnCadProduto.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        btnCadProduto.setForeground(new java.awt.Color(51, 51, 51));
+        btnCadProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
+        btnCadProduto.setText("Cadastrar produto");
+        btnCadProduto.setBorder(null);
+        btnCadProduto.setBorderPainted(false);
+        btnCadProduto.setContentAreaFilled(false);
+        btnCadProduto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnCadProduto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnCadProduto.setPreferredSize(new java.awt.Dimension(100, 25));
+        btnCadProduto.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotaoselionado.png"))); // NOI18N
+        btnCadProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadProdutoActionPerformed(evt);
+            }
+        });
+
+        btnDelProduto.setBackground(new java.awt.Color(255, 255, 255));
+        btnDelProduto.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        btnDelProduto.setForeground(new java.awt.Color(51, 51, 51));
+        btnDelProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
+        btnDelProduto.setText("Deletar produto");
+        btnDelProduto.setBorder(null);
+        btnDelProduto.setBorderPainted(false);
+        btnDelProduto.setContentAreaFilled(false);
+        btnDelProduto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnDelProduto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnDelProduto.setPreferredSize(new java.awt.Dimension(100, 25));
+        btnDelProduto.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotaoselionado.png"))); // NOI18N
+        btnDelProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDelProdutoActionPerformed(evt);
+            }
+        });
+
+        btnEditarProduto.setBackground(new java.awt.Color(255, 255, 255));
+        btnEditarProduto.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        btnEditarProduto.setForeground(new java.awt.Color(51, 51, 51));
+        btnEditarProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
+        btnEditarProduto.setText("Editar Produto");
+        btnEditarProduto.setBorder(null);
+        btnEditarProduto.setBorderPainted(false);
+        btnEditarProduto.setContentAreaFilled(false);
+        btnEditarProduto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnEditarProduto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnEditarProduto.setPreferredSize(new java.awt.Dimension(100, 25));
+        btnEditarProduto.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotaoselionado.png"))); // NOI18N
+        btnEditarProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarProdutoActionPerformed(evt);
+            }
+        });
+
+        btnVisuProduto.setBackground(new java.awt.Color(255, 255, 255));
+        btnVisuProduto.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        btnVisuProduto.setForeground(new java.awt.Color(51, 51, 51));
+        btnVisuProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
+        btnVisuProduto.setText("Visualizar produtos");
+        btnVisuProduto.setBorder(null);
+        btnVisuProduto.setBorderPainted(false);
+        btnVisuProduto.setContentAreaFilled(false);
+        btnVisuProduto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnVisuProduto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnVisuProduto.setPreferredSize(new java.awt.Dimension(100, 25));
+        btnVisuProduto.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotaoselionado.png"))); // NOI18N
+        btnVisuProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVisuProdutoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlProdutosLayout = new javax.swing.GroupLayout(pnlProdutos);
+        pnlProdutos.setLayout(pnlProdutosLayout);
+        pnlProdutosLayout.setHorizontalGroup(
+            pnlProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btnCadProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnDelProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnEditarProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnVisuProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        pnlProdutosLayout.setVerticalGroup(
+            pnlProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlProdutosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnCadProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnDelProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnEditarProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnVisuProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        pnlVendas.setPreferredSize(new java.awt.Dimension(209, 0));
+
+        btnCriarVendas.setBackground(new java.awt.Color(255, 255, 255));
+        btnCriarVendas.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        btnCriarVendas.setForeground(new java.awt.Color(51, 51, 51));
+        btnCriarVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
+        btnCriarVendas.setText("Nova venda");
+        btnCriarVendas.setBorder(null);
+        btnCriarVendas.setBorderPainted(false);
+        btnCriarVendas.setContentAreaFilled(false);
+        btnCriarVendas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnCriarVendas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnCriarVendas.setPreferredSize(new java.awt.Dimension(100, 25));
+        btnCriarVendas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotaoselionado.png"))); // NOI18N
+        btnCriarVendas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCriarVendasActionPerformed(evt);
+            }
+        });
+
+        btnDelProduto2.setBackground(new java.awt.Color(255, 255, 255));
+        btnDelProduto2.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        btnDelProduto2.setForeground(new java.awt.Color(51, 51, 51));
+        btnDelProduto2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
+        btnDelProduto2.setText("Relatório de vendas");
+        btnDelProduto2.setBorder(null);
+        btnDelProduto2.setBorderPainted(false);
+        btnDelProduto2.setContentAreaFilled(false);
+        btnDelProduto2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnDelProduto2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnDelProduto2.setPreferredSize(new java.awt.Dimension(100, 25));
+        btnDelProduto2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotaoselionado.png"))); // NOI18N
+        btnDelProduto2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDelProduto2ActionPerformed(evt);
+            }
+        });
+
+        outros.setBackground(new java.awt.Color(255, 255, 255));
+        outros.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        outros.setForeground(new java.awt.Color(51, 51, 51));
+        outros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
+        outros.setText("...");
+        outros.setBorder(null);
+        outros.setBorderPainted(false);
+        outros.setContentAreaFilled(false);
+        outros.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        outros.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        outros.setPreferredSize(new java.awt.Dimension(100, 25));
+        outros.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotaoselionado.png"))); // NOI18N
+        outros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                outrosActionPerformed(evt);
+            }
+        });
+
+        outros2.setBackground(new java.awt.Color(255, 255, 255));
+        outros2.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        outros2.setForeground(new java.awt.Color(51, 51, 51));
+        outros2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
+        outros2.setText("...");
+        outros2.setBorder(null);
+        outros2.setBorderPainted(false);
+        outros2.setContentAreaFilled(false);
+        outros2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        outros2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        outros2.setPreferredSize(new java.awt.Dimension(100, 25));
+        outros2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotaoselionado.png"))); // NOI18N
+        outros2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                outros2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlVendasLayout = new javax.swing.GroupLayout(pnlVendas);
+        pnlVendas.setLayout(pnlVendasLayout);
+        pnlVendasLayout.setHorizontalGroup(
+            pnlVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btnCriarVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnDelProduto2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(outros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(outros2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        pnlVendasLayout.setVerticalGroup(
+            pnlVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlVendasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnCriarVendas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnDelProduto2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(outros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(outros2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        btnVendas.setBackground(new java.awt.Color(255, 255, 255));
+        gpSubmenu.add(btnVendas);
+        btnVendas.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
+        btnVendas.setForeground(new java.awt.Color(74, 74, 74));
+        btnVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/arrow.png"))); // NOI18N
+        btnVendas.setText("Vendas");
+        btnVendas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnVendas.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        btnVendas.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        btnVendas.setIconTextGap(67);
+        btnVendas.setOpaque(true);
+        btnVendas.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/arrowcima.png"))); // NOI18N
+        btnVendas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVendasActionPerformed(evt);
+            }
+        });
+
+        btnOutros.setBackground(new java.awt.Color(255, 255, 255));
+        gpSubmenu.add(btnOutros);
+        btnOutros.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
+        btnOutros.setForeground(new java.awt.Color(74, 74, 74));
+        btnOutros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/arrow.png"))); // NOI18N
+        btnOutros.setText("Outros");
+        btnOutros.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOutros.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        btnOutros.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        btnOutros.setIconTextGap(67);
+        btnOutros.setOpaque(true);
+        btnOutros.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/arrowcima.png"))); // NOI18N
+        btnOutros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOutrosActionPerformed(evt);
+            }
+        });
+
+        pnlOutros.setPreferredSize(new java.awt.Dimension(257, 0));
+
+        btnDelProduto3.setBackground(new java.awt.Color(255, 255, 255));
+        btnDelProduto3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        btnDelProduto3.setForeground(new java.awt.Color(51, 51, 51));
+        btnDelProduto3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
+        btnDelProduto3.setText("...");
+        btnDelProduto3.setBorder(null);
+        btnDelProduto3.setBorderPainted(false);
+        btnDelProduto3.setContentAreaFilled(false);
+        btnDelProduto3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnDelProduto3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnDelProduto3.setPreferredSize(new java.awt.Dimension(100, 25));
+        btnDelProduto3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotaoselionado.png"))); // NOI18N
+        btnDelProduto3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDelProduto3ActionPerformed(evt);
+            }
+        });
+
+        btnEditarProduto3.setBackground(new java.awt.Color(255, 255, 255));
+        btnEditarProduto3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        btnEditarProduto3.setForeground(new java.awt.Color(51, 51, 51));
+        btnEditarProduto3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
+        btnEditarProduto3.setText("...");
+        btnEditarProduto3.setBorder(null);
+        btnEditarProduto3.setBorderPainted(false);
+        btnEditarProduto3.setContentAreaFilled(false);
+        btnEditarProduto3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnEditarProduto3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnEditarProduto3.setPreferredSize(new java.awt.Dimension(100, 25));
+        btnEditarProduto3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotaoselionado.png"))); // NOI18N
+        btnEditarProduto3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarProduto3ActionPerformed(evt);
+            }
+        });
+
+        btnVisuProduto3.setBackground(new java.awt.Color(255, 255, 255));
+        btnVisuProduto3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        btnVisuProduto3.setForeground(new java.awt.Color(51, 51, 51));
+        btnVisuProduto3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
+        btnVisuProduto3.setText("...");
+        btnVisuProduto3.setBorder(null);
+        btnVisuProduto3.setBorderPainted(false);
+        btnVisuProduto3.setContentAreaFilled(false);
+        btnVisuProduto3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnVisuProduto3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnVisuProduto3.setPreferredSize(new java.awt.Dimension(100, 25));
+        btnVisuProduto3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotaoselionado.png"))); // NOI18N
+        btnVisuProduto3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVisuProduto3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlOutrosLayout = new javax.swing.GroupLayout(pnlOutros);
+        pnlOutros.setLayout(pnlOutrosLayout);
+        pnlOutrosLayout.setHorizontalGroup(
+            pnlOutrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btnDelProduto3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnEditarProduto3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnVisuProduto3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        pnlOutrosLayout.setVerticalGroup(
+            pnlOutrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlOutrosLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnDelProduto3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnEditarProduto3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnVisuProduto3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        btnCadProduto3.setBackground(new java.awt.Color(255, 255, 255));
+        btnCadProduto3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        btnCadProduto3.setForeground(new java.awt.Color(51, 51, 51));
+        btnCadProduto3.setText("Cadastrar produto");
+        btnCadProduto3.setBorder(null);
+        btnCadProduto3.setBorderPainted(false);
+        btnCadProduto3.setContentAreaFilled(false);
+        btnCadProduto3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCadProduto3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnCadProduto3.setPreferredSize(new java.awt.Dimension(100, 0));
+        btnCadProduto3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadProduto3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlBaixooutrosLayout = new javax.swing.GroupLayout(pnlBaixooutros);
+        pnlBaixooutros.setLayout(pnlBaixooutrosLayout);
+        pnlBaixooutrosLayout.setHorizontalGroup(
+            pnlBaixooutrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        pnlBaixooutrosLayout.setVerticalGroup(
+            pnlBaixooutrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout pnlBaixovendasLayout = new javax.swing.GroupLayout(pnlBaixovendas);
+        pnlBaixovendas.setLayout(pnlBaixovendasLayout);
+        pnlBaixovendasLayout.setHorizontalGroup(
+            pnlBaixovendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnlOutros, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
+            .addComponent(btnOutros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnCadProduto3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(pnlBaixovendasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(pnlBaixooutros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlBaixovendasLayout.setVerticalGroup(
+            pnlBaixovendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBaixovendasLayout.createSequentialGroup()
+                .addComponent(btnOutros, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(btnCadProduto3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(pnlOutros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addComponent(pnlBaixooutros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70))
+        );
+
+        javax.swing.GroupLayout pnlBaixoprodutosLayout = new javax.swing.GroupLayout(pnlBaixoprodutos);
+        pnlBaixoprodutos.setLayout(pnlBaixoprodutosLayout);
+        pnlBaixoprodutosLayout.setHorizontalGroup(
+            pnlBaixoprodutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btnVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(pnlBaixoprodutosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(pnlVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addComponent(pnlBaixovendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        pnlBaixoprodutosLayout.setVerticalGroup(
+            pnlBaixoprodutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBaixoprodutosLayout.createSequentialGroup()
+                .addComponent(btnVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(pnlVendas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlBaixovendas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout pnlBaixoclientesLayout = new javax.swing.GroupLayout(pnlBaixoclientes);
+        pnlBaixoclientes.setLayout(pnlBaixoclientesLayout);
+        pnlBaixoclientesLayout.setHorizontalGroup(
+            pnlBaixoclientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btnProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
+            .addComponent(pnlProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
+            .addComponent(pnlBaixoprodutos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        pnlBaixoclientesLayout.setVerticalGroup(
+            pnlBaixoclientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlBaixoclientesLayout.createSequentialGroup()
+                .addComponent(btnProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(pnlProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlBaixoprodutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jLabel4.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Grupo Matrix - 4Beauty | 2022");
 
         javax.swing.GroupLayout pnlMenuLayout = new javax.swing.GroupLayout(pnlMenu);
         pnlMenu.setLayout(pnlMenuLayout);
         pnlMenuLayout.setHorizontalGroup(
             pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMenuLayout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
-                .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jToggleButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jToggleButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jToggleButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jToggleButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jToggleButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jToggleButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(19, 19, 19))
-            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(pnlMenuLayout.createSequentialGroup()
-                .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlMenuLayout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addComponent(jLabel3))
-                    .addGroup(pnlMenuLayout.createSequentialGroup()
-                        .addGap(96, 96, 96)
-                        .addComponent(jLabel2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnClientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlBaixoclientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         pnlMenuLayout.setVerticalGroup(
             pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -201,31 +728,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addGap(48, 48, 48)
-                .addComponent(jToggleButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jToggleButton3)
-                .addGap(18, 18, 18)
-                .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jToggleButton2)
-                .addGap(12, 12, 12)
-                .addComponent(jToggleButton8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jToggleButton7)
+                .addGap(30, 30, 30)
+                .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(pnlClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jToggleButton5)
+                .addComponent(pnlBaixoclientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel4)
-                .addGap(21, 21, 21))
+                .addContainerGap())
         );
-
-        jLabel2.getAccessibleContext().setAccessibleName("nome!");
-
-        pnlBody.setPreferredSize(new java.awt.Dimension(923, 584));
-        pnlBody.setLayout(new java.awt.BorderLayout());
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -236,14 +748,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pnlBody, javax.swing.GroupLayout.DEFAULT_SIZE, 957, Short.MAX_VALUE)))
+                    .addComponent(pnlBody, javax.swing.GroupLayout.DEFAULT_SIZE, 956, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(pnlBody, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE))
+                .addComponent(pnlBody, javax.swing.GroupLayout.DEFAULT_SIZE, 601, Short.MAX_VALUE))
             .addComponent(pnlMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -253,46 +765,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
-        showForm(new CadastrarClientes());
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
-
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
-        // TODO add your handling code here:
-        showForm(new VisualizarClientes());
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
-
-    private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
-        // TODO add your handling code here:
-        showForm(new VisualizarProdutos());
-    }//GEN-LAST:event_jToggleButton5ActionPerformed
-
-    private void jToggleButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton8ActionPerformed
-        // TODO add your handling code here:
-        showForm(new CadastrarProdutos());
-    }//GEN-LAST:event_jToggleButton8ActionPerformed
-
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
-        // TODO add your handling code here:
-        showForm(new DeletarClientes());
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
-
-    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
-        // TODO add your handling code here:
-        showForm(new EditarClientes());
-    }//GEN-LAST:event_jToggleButton4ActionPerformed
-
-    private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7ActionPerformed
-        // TODO add your handling code here:
-        showForm(new DeletarProdutos());
-    }//GEN-LAST:event_jToggleButton7ActionPerformed
-
-    private void jToggleButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton6ActionPerformed
-        // TODO add your handling code here:
-        showForm(new EditarProdutos());
-    }//GEN-LAST:event_jToggleButton6ActionPerformed
-
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // TODO add your handling code here:
         this.dispose();
@@ -301,11 +773,137 @@ public class MenuPrincipal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jLabel6MouseClicked
 
+    private void btnCadClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadClienteActionPerformed
+        // TODO add your handling code here:
+        showForm(new CadastrarClientes());
+    }//GEN-LAST:event_btnCadClienteActionPerformed
+
+    private void btnDelClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelClienteActionPerformed
+        // TODO add your handling code here:
+        showForm(new DeletarClientes());
+    }//GEN-LAST:event_btnDelClienteActionPerformed
+
+    private void btnEditClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditClienteActionPerformed
+        // TODO add your handling code here:
+        showForm(new EditarClientes());
+    }//GEN-LAST:event_btnEditClienteActionPerformed
+
+    private void btnVisuClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisuClienteActionPerformed
+        // TODO add your handling code here:
+        showForm(new VisualizarClientes());
+    }//GEN-LAST:event_btnVisuClienteActionPerformed
+
+    private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
+        // TODO add your handling code here:
+
+        if (!menuAberto) {
+            timer.stop();
+            pnlCima = pnlClientes;
+            pnlBaixo = pnlBaixoclientes;
+            timer.start();
+        }else{
+            timer.stop();
+            timer.start();
+        }
+    }//GEN-LAST:event_btnClientesActionPerformed
+
+    private void btnProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutosActionPerformed
+        // TODO add your handling code here:
+        timer.stop();
+        timer.start();
+        if (!menuAberto) {
+            timer.stop();
+            pnlCima = pnlProdutos;
+            pnlBaixo = pnlBaixoprodutos;
+            timer.start();
+        }else{
+
+        }
+    }//GEN-LAST:event_btnProdutosActionPerformed
+
+    private void btnCadProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadProdutoActionPerformed
+        // TODO add your handling code here:
+        showForm(new CadastrarProdutos());
+    }//GEN-LAST:event_btnCadProdutoActionPerformed
+
+    private void btnDelProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelProdutoActionPerformed
+        // TODO add your handling code here:
+        showForm(new DeletarProdutos());
+    }//GEN-LAST:event_btnDelProdutoActionPerformed
+
+    private void btnEditarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarProdutoActionPerformed
+        // TODO add your handling code here:
+        showForm(new EditarProdutos());
+    }//GEN-LAST:event_btnEditarProdutoActionPerformed
+
+    private void btnVisuProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisuProdutoActionPerformed
+        // TODO add your handling code here:
+        showForm(new VisualizarProdutos());
+    }//GEN-LAST:event_btnVisuProdutoActionPerformed
+
+    private void btnCriarVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCriarVendasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCriarVendasActionPerformed
+
+    private void btnDelProduto2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelProduto2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDelProduto2ActionPerformed
+
+    private void outrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_outrosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_outrosActionPerformed
+
+    private void outros2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_outros2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_outros2ActionPerformed
+
+    private void btnVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendasActionPerformed
+        // TODO add your handling code here:
+        timer.stop();
+        timer.start();
+        if (!menuAberto) {
+            timer.stop();
+            pnlCima = pnlVendas;
+            pnlBaixo = pnlBaixovendas;
+            timer.start();
+        }
+    }//GEN-LAST:event_btnVendasActionPerformed
+
+    private void btnOutrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOutrosActionPerformed
+        // TODO add your handling code here:
+        timer.stop();
+        timer.start();
+        if (!menuAberto) {
+            timer.stop();
+            pnlCima = pnlOutros;
+            pnlBaixo = pnlBaixooutros;
+            timer.start();
+        }
+    }//GEN-LAST:event_btnOutrosActionPerformed
+
+    private void btnDelProduto3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelProduto3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDelProduto3ActionPerformed
+
+    private void btnEditarProduto3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarProduto3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEditarProduto3ActionPerformed
+
+    private void btnVisuProduto3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisuProduto3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVisuProduto3ActionPerformed
+
+    private void btnCadProduto3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadProduto3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCadProduto3ActionPerformed
+
     public void showForm(Component com) {
         pnlBody.removeAll();
         pnlBody.add(com);
         pnlBody.repaint();
         pnlBody.revalidate();
+        timer.start();
+        gpSubmenu.clearSelection();  
     }
     /**
      * @param args the command line arguments
@@ -343,7 +941,26 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton btnCadCliente;
+    private javax.swing.JToggleButton btnCadProduto;
+    private javax.swing.JToggleButton btnCadProduto3;
+    private javax.swing.JToggleButton btnClientes;
+    private javax.swing.JToggleButton btnCriarVendas;
+    private javax.swing.JToggleButton btnDelCliente;
+    private javax.swing.JToggleButton btnDelProduto;
+    private javax.swing.JToggleButton btnDelProduto2;
+    private javax.swing.JToggleButton btnDelProduto3;
+    private javax.swing.JToggleButton btnEditCliente;
+    private javax.swing.JToggleButton btnEditarProduto;
+    private javax.swing.JToggleButton btnEditarProduto3;
+    private javax.swing.JToggleButton btnOutros;
+    private javax.swing.JToggleButton btnProdutos;
+    private javax.swing.JToggleButton btnVendas;
+    private javax.swing.JToggleButton btnVisuCliente;
+    private javax.swing.JToggleButton btnVisuProduto;
+    private javax.swing.JToggleButton btnVisuProduto3;
     private javax.swing.ButtonGroup gpMenu;
+    private javax.swing.ButtonGroup gpSubmenu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -351,15 +968,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
-    private javax.swing.JToggleButton jToggleButton5;
-    private javax.swing.JToggleButton jToggleButton6;
-    private javax.swing.JToggleButton jToggleButton7;
-    private javax.swing.JToggleButton jToggleButton8;
+    private javax.swing.JToggleButton outros;
+    private javax.swing.JToggleButton outros2;
+    private javax.swing.JPanel pnlBaixoclientes;
+    private javax.swing.JPanel pnlBaixooutros;
+    private javax.swing.JPanel pnlBaixoprodutos;
+    private javax.swing.JPanel pnlBaixovendas;
     private javax.swing.JPanel pnlBody;
+    private javax.swing.JPanel pnlClientes;
     private javax.swing.JPanel pnlMenu;
+    private javax.swing.JPanel pnlOutros;
+    private javax.swing.JPanel pnlProdutos;
+    private javax.swing.JPanel pnlVendas;
     // End of variables declaration//GEN-END:variables
 }
