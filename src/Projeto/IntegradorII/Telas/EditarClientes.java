@@ -66,7 +66,7 @@ public class EditarClientes extends javax.swing.JPanel {
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         txtCPF = new javax.swing.JFormattedTextField();
         cbUF = new javax.swing.JComboBox<>();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        txtTelefone = new javax.swing.JFormattedTextField();
 
         setToolTipText("");
         setPreferredSize(new java.awt.Dimension(923, 584));
@@ -215,9 +215,9 @@ public class EditarClientes extends javax.swing.JPanel {
 
         cbUF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<selecione>", "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MS", "MT", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO", " " }));
 
-        jFormattedTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        txtTelefone.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         try {
-            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
+            txtTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -255,7 +255,7 @@ public class EditarClientes extends javax.swing.JPanel {
                             .addComponent(jLabel17)
                             .addComponent(txtBairro, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
                             .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jFormattedTextField1))
+                            .addComponent(txtTelefone))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -314,7 +314,7 @@ public class EditarClientes extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -376,29 +376,21 @@ public class EditarClientes extends javax.swing.JPanel {
     }//GEN-LAST:event_btnDesfazerActionPerformed
 
     private void bntSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntSalvarActionPerformed
-        //Obtém a data no formato DD/MM/AAAA
-//        SimpleDateFormat dFormat = new SimpleDateFormat("dd/MM/yyyy");
-//        String dataNasc = dFormat.format(jDateChooser1.getDate());
-//        JOptionPane.showMessageDialog(this, "Data Selecionada: " + dataNasc);
-    Validador v = new Validador();
-    
+
+    //nome, sobrenome, cpf, email, telefone, dt nasc, sexo, estado civil
+    //O replaceAll Remove os Traços e Pontos, Parenteses deixando apenas os números
+    Validador v1 = new Validador();    
     String nome = txtNome.getText();
-    v.validaString(nome, "nome");
-    
     String sobreNome = txtSobrenome.getText();
-    v.validaString(sobreNome, "Sobrenome");
-    
-    
-    //O replaceAll Remove os Traços e Pontos do CPF deixando apenas os números
     String cpf = txtCPF.getText().replaceAll("\\D", ""); 
-    v.validaString(cpf, "CPF");
-    
     String email = txtEmail.getText().toLowerCase();
-    v.validaString(email, "Email");
+    String telefone = txtTelefone.getText().replaceAll("\\D", "");
+    String dataNasc = (new SimpleDateFormat("dd/MM/yyyy")).format(jDateChooser1.getDate());
+    String sexo = cbSexo.getSelectedItem().toString();
+    String estadoCivil = cbEstadoCivil.getSelectedItem().toString();
     
     
-    //Exibe Erros ou Mensagem de Atualização Feita com Sucesso
-    v.msgSalvar();
+    v1.validarCliente(nome, sobreNome, cpf, email, telefone, dataNasc, sexo, estadoCivil);
     }//GEN-LAST:event_bntSalvarActionPerformed
 
 
@@ -409,7 +401,6 @@ public class EditarClientes extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> cbSexo;
     private javax.swing.JComboBox<String> cbUF;
     private com.toedter.calendar.JDateChooser jDateChooser1;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -440,5 +431,6 @@ public class EditarClientes extends javax.swing.JPanel {
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtNumero;
     private javax.swing.JTextField txtSobrenome;
+    private javax.swing.JFormattedTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
 }
