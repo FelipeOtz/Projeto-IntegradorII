@@ -105,12 +105,14 @@ public class EditarClientes extends javax.swing.JPanel {
         jLabel3.setText("Primeiro Nome");
 
         txtNome.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        txtNome.setName("Nome");
         txtNome.setNextFocusableComponent(txtSobrenome);
 
         jLabel4.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 14)); // NOI18N
         jLabel4.setText("Sobrenome:");
 
         txtSobrenome.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        txtSobrenome.setName("Sobrenome");
         txtSobrenome.setNextFocusableComponent(txtCPF);
 
         jLabel5.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 14)); // NOI18N
@@ -142,6 +144,7 @@ public class EditarClientes extends javax.swing.JPanel {
         jLabel6.setText("E-mail");
 
         txtEmail.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        txtEmail.setName("E-mail");
 
         jLabel7.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 14)); // NOI18N
         jLabel7.setText("Telefone");
@@ -169,6 +172,7 @@ public class EditarClientes extends javax.swing.JPanel {
         jLabel14.setText("Estado Civil");
 
         cbSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<selecione>", "Masculino", "Feminino", "Outros", "Prefiro Não Informar" }));
+        cbSexo.setName("Sexo");
         cbSexo.setNextFocusableComponent(cbEstadoCivil);
         cbSexo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,6 +181,7 @@ public class EditarClientes extends javax.swing.JPanel {
         });
 
         cbEstadoCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<selecione>", "Solteiro(a)", "Casado(a)", "Divorciado(a)", "Viúvo(a)" }));
+        cbEstadoCivil.setName("Estado Civil");
 
         jLabel15.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 14)); // NOI18N
         jLabel15.setText("Número");
@@ -211,6 +216,7 @@ public class EditarClientes extends javax.swing.JPanel {
             ex.printStackTrace();
         }
         txtCPF.setToolTipText("Inserir Somente Números");
+        txtCPF.setName("CPF");
         txtCPF.setNextFocusableComponent(txtEmail);
 
         cbUF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<selecione>", "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MS", "MT", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO", " " }));
@@ -221,6 +227,7 @@ public class EditarClientes extends javax.swing.JPanel {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtTelefone.setName("Telefone");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -376,21 +383,18 @@ public class EditarClientes extends javax.swing.JPanel {
     }//GEN-LAST:event_btnDesfazerActionPerformed
 
     private void bntSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntSalvarActionPerformed
-
     //nome, sobrenome, cpf, email, telefone, dt nasc, sexo, estado civil
     //O replaceAll Remove os Traços e Pontos, Parenteses deixando apenas os números
-    Validador v1 = new Validador();    
-    String nome = txtNome.getText();
-    String sobreNome = txtSobrenome.getText();
-    String cpf = txtCPF.getText().replaceAll("\\D", ""); 
-    String email = txtEmail.getText().toLowerCase();
-    String telefone = txtTelefone.getText().replaceAll("\\D", "");
-    String dataNasc = (new SimpleDateFormat("dd/MM/yyyy")).format(jDateChooser1.getDate());
-    String sexo = cbSexo.getSelectedItem().toString();
-    String estadoCivil = cbEstadoCivil.getSelectedItem().toString();
-    
-    
-    v1.validarCliente(nome, sobreNome, cpf, email, telefone, dataNasc, sexo, estadoCivil);
+        Validador v = new Validador();
+        
+       //Retorna true se não houver erros na validação
+       if (v.validarCliente(txtNome, txtSobrenome, txtCPF, txtEmail, txtTelefone, jDateChooser1.getDate(),
+       cbSexo, cbEstadoCivil)){
+           JOptionPane.showMessageDialog(this, "Cliente Cadastrado com Sucesso");
+       }else{
+           v.showErros();
+       }
+
     }//GEN-LAST:event_bntSalvarActionPerformed
 
 
