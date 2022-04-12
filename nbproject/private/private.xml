@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Lenovo/Desktop/Projeto-IntegradorII/src/Projeto/IntegradorII/Utils/Validador.java</file>
-            <file>file:/C:/Users/Lenovo/Desktop/Projeto-IntegradorII/src/Projeto/IntegradorII/Telas/EditarProdutos.java</file>
-            <file>file:/C:/Users/Lenovo/Desktop/Projeto-IntegradorII/src/Projeto/IntegradorII/Telas/EditarClientes.java</file>
+            <file>file:/C:/Users/Lenovo/Desktop/P_I/Projeto-IntegradorII/src/Projeto/IntegradorII/Utils/ValidadorCliente.java</file>
+            <file>file:/C:/Users/Lenovo/Desktop/P_I/Projeto-IntegradorII/src/Projeto/IntegradorII/Telas/EditarProdutos.java</file>
+            <file>file:/C:/Users/Lenovo/Desktop/P_I/Projeto-IntegradorII/src/Projeto/IntegradorII/Utils/ValidadorProduto.java</file>
+            <file>file:/C:/Users/Lenovo/Desktop/P_I/Projeto-IntegradorII/src/Projeto/IntegradorII/Telas/CadastrarProdutos.java</file>
         </group>
     </open-files>
 </project-private>

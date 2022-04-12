@@ -4,7 +4,8 @@
  */
 package Projeto.IntegradorII.Telas;
 
-import Projeto.IntegradorII.Utils.Validador;
+import Projeto.IntegradorII.Objetos.Cliente;
+import Projeto.IntegradorII.Utils.ValidadorCliente;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 
@@ -207,6 +208,8 @@ public class EditarClientes extends javax.swing.JPanel {
         jLabel20.setText("UF");
 
         jDateChooser1.setDateFormatString("dd/MM/yyyy");
+        jDateChooser1.setMaxSelectableDate(new java.util.Date(1672545679000L));
+        jDateChooser1.setMinSelectableDate(new java.util.Date(-2208974321000L));
         jDateChooser1.setNextFocusableComponent(cbSexo);
 
         txtCPF.setBorder(txtNome.getBorder());
@@ -385,14 +388,15 @@ public class EditarClientes extends javax.swing.JPanel {
     private void bntSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntSalvarActionPerformed
     //nome, sobrenome, cpf, email, telefone, dt nasc, sexo, estado civil
     //O replaceAll Remove os Traços e Pontos, Parenteses deixando apenas os números
-        Validador v = new Validador();
+        ValidadorCliente v = new ValidadorCliente();
         
        //Retorna true se não houver erros na validação
-       if (v.validarCliente(txtNome, txtSobrenome, txtCPF, txtEmail, txtTelefone, jDateChooser1.getDate(),
+       if (v.validarCliente(txtNome, txtSobrenome, txtCPF, txtEmail, txtTelefone, jDateChooser1,
        cbSexo, cbEstadoCivil)){
+
            JOptionPane.showMessageDialog(this, "Cliente Cadastrado com Sucesso");
        }else{
-           v.showErros();
+           v.exibirErros();
        }
 
     }//GEN-LAST:event_bntSalvarActionPerformed

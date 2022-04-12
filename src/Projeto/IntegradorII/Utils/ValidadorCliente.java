@@ -1,6 +1,7 @@
 package Projeto.IntegradorII.Utils;
 
 import Projeto.IntegradorII.Telas.EditarClientes;
+import com.toedter.calendar.JDateChooser;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.regex.Matcher;
@@ -9,9 +10,10 @@ import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class Validador {
-    String erros = "";
+public class ValidadorCliente {
+    SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy");
     
+    String erros = "";
     private String nome;
     private String sobreNome;
     private String cpf; 
@@ -22,53 +24,54 @@ public class Validador {
     private String estadoCivil;
     
     public boolean validarCliente (JTextField txtNome, JTextField txtSobrenome, JTextField txtCPF,
-    JTextField txtEmail, JTextField txtTelefone, Date jDateChooser1, JComboBox cbSexo, JComboBox cbEstadoCivil){
-        this.nome = txtNome.getText();
-        this.sobreNome = txtSobrenome.getText();
-        this.cpf = txtCPF.getText().replaceAll("\\D", "");
-        this.email = txtEmail.getText().toLowerCase();
-        this.telefone = txtTelefone.getText().replaceAll("\\D", "");
-        //this.dataNasc = (new SimpleDateFormat("dd/MM/yyyy")).format(jDateChooser1.getDate());
-        this.sexo = cbSexo.getSelectedItem().toString();
-        this.estadoCivil = cbEstadoCivil.getSelectedItem().toString();
-        
+    JTextField txtEmail, JTextField txtTelefone, JDateChooser jDateChooser1, JComboBox cbSexo, JComboBox cbEstadoCivil){
         
         validaString(txtNome);
         validaString(txtSobrenome);
         validaNum(txtCPF);
         validaEmail(txtEmail);
         validaNum(txtTelefone);
-        //Data Não Precisa de Validação por enquanto
+        validaData(jDateChooser1);
         validaComboBox(cbSexo);
         validaComboBox(cbEstadoCivil);
-    //Se a String erros estiver vazia significa que não houveram erros, logo a validação
-    // retornará true.    
-    if(erros.trim().equals(""))
-        return true;
-    else
-        return false;
+
+        //Se não houver erros, atribui os valores às variáveis e retorna true.    
+        if(erros.trim().equals("")){
+            this.nome = txtNome.getText();
+            this.sobreNome = txtSobrenome.getText();
+            this.cpf = txtCPF.getText().replaceAll("\\D", "");
+            this.email = txtEmail.getText().toLowerCase();
+            this.telefone = txtTelefone.getText().replaceAll("\\D", "");    
+            this.dataNasc = formatoData.format(jDateChooser1.getDate());
+            this.sexo = cbSexo.getSelectedItem().toString();
+            this.estadoCivil = cbEstadoCivil.getSelectedItem().toString();
+            return true;
+        }
+
+        else{
+            return false;
+        }
     
     }
     
     
     /*Métodos Validadores*/
     
-    //Valida se um JTextField é Vazio ("")
+    //Verifica se um JTextField é Vazio ("")
     public void validaString(JTextField campo){    
         if(campo.getText().trim().equals("")){
             erros += "Campo " + campo.getName() + " vazio\n";
         }
     } 
     
-    /*Verifica se num tem menos de 11 Caracteres
-    para os Campos Telefone e CPF os quais obrigatóriamente devem ter 11 Digitos)*/    
+    /*Verifica se num tem menos de 11 Caracteres para os Campos Telefone e CPF
+    os quais obrigatóriamente devem ter 11 Digitos)*/    
     public void validaNum(JTextField num){
         if(num.getText().replaceAll("\\D", "").length() < 11){
             erros += "Campo " + num.getName() + " inválido\n"; 
         }
     }
-        
-         
+             
     //Validação de E-mail usando Regex
     public void validaEmail(JTextField email){
     String e = email.getText();
@@ -80,15 +83,26 @@ public class Validador {
         }
     }  
 
-    /*Se o selectedIndex for igual a 0 significa que nenhuma
-    opção foi selecionada*/ 
+    /*Verifica se alguma opção do comboBox foi selecionada*/ 
     public void validaComboBox (JComboBox cb){
         if(cb.getSelectedIndex() < 1){
             erros += "Nenhum " + cb.getName() + " Foi Selecionado\n";
         }
     }
-           
-    public void showErros (){
+    
+    
+    /*Verifica se alguma data foi Selecionada*/
+    public void validaData (JDateChooser data){
+        try{
+            formatoData.format(data.getDate());
+        }
+        catch(Exception e){
+            erros += "Nenhuma data foi selecionada\n";
+        } 
+    }
+    
+    //Exibe Erros
+    public void exibirErros (){
         JOptionPane.showMessageDialog(null, erros);
     }
    
