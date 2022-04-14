@@ -6,6 +6,8 @@ package Projeto.IntegradorII.Telas;
 
 import Projeto.IntegradorII.Objetos.Cliente;
 import Projeto.IntegradorII.Utils.ValidadorCliente;
+import br.com.parg.viacep.ViaCEP;
+import br.com.parg.viacep.ViaCEPException;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 
@@ -49,14 +51,13 @@ public class EditarClientes extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        txtCEP = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        txtLogrdouro = new javax.swing.JTextField();
+        txtLogradouro = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         cbSexo = new javax.swing.JComboBox<>();
         cbEstadoCivil = new javax.swing.JComboBox<>();
         jLabel15 = new javax.swing.JLabel();
-        txtNumero = new javax.swing.JTextField();
+        txtNum = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         txtComplemento = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
@@ -66,8 +67,9 @@ public class EditarClientes extends javax.swing.JPanel {
         jLabel20 = new javax.swing.JLabel();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         txtCPF = new javax.swing.JFormattedTextField();
-        cbUF = new javax.swing.JComboBox<>();
         txtTelefone = new javax.swing.JFormattedTextField();
+        txtEstado = new javax.swing.JTextField();
+        txtCep = new javax.swing.JFormattedTextField();
 
         setToolTipText("");
         setPreferredSize(new java.awt.Dimension(923, 584));
@@ -162,12 +164,11 @@ public class EditarClientes extends javax.swing.JPanel {
         jLabel11.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 14)); // NOI18N
         jLabel11.setText("CEP");
 
-        txtCEP.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-
         jLabel12.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 14)); // NOI18N
         jLabel12.setText("Logradouro");
 
-        txtLogrdouro.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        txtLogradouro.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        txtLogradouro.setName("Logradouro"); // NOI18N
 
         jLabel14.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 14)); // NOI18N
         jLabel14.setText("Estado Civil");
@@ -187,25 +188,29 @@ public class EditarClientes extends javax.swing.JPanel {
         jLabel15.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 14)); // NOI18N
         jLabel15.setText("Número");
 
-        txtNumero.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        txtNum.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        txtNum.setName("Número"); // NOI18N
 
         jLabel16.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 14)); // NOI18N
         jLabel16.setText("Complemento");
 
         txtComplemento.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        txtComplemento.setName("Complemento"); // NOI18N
 
         jLabel17.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 14)); // NOI18N
         jLabel17.setText("Bairro");
 
         txtBairro.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        txtBairro.setName("Bairro"); // NOI18N
 
         jLabel18.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 14)); // NOI18N
         jLabel18.setText("Cidade");
 
         txtCidade.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        txtCidade.setName("Cidade"); // NOI18N
 
         jLabel20.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 14)); // NOI18N
-        jLabel20.setText("UF");
+        jLabel20.setText("Estado");
 
         jDateChooser1.setDateFormatString("dd/MM/yyyy");
         jDateChooser1.setMaxSelectableDate(new java.util.Date(1672545679000L));
@@ -221,8 +226,11 @@ public class EditarClientes extends javax.swing.JPanel {
         txtCPF.setToolTipText("Inserir Somente Números");
         txtCPF.setName("CPF");
         txtCPF.setNextFocusableComponent(txtEmail);
-
-        cbUF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<selecione>", "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MS", "MT", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO", " " }));
+        txtCPF.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtCPFFocusLost(evt);
+            }
+        });
 
         txtTelefone.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         try {
@@ -231,6 +239,29 @@ public class EditarClientes extends javax.swing.JPanel {
             ex.printStackTrace();
         }
         txtTelefone.setName("Telefone");
+
+        txtEstado.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        txtEstado.setName("Estado"); // NOI18N
+
+        txtCep.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        try {
+            txtCep.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtCep.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtCep.setFont(new java.awt.Font("Microsoft YaHei", 0, 14)); // NOI18N
+        txtCep.setName("CEP"); // NOI18N
+        txtCep.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtCepFocusLost(evt);
+            }
+        });
+        txtCep.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCepActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -241,19 +272,23 @@ public class EditarClientes extends javax.swing.JPanel {
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtCEP)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(txtSobrenome)
-                            .addComponent(txtNome)
-                            .addComponent(txtComplemento, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                            .addComponent(jLabel16)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel11)
-                            .addComponent(txtCPF))
+                        .addComponent(jLabel20)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 570, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(txtEstado, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtSobrenome, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtComplemento, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtCPF, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                            .addComponent(txtCep))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
@@ -261,16 +296,11 @@ public class EditarClientes extends javax.swing.JPanel {
                             .addComponent(jLabel7)
                             .addComponent(jLabel9)
                             .addComponent(jLabel12)
-                            .addComponent(txtLogrdouro, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                            .addComponent(txtLogradouro, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
                             .addComponent(jLabel17)
                             .addComponent(txtBairro, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
                             .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTelefone))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel20)
-                            .addComponent(cbUF, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -278,7 +308,7 @@ public class EditarClientes extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(bntSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel15)
-                    .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNum, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18)
                     .addComponent(txtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8)
@@ -338,13 +368,13 @@ public class EditarClientes extends javax.swing.JPanel {
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtLogrdouro, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtLogradouro, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                            .addComponent(txtCep)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtNum, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -369,9 +399,9 @@ public class EditarClientes extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cbUF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(46, Short.MAX_VALUE))))
         );
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
@@ -391,8 +421,8 @@ public class EditarClientes extends javax.swing.JPanel {
         ValidadorCliente v = new ValidadorCliente();
         
        //Retorna true se não houver erros na validação
-       if (v.validarCliente(txtNome, txtSobrenome, txtCPF, txtEmail, txtTelefone, jDateChooser1,
-       cbSexo, cbEstadoCivil)){
+        if (v.validarCliente(txtNome, txtSobrenome, txtCPF, txtEmail, txtTelefone, jDateChooser1,
+        cbSexo, cbEstadoCivil,txtCep, txtLogradouro, txtNum, txtComplemento, txtBairro, txtCidade, txtEstado)){
 
            JOptionPane.showMessageDialog(this, "Cliente Cadastrado com Sucesso");
        }else{
@@ -401,13 +431,58 @@ public class EditarClientes extends javax.swing.JPanel {
 
     }//GEN-LAST:event_bntSalvarActionPerformed
 
+    private void txtCPFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCPFFocusLost
+         ViaCEP cep = new ViaCEP();
+        try {
+            cep.buscar(txtCep.getText().replaceAll("\\D", ""));
+              String bairro = cep.getBairro();
+        txtBairro.setText(bairro);
+        
+        String logra = cep.getLogradouro();
+        txtLogradouro.setText(logra);
+        
+        String local = cep.getLocalidade();
+        txtCidade.setText(local);
+        
+        
+        String estado = cep.getLocalidade();
+        txtEstado.setText(estado);
+        } catch (ViaCEPException ex) {
+            JOptionPane.showMessageDialog(this, "CEP inválido");
+        }
+    }//GEN-LAST:event_txtCPFFocusLost
+
+    private void txtCepFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCepFocusLost
+        // TODO add your handling code here:
+        ViaCEP cep = new ViaCEP();
+        try {
+            cep.buscar(txtCep.getText().replaceAll("\\D", ""));
+            String bairro = cep.getBairro();
+            txtBairro.setText(bairro);
+
+            String logra = cep.getLogradouro();
+            txtLogradouro.setText(logra);
+
+            String local = cep.getLocalidade();
+            txtCidade.setText(local);
+
+            String estado = cep.getLocalidade();
+            txtEstado.setText(estado);
+        } catch (ViaCEPException ex) {
+            JOptionPane.showMessageDialog(this, "CEP inválido");
+        }
+    }//GEN-LAST:event_txtCepFocusLost
+
+    private void txtCepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCepActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCepActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bntSalvar;
     private javax.swing.JButton btnDesfazer;
     private javax.swing.JComboBox<String> cbEstadoCivil;
     private javax.swing.JComboBox<String> cbSexo;
-    private javax.swing.JComboBox<String> cbUF;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -430,14 +505,15 @@ public class EditarClientes extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField txtBairro;
-    private javax.swing.JTextField txtCEP;
     private javax.swing.JFormattedTextField txtCPF;
+    private javax.swing.JFormattedTextField txtCep;
     private javax.swing.JTextField txtCidade;
     private javax.swing.JTextField txtComplemento;
     private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtLogrdouro;
+    private javax.swing.JTextField txtEstado;
+    private javax.swing.JTextField txtLogradouro;
     private javax.swing.JTextField txtNome;
-    private javax.swing.JTextField txtNumero;
+    private javax.swing.JTextField txtNum;
     private javax.swing.JTextField txtSobrenome;
     private javax.swing.JFormattedTextField txtTelefone;
     // End of variables declaration//GEN-END:variables

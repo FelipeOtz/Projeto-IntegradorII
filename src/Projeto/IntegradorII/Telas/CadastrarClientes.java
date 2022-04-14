@@ -243,6 +243,8 @@ public class CadastrarClientes extends javax.swing.JPanel {
         txtNum.setAlignmentY(0.0F);
         txtNum.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
         txtNum.setMargin(new java.awt.Insets(2, 2, 0, 2));
+        txtNum.setName("Número"); // NOI18N
+        txtNum.setNextFocusableComponent(txtComplemento);
         txtNum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNumActionPerformed(evt);
@@ -271,6 +273,7 @@ public class CadastrarClientes extends javax.swing.JPanel {
         txtLogradouro.setAlignmentY(0.0F);
         txtLogradouro.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
         txtLogradouro.setMargin(new java.awt.Insets(2, 2, 0, 2));
+        txtLogradouro.setName("Logradouro"); // NOI18N
         txtLogradouro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtLogradouroActionPerformed(evt);
@@ -285,6 +288,13 @@ public class CadastrarClientes extends javax.swing.JPanel {
         }
         txtCep.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtCep.setFont(new java.awt.Font("Microsoft YaHei", 0, 14)); // NOI18N
+        txtCep.setName("CEP"); // NOI18N
+        txtCep.setNextFocusableComponent(txtNum);
+        txtCep.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtCepFocusLost(evt);
+            }
+        });
         txtCep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCepActionPerformed(evt);
@@ -299,6 +309,9 @@ public class CadastrarClientes extends javax.swing.JPanel {
         txtComplemento.setAlignmentY(0.0F);
         txtComplemento.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
         txtComplemento.setMargin(new java.awt.Insets(2, 2, 0, 2));
+        txtComplemento.setName("Complemento"); // NOI18N
+        txtComplemento.setNextFocusableComponent(bntSalvar);
+        txtComplemento.setOpaque(false);
         txtComplemento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtComplementoActionPerformed(evt);
@@ -324,6 +337,7 @@ public class CadastrarClientes extends javax.swing.JPanel {
 
         jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/char.png"))); // NOI18N
 
+        jDateChooser1.setBackground(new java.awt.Color(204, 204, 204));
         jDateChooser1.setDateFormatString("dd/MM/yyyy");
         jDateChooser1.setMaxSelectableDate(new java.util.Date(1672545679000L));
         jDateChooser1.setMinSelectableDate(new java.util.Date(-2208974321000L));
@@ -333,6 +347,7 @@ public class CadastrarClientes extends javax.swing.JPanel {
         txtBairro.setAlignmentY(0.0F);
         txtBairro.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
         txtBairro.setMargin(new java.awt.Insets(2, 2, 0, 2));
+        txtBairro.setName("Bairro"); // NOI18N
         txtBairro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBairroActionPerformed(evt);
@@ -354,6 +369,7 @@ public class CadastrarClientes extends javax.swing.JPanel {
         txtCidade.setAlignmentY(0.0F);
         txtCidade.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
         txtCidade.setMargin(new java.awt.Insets(2, 2, 0, 2));
+        txtCidade.setName("Cidade"); // NOI18N
         txtCidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCidadeActionPerformed(evt);
@@ -372,6 +388,7 @@ public class CadastrarClientes extends javax.swing.JPanel {
         txtEstado.setAlignmentY(0.0F);
         txtEstado.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
         txtEstado.setMargin(new java.awt.Insets(2, 2, 0, 2));
+        txtEstado.setName("Estado"); // NOI18N
         txtEstado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEstadoActionPerformed(evt);
@@ -617,11 +634,12 @@ public class CadastrarClientes extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtLogradouro, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtLogradouro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -714,9 +732,53 @@ public class CadastrarClientes extends javax.swing.JPanel {
     }//GEN-LAST:event_txtCepActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+//        // TODO add your handling code here:
+//        ViaCEP cep = new ViaCEP();
+//        try {
+//            cep.buscar(txtCep.getText().replaceAll("\\D", ""));
+//              String bairro = cep.getBairro();
+//        txtBairro.setText(bairro);
+//        
+//        String logra = cep.getLogradouro();
+//        txtLogradouro.setText(logra);
+//        
+//        String local = cep.getLocalidade();
+//        txtCidade.setText(local);
+//        
+//        
+//        String estado = cep.getLocalidade();
+//        txtEstado.setText(estado);
+//        } catch (ViaCEPException ex) {
+//            JOptionPane.showMessageDialog(this, "CEP inválido");
+//        }
+    }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void txtEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEstadoActionPerformed
         // TODO add your handling code here:
+    }//GEN-LAST:event_txtEstadoActionPerformed
+
+    private void bntSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntSalvarActionPerformed
+        //nome, sobrenome, cpf, email, telefone, dt nasc, sexo, estado civil
+        //O replaceAll Remove os Traços e Pontos, Parenteses deixando apenas os números
+        ValidadorCliente v = new ValidadorCliente();
+
+        //Retorna true se não houver erros na validação
+        if (v.validarCliente(txtNome, txtSobrenome, txtCPF, txtEmail, txtTelefone, jDateChooser1,
+        cbSexo, cbEstadoCivil,txtCep, txtLogradouro, txtNum, txtComplemento, txtBairro, txtCidade, txtEstado)){
+         
+            JOptionPane.showMessageDialog(this, "Cliente Cadastrado com Sucesso");
+        }else{
+            v.exibirErros();
+        }
+    }//GEN-LAST:event_bntSalvarActionPerformed
+
+    private void btnDesfazerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDesfazerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDesfazerActionPerformed
+
+    private void txtCepFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCepFocusLost
+               // TODO add your handling code here:
         ViaCEP cep = new ViaCEP();
-        
         try {
             cep.buscar(txtCep.getText().replaceAll("\\D", ""));
               String bairro = cep.getBairro();
@@ -732,33 +794,9 @@ public class CadastrarClientes extends javax.swing.JPanel {
         String estado = cep.getLocalidade();
         txtEstado.setText(estado);
         } catch (ViaCEPException ex) {
-            
             JOptionPane.showMessageDialog(this, "CEP inválido");
         }
-    }//GEN-LAST:event_jLabel2MouseClicked
-
-    private void txtEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEstadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEstadoActionPerformed
-
-    private void bntSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntSalvarActionPerformed
-        //nome, sobrenome, cpf, email, telefone, dt nasc, sexo, estado civil
-        //O replaceAll Remove os Traços e Pontos, Parenteses deixando apenas os números
-        ValidadorCliente v = new ValidadorCliente();
-
-        //Retorna true se não houver erros na validação
-        if (v.validarCliente(txtNome, txtSobrenome, txtCPF, txtEmail, txtTelefone, jDateChooser1,
-            cbSexo, cbEstadoCivil)){
-
-        JOptionPane.showMessageDialog(this, "Cliente Cadastrado com Sucesso");
-        }else{
-            v.exibirErros();
-        }
-    }//GEN-LAST:event_bntSalvarActionPerformed
-
-    private void btnDesfazerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDesfazerActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnDesfazerActionPerformed
+    }//GEN-LAST:event_txtCepFocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
