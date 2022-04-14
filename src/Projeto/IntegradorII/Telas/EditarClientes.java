@@ -70,6 +70,7 @@ public class EditarClientes extends javax.swing.JPanel {
         txtTelefone = new javax.swing.JFormattedTextField();
         txtEstado = new javax.swing.JTextField();
         txtCep = new javax.swing.JFormattedTextField();
+        btnSearchCEP = new javax.swing.JButton();
 
         setToolTipText("");
         setPreferredSize(new java.awt.Dimension(923, 584));
@@ -263,6 +264,14 @@ public class EditarClientes extends javax.swing.JPanel {
             }
         });
 
+        btnSearchCEP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/cep.png"))); // NOI18N
+        btnSearchCEP.setBorder(null);
+        btnSearchCEP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchCEPActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -288,7 +297,10 @@ public class EditarClientes extends javax.swing.JPanel {
                             .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtCPF, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                            .addComponent(txtCep))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnSearchCEP)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
@@ -370,7 +382,8 @@ public class EditarClientes extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtLogradouro, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
-                            .addComponent(txtCep)))
+                            .addComponent(txtCep)
+                            .addComponent(btnSearchCEP, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -453,34 +466,49 @@ public class EditarClientes extends javax.swing.JPanel {
     }//GEN-LAST:event_txtCPFFocusLost
 
     private void txtCepFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCepFocusLost
-        // TODO add your handling code here:
-        ViaCEP cep = new ViaCEP();
-        try {
-            cep.buscar(txtCep.getText().replaceAll("\\D", ""));
-            String bairro = cep.getBairro();
-            txtBairro.setText(bairro);
-
-            String logra = cep.getLogradouro();
-            txtLogradouro.setText(logra);
-
-            String local = cep.getLocalidade();
-            txtCidade.setText(local);
-
-            String estado = cep.getLocalidade();
-            txtEstado.setText(estado);
-        } catch (ViaCEPException ex) {
-            JOptionPane.showMessageDialog(this, "CEP inválido");
-        }
+       runViaCEP();
     }//GEN-LAST:event_txtCepFocusLost
 
+    
     private void txtCepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCepActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCepActionPerformed
 
+    private void btnSearchCEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchCEPActionPerformed
+        // TODO add your handling code here:
+        runViaCEP();
+    }//GEN-LAST:event_btnSearchCEPActionPerformed
 
+        public void runViaCEP(){
+        ViaCEP cep = new ViaCEP();
+        try {
+            cep.buscar(txtCep.getText().replaceAll("\\D", ""));
+              String bairro = cep.getBairro();
+        txtBairro.setText(bairro);
+        
+        String logra = cep.getLogradouro();
+        txtLogradouro.setText(logra);
+        
+        String local = cep.getLocalidade();
+        txtCidade.setText(local);
+        
+        
+        String estado = cep.getLocalidade();
+        txtEstado.setText(estado);
+        } catch (ViaCEPException ex) {
+            JOptionPane.showMessageDialog(this, "CEP inválido");
+    }
+    
+    }
+    
+    
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bntSalvar;
     private javax.swing.JButton btnDesfazer;
+    private javax.swing.JButton btnSearchCEP;
     private javax.swing.JComboBox<String> cbEstadoCivil;
     private javax.swing.JComboBox<String> cbSexo;
     private com.toedter.calendar.JDateChooser jDateChooser1;
