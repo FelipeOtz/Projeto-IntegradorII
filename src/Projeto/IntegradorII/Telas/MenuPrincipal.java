@@ -842,7 +842,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVisuProdutoActionPerformed
 
     private void btnCriarVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCriarVendasActionPerformed
-        // TODO add your handling code here:
+        showForm(new NovaVenda());
     }//GEN-LAST:event_btnCriarVendasActionPerformed
 
     private void btnDelProduto2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelProduto2ActionPerformed

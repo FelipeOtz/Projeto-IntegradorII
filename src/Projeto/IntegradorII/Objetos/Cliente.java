@@ -18,6 +18,7 @@ public class Cliente {
     private String sexo;
     private String estadoCivil;
 
+
     public String getNome() {
         return nome;
     }
