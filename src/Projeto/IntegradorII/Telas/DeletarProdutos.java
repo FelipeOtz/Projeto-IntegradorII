@@ -84,7 +84,7 @@ public class DeletarProdutos extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Malgun Gothic Semilight", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 214, 210));
-        jLabel1.setText("CADASTRO DE PRODUTOS");
+        jLabel1.setText("DELETAR PRODUTOS");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
