@@ -55,8 +55,8 @@ public class RelatorioVendas extends javax.swing.JPanel {
 
         jPanel4.setBackground(new java.awt.Color(9, 158, 199));
 
-        jLabel3.setFont(new java.awt.Font("Malgun Gothic Semilight", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 214, 210));
+        jLabel3.setFont(new java.awt.Font("Microsoft YaHei", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("RELATÓRIO DE VENDAS");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
