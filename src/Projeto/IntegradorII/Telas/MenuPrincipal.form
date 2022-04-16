@@ -139,7 +139,7 @@
                   <Component id="jLabel3" alignment="1" max="32767" attributes="0"/>
                   <Component id="jLabel2" alignment="1" max="32767" attributes="0"/>
                   <Component id="btnClientes" alignment="1" max="32767" attributes="0"/>
-                  <Component id="pnlClientes" alignment="0" max="32767" attributes="0"/>
+                  <Component id="pnlClientes" alignment="0" pref="245" max="32767" attributes="0"/>
                   <Component id="pnlBaixoclientes" alignment="0" max="32767" attributes="0"/>
                   <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
               </Group>
@@ -399,8 +399,8 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btnProdutos" alignment="0" pref="233" max="32767" attributes="0"/>
-                      <Component id="pnlProdutos" alignment="0" pref="233" max="32767" attributes="0"/>
+                      <Component id="btnProdutos" alignment="0" pref="245" max="32767" attributes="0"/>
+                      <Component id="pnlProdutos" alignment="0" pref="245" max="32767" attributes="0"/>
                       <Component id="pnlBaixoprodutos" alignment="0" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
@@ -837,7 +837,7 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="pnlOutros" alignment="0" pref="233" max="32767" attributes="0"/>
+                              <Component id="pnlOutros" alignment="0" pref="245" max="32767" attributes="0"/>
                               <Component id="btnOutros" alignment="0" max="32767" attributes="0"/>
                               <Component id="btnCadProduto3" alignment="1" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">

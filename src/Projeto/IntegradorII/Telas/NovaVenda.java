@@ -422,6 +422,9 @@ public class NovaVenda extends javax.swing.JPanel {
         Object objeto[] = {codProduto,nome,Quantidade,valor};
         Venda venda = new Venda();
         table2.addRow(objeto);
+        String produtos = Arrays.toString(objeto);
+
+        
         venda.setProdutos(Arrays.toString(objeto));
     }//GEN-LAST:event_btnAdicionarActionPerformed
 
