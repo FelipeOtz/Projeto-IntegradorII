@@ -31,6 +31,10 @@ public class RelatorioVendas extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 204, 255));
         setLayout(new java.awt.BorderLayout());
@@ -62,30 +66,46 @@ public class RelatorioVendas extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"322", "15/04/2022", "78005495005", "Burberry Her", " R$ 269,00 ",  new Integer(54)},
-                {"65", "15/04/2022", "11119985058", "Sephora Collection Bath Bar Soap", " R$ 39,00 ",  new Integer(54)},
-                {"324", "28/02/2022", "44575675075", "Óleo Hidratante Desodorante Corporal de Banho Cristal Therapy", " R$ 39,99 ",  new Integer(54)},
-                {"324", "15/03/2022", "50641412037", "Batom Soul Kiss Me Hidramatte Pink Fumé 3,5g", " R$ 9,99 ",  new Integer(54)},
-                {"7", "02/04/2022", "92786084083", "Pink Sugar", " R$ 239,80 ",  new Integer(31)},
-                {"87", "19/03/2022", "39262707053", "Esmalte Natural Colorama ", " R$ 4,79 ",  new Integer(75)},
-                {"6", "24/01/2022", "93004658054", "Esmalte Risqué Cremoso - Lavanda Alma", " R$ 3,90 ",  new Integer(2)},
-                {"657", "30/03/2022", "53694745084", "Sabonete Líquido Nutrição Profunda", " R$ 10,39 ",  new Integer(54)},
-                {"87", "01/04/2022", "56050422036", "Idôle Lancôme Eau de Parfum", " R$ 720,00 ",  new Integer(23)},
-                {"45", "07/04/2022", "89014465025", "TRESEMME CONDICIONADOR HIDRATACAO PROFUNDA 200 ML", " R$ 11,99 ",  new Integer(86)}
+                {"322", "15/04/2022", "78005495005", " R$ 269,00 ",  new Integer(54)},
+                {"65", "15/04/2022", "11119985058", " R$ 39,00 ",  new Integer(54)},
+                {"324", "28/02/2022", "44575675075", " R$ 39,99 ",  new Integer(54)},
+                {"324", "15/03/2022", "50641412037", " R$ 9,99 ",  new Integer(54)},
+                {"7", "02/04/2022", "92786084083", " R$ 239,80 ",  new Integer(31)},
+                {"87", "19/03/2022", "39262707053", " R$ 4,79 ",  new Integer(75)},
+                {"6", "24/01/2022", "93004658054", " R$ 3,90 ",  new Integer(2)},
+                {"657", "30/03/2022", "53694745084", " R$ 10,39 ",  new Integer(54)},
+                {"87", "01/04/2022", "56050422036", " R$ 720,00 ",  new Integer(23)},
+                {"45", "07/04/2022", "89014465025", " R$ 11,99 ",  new Integer(86)}
             },
             new String [] {
-                "Cód. do Pedido", "Data da Venda", "CPF Cliente", "Produtos", "Valor Total", "Cód. Vendedor"
+                "Cód. do Pedido", "Data da Venda", "CPF Cliente", "Valor Total", "Cód. Vendedor"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
         });
+        jTable1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(jTable1);
+
+        jScrollPane2.setViewportView(jList1);
+
+        jLabel1.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
+        jLabel1.setText("Relatório Sintético");
+
+        jLabel2.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
+        jLabel2.setText("Relatório Analítico");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -96,16 +116,27 @@ public class RelatorioVendas extends javax.swing.JPanel {
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(124, 124, 124)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 744, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 744, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
@@ -113,10 +144,14 @@ public class RelatorioVendas extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
