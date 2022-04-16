@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <Properties>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="ff" green="cc" red="cc" type="rgb"/>
@@ -16,11 +16,17 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,27,0,0,3,-13"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
   <SubComponents>
     <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
           <BorderConstraints direction="Center"/>
@@ -30,29 +36,191 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <Component id="jPanel4" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
-                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="747" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="744" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
-                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="423" max="32767" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="40" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Container class="javax.swing.JPanel" name="jPanel4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Relatori vendas"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="c7" green="9e" red="9" type="rgb"/>
+            </Property>
           </Properties>
-        </Component>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="717" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel3">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Malgun Gothic Semilight" size="24" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="d2" green="d6" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="RELAT&#xd3;RIO DE VENDAS"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTable" name="jTable1">
+              <Properties>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                  <Table columnCount="6" rowCount="10">
+                    <Column editable="true" title="C&#xf3;d. do Pedido" type="java.lang.Object">
+                      <Data value="322"/>
+                      <Data value="65"/>
+                      <Data value="324"/>
+                      <Data value="324"/>
+                      <Data value="7"/>
+                      <Data value="87"/>
+                      <Data value="6"/>
+                      <Data value="657"/>
+                      <Data value="87"/>
+                      <Data value="45"/>
+                    </Column>
+                    <Column editable="true" title="Data da Venda" type="java.lang.String">
+                      <Data value="15/04/2022"/>
+                      <Data value="15/04/2022"/>
+                      <Data value="28/02/2022"/>
+                      <Data value="15/03/2022"/>
+                      <Data value="02/04/2022"/>
+                      <Data value="19/03/2022"/>
+                      <Data value="24/01/2022"/>
+                      <Data value="30/03/2022"/>
+                      <Data value="01/04/2022"/>
+                      <Data value="07/04/2022"/>
+                    </Column>
+                    <Column editable="true" title="CPF Cliente" type="java.lang.Object">
+                      <Data value="78005495005"/>
+                      <Data value="11119985058"/>
+                      <Data value="44575675075"/>
+                      <Data value="50641412037"/>
+                      <Data value="92786084083"/>
+                      <Data value="39262707053"/>
+                      <Data value="93004658054"/>
+                      <Data value="53694745084"/>
+                      <Data value="56050422036"/>
+                      <Data value="89014465025"/>
+                    </Column>
+                    <Column editable="true" title="Produtos" type="java.lang.String">
+                      <Data value="Burberry Her"/>
+                      <Data value="Sephora Collection Bath Bar Soap"/>
+                      <Data value="&#xd3;leo Hidratante Desodorante Corporal de Banho Cristal Therapy"/>
+                      <Data value="Batom Soul Kiss Me Hidramatte Pink Fum&#xe9; 3,5g"/>
+                      <Data value="Pink Sugar"/>
+                      <Data value="Esmalte Natural Colorama&#xa0;"/>
+                      <Data value="Esmalte Risqu&#xe9; Cremoso - Lavanda Alma"/>
+                      <Data value="Sabonete L&#xed;quido Nutri&#xe7;&#xe3;o Profunda"/>
+                      <Data value="Id&#xf4;le Lanc&#xf4;me Eau de Parfum"/>
+                      <Data value="TRESEMME CONDICIONADOR HIDRATACAO PROFUNDA 200 ML"/>
+                    </Column>
+                    <Column editable="true" title="Valor Total" type="java.lang.String">
+                      <Data value=" R$ 269,00 "/>
+                      <Data value=" R$ 39,00 "/>
+                      <Data value=" R$ 39,99 "/>
+                      <Data value=" R$ 9,99 "/>
+                      <Data value=" R$ 239,80 "/>
+                      <Data value=" R$ 4,79 "/>
+                      <Data value=" R$ 3,90 "/>
+                      <Data value=" R$ 10,39 "/>
+                      <Data value=" R$ 720,00 "/>
+                      <Data value=" R$ 11,99 "/>
+                    </Column>
+                    <Column editable="true" title="C&#xf3;d. Vendedor" type="java.lang.Integer">
+                      <Data value="54"/>
+                      <Data value="54"/>
+                      <Data value="54"/>
+                      <Data value="54"/>
+                      <Data value="31"/>
+                      <Data value="75"/>
+                      <Data value="2"/>
+                      <Data value="54"/>
+                      <Data value="23"/>
+                      <Data value="86"/>
+                    </Column>
+                  </Table>
+                </Property>
+                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                  <TableColumnModel selectionModel="0">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                  </TableColumnModel>
+                </Property>
+                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                  <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                </Property>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
   </SubComponents>

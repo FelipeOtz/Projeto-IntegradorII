@@ -27,28 +27,85 @@ public class RelatorioVendas extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(204, 204, 255));
         setLayout(new java.awt.BorderLayout());
 
-        jLabel2.setText("Relatori vendas");
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel4.setBackground(new java.awt.Color(9, 158, 199));
+
+        jLabel3.setFont(new java.awt.Font("Malgun Gothic Semilight", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 214, 210));
+        jLabel3.setText("RELATÓRIO DE VENDAS");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jLabel3)
+                .addContainerGap(717, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"322", "15/04/2022", "78005495005", "Burberry Her", " R$ 269,00 ",  new Integer(54)},
+                {"65", "15/04/2022", "11119985058", "Sephora Collection Bath Bar Soap", " R$ 39,00 ",  new Integer(54)},
+                {"324", "28/02/2022", "44575675075", "Óleo Hidratante Desodorante Corporal de Banho Cristal Therapy", " R$ 39,99 ",  new Integer(54)},
+                {"324", "15/03/2022", "50641412037", "Batom Soul Kiss Me Hidramatte Pink Fumé 3,5g", " R$ 9,99 ",  new Integer(54)},
+                {"7", "02/04/2022", "92786084083", "Pink Sugar", " R$ 239,80 ",  new Integer(31)},
+                {"87", "19/03/2022", "39262707053", "Esmalte Natural Colorama ", " R$ 4,79 ",  new Integer(75)},
+                {"6", "24/01/2022", "93004658054", "Esmalte Risqué Cremoso - Lavanda Alma", " R$ 3,90 ",  new Integer(2)},
+                {"657", "30/03/2022", "53694745084", "Sabonete Líquido Nutrição Profunda", " R$ 10,39 ",  new Integer(54)},
+                {"87", "01/04/2022", "56050422036", "Idôle Lancôme Eau de Parfum", " R$ 720,00 ",  new Integer(23)},
+                {"45", "07/04/2022", "89014465025", "TRESEMME CONDICIONADOR HIDRATACAO PROFUNDA 200 ML", " R$ 11,99 ",  new Integer(86)}
+            },
+            new String [] {
+                "Cód. do Pedido", "Data da Venda", "CPF Cliente", "Produtos", "Valor Total", "Cód. Vendedor"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(96, 96, 96)
-                .addComponent(jLabel2)
-                .addContainerGap(747, Short.MAX_VALUE))
+                .addGap(124, 124, 124)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 744, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(145, 145, 145)
-                .addComponent(jLabel2)
-                .addContainerGap(423, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
         );
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
@@ -56,7 +113,10 @@ public class RelatorioVendas extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
