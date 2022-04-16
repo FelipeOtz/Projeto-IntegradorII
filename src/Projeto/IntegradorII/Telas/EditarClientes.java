@@ -308,7 +308,6 @@ public class EditarClientes extends javax.swing.JPanel {
         txtComplemento.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
         txtComplemento.setMargin(new java.awt.Insets(2, 2, 0, 2));
         txtComplemento.setName("Complemento"); // NOI18N
-        txtComplemento.setOpaque(false);
         txtComplemento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtComplementoActionPerformed(evt);
