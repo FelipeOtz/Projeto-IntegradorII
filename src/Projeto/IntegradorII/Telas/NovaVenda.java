@@ -50,7 +50,6 @@ public class NovaVenda extends javax.swing.JPanel {
         jTable1 = new javax.swing.JTable();
         txtData = new javax.swing.JFormattedTextField();
         jLabel5 = new javax.swing.JLabel();
-        txtCompra = new javax.swing.JFormattedTextField();
         jLabel7 = new javax.swing.JLabel();
         txtOperador = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
@@ -63,6 +62,7 @@ public class NovaVenda extends javax.swing.JPanel {
         bntFinalizar = new javax.swing.JButton();
         btnAdicionar = new javax.swing.JButton();
         btnRemover = new javax.swing.JButton();
+        txtCompra = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setToolTipText("");
@@ -188,17 +188,6 @@ public class NovaVenda extends javax.swing.JPanel {
         jLabel5.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         jLabel5.setText("Total da Compra");
 
-        try {
-            txtCompra.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtCompra.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCompraActionPerformed(evt);
-            }
-        });
-
         jLabel7.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         jLabel7.setText("Código do operador");
 
@@ -307,9 +296,9 @@ public class NovaVenda extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(93, 93, 93)
                         .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39)
                         .addComponent(bntFinalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
@@ -360,7 +349,7 @@ public class NovaVenda extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 6, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel9)))
@@ -371,9 +360,9 @@ public class NovaVenda extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel5)
-                        .addComponent(bntFinalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(bntFinalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtQtd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -415,7 +404,10 @@ public class NovaVenda extends javax.swing.JPanel {
         String codProduto = (String) jTable1.getModel().getValueAt(jTable1.getSelectedRow(),0);
         String nome = (String) jTable1.getModel().getValueAt(jTable1.getSelectedRow(),2);
         String Quantidade = txtQtd.getText();
-        int valor = (int) jTable1.getModel().getValueAt(jTable1.getSelectedRow(),5);
+        
+        int valor = ((int) jTable1.getModel().getValueAt(jTable1.getSelectedRow(),5));
+        
+        valor = valor * Integer.parseInt(Quantidade);
        
         jTable2.setModel(table2);
         
@@ -423,8 +415,12 @@ public class NovaVenda extends javax.swing.JPanel {
         Venda venda = new Venda();
         table2.addRow(objeto);
         String produtos = Arrays.toString(objeto);
-
-        
+        int valortotal = 0;
+        for (int i = 0; i < jTable2.getRowCount(); i++) {
+            valortotal += (int)jTable2.getValueAt(i, 3);
+        }
+        String texto = ""+ valortotal;        
+        txtCompra.setText(texto);
         venda.setProdutos(Arrays.toString(objeto));
     }//GEN-LAST:event_btnAdicionarActionPerformed
 
@@ -435,10 +431,6 @@ public class NovaVenda extends javax.swing.JPanel {
         table2.removeRow(jTable2.getSelectedRow());
         jTable2.setModel(table2);
     }//GEN-LAST:event_btnRemoverActionPerformed
-
-    private void txtCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCompraActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCompraActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -459,7 +451,7 @@ public class NovaVenda extends javax.swing.JPanel {
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JFormattedTextField txtCompra;
+    private javax.swing.JTextField txtCompra;
     private javax.swing.JFormattedTextField txtCpf;
     private javax.swing.JFormattedTextField txtData;
     private javax.swing.JTextField txtOperador;
