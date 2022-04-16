@@ -4,7 +4,9 @@
  */
 package Projeto.IntegradorII.Telas;
 
+import Projeto.IntegradorII.Objetos.Venda;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
@@ -405,14 +407,22 @@ public class NovaVenda extends javax.swing.JPanel {
 
     private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
         // TODO add your handling code here:
+               
+        
         DefaultTableModel table2 = (DefaultTableModel)jTable2.getModel();
+        
         
         String codProduto = (String) jTable1.getModel().getValueAt(jTable1.getSelectedRow(),0);
         String nome = (String) jTable1.getModel().getValueAt(jTable1.getSelectedRow(),2);
         String Quantidade = txtQtd.getText();
         int valor = (int) jTable1.getModel().getValueAt(jTable1.getSelectedRow(),5);
-        table2.addRow(new Object[]{codProduto,nome,Quantidade,valor});
+       
         jTable2.setModel(table2);
+        
+        Object objeto[] = {codProduto,nome,Quantidade,valor};
+        Venda venda = new Venda();
+        table2.addRow(objeto);
+        venda.setProdutos(Arrays.toString(objeto));
     }//GEN-LAST:event_btnAdicionarActionPerformed
 
     private void btnRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverActionPerformed
