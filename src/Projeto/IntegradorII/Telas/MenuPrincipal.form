@@ -236,9 +236,6 @@
               <SubComponents>
                 <Component class="javax.swing.JToggleButton" name="btnCadCliente">
                   <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Microsoft YaHei" size="12" style="0"/>
                     </Property>
@@ -271,9 +268,6 @@
                 </Component>
                 <Component class="javax.swing.JToggleButton" name="btnDelCliente">
                   <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Microsoft YaHei" size="12" style="0"/>
                     </Property>
@@ -306,9 +300,6 @@
                 </Component>
                 <Component class="javax.swing.JToggleButton" name="btnEditCliente">
                   <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Microsoft YaHei" size="12" style="0"/>
                     </Property>
@@ -341,9 +332,6 @@
                 </Component>
                 <Component class="javax.swing.JToggleButton" name="btnVisuCliente">
                   <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Microsoft YaHei" size="12" style="0"/>
                     </Property>
@@ -378,9 +366,6 @@
             </Container>
             <Component class="javax.swing.JToggleButton" name="btnClientes">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="gpSubmenu"/>
                 </Property>
@@ -435,9 +420,6 @@
               <SubComponents>
                 <Component class="javax.swing.JToggleButton" name="btnProdutos">
                   <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="gpSubmenu"/>
                     </Property>
@@ -501,9 +483,6 @@
                   <SubComponents>
                     <Component class="javax.swing.JToggleButton" name="btnCadProduto">
                       <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                        </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Microsoft YaHei" size="12" style="0"/>
                         </Property>
@@ -536,9 +515,6 @@
                     </Component>
                     <Component class="javax.swing.JToggleButton" name="btnDelProduto">
                       <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                        </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Microsoft YaHei" size="12" style="0"/>
                         </Property>
@@ -571,9 +547,6 @@
                     </Component>
                     <Component class="javax.swing.JToggleButton" name="btnEditarProduto">
                       <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                        </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Microsoft YaHei" size="12" style="0"/>
                         </Property>
@@ -606,9 +579,6 @@
                     </Component>
                     <Component class="javax.swing.JToggleButton" name="btnVisuProduto">
                       <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                        </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Microsoft YaHei" size="12" style="0"/>
                         </Property>
@@ -649,7 +619,7 @@
                           <Component id="btnVendas" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="pnlVendas" max="32767" attributes="0"/>
+                              <Component id="pnlVendas" pref="221" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                           <Component id="pnlBaixovendas" alignment="0" max="32767" attributes="0"/>
@@ -680,7 +650,7 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="btnCriarVendas" alignment="0" max="32767" attributes="0"/>
-                              <Component id="btnDelProduto2" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnRelatorio" alignment="0" max="32767" attributes="0"/>
                               <Component id="outros" alignment="0" max="32767" attributes="0"/>
                               <Component id="outros2" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -691,7 +661,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btnCriarVendas" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="btnDelProduto2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnRelatorio" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="outros" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -704,9 +674,6 @@
                       <SubComponents>
                         <Component class="javax.swing.JToggleButton" name="btnCriarVendas">
                           <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                            </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Microsoft YaHei" size="12" style="0"/>
                             </Property>
@@ -737,11 +704,8 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCriarVendasActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JToggleButton" name="btnDelProduto2">
+                        <Component class="javax.swing.JToggleButton" name="btnRelatorio">
                           <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                            </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Microsoft YaHei" size="12" style="0"/>
                             </Property>
@@ -769,14 +733,11 @@
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDelProduto2ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRelatorioActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JToggleButton" name="outros">
                           <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                            </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Microsoft YaHei" size="12" style="0"/>
                             </Property>
@@ -809,9 +770,6 @@
                         </Component>
                         <Component class="javax.swing.JToggleButton" name="outros2">
                           <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                            </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Microsoft YaHei" size="12" style="0"/>
                             </Property>
@@ -846,9 +804,6 @@
                     </Container>
                     <Component class="javax.swing.JToggleButton" name="btnVendas">
                       <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                        </Property>
                         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                           <ComponentRef name="gpSubmenu"/>
                         </Property>
@@ -910,9 +865,6 @@
                       <SubComponents>
                         <Component class="javax.swing.JToggleButton" name="btnOutros">
                           <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                            </Property>
                             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                               <ComponentRef name="gpSubmenu"/>
                             </Property>
@@ -972,9 +924,6 @@
                           <SubComponents>
                             <Component class="javax.swing.JToggleButton" name="btnDelProduto3">
                               <Properties>
-                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                                </Property>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Microsoft YaHei" size="12" style="0"/>
                                 </Property>
@@ -1007,9 +956,6 @@
                             </Component>
                             <Component class="javax.swing.JToggleButton" name="btnEditarProduto3">
                               <Properties>
-                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                                </Property>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Microsoft YaHei" size="12" style="0"/>
                                 </Property>
@@ -1042,9 +988,6 @@
                             </Component>
                             <Component class="javax.swing.JToggleButton" name="btnVisuProduto3">
                               <Properties>
-                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                                </Property>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Microsoft YaHei" size="12" style="0"/>
                                 </Property>
@@ -1079,9 +1022,6 @@
                         </Container>
                         <Component class="javax.swing.JToggleButton" name="btnCadProduto3">
                           <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                            </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Microsoft YaHei" size="12" style="0"/>
                             </Property>

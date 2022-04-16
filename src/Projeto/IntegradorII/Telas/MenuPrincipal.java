@@ -105,7 +105,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         pnlBaixoprodutos = new javax.swing.JPanel();
         pnlVendas = new javax.swing.JPanel();
         btnCriarVendas = new javax.swing.JToggleButton();
-        btnDelProduto2 = new javax.swing.JToggleButton();
+        btnRelatorio = new javax.swing.JToggleButton();
         outros = new javax.swing.JToggleButton();
         outros2 = new javax.swing.JToggleButton();
         btnVendas = new javax.swing.JToggleButton();
@@ -170,7 +170,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         pnlClientes.setBackground(new java.awt.Color(243, 243, 243));
         pnlClientes.setPreferredSize(new java.awt.Dimension(233, 0));
 
-        btnCadCliente.setBackground(new java.awt.Color(255, 255, 255));
         btnCadCliente.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         btnCadCliente.setForeground(new java.awt.Color(51, 51, 51));
         btnCadCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
@@ -188,7 +187,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        btnDelCliente.setBackground(new java.awt.Color(255, 255, 255));
         btnDelCliente.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         btnDelCliente.setForeground(new java.awt.Color(51, 51, 51));
         btnDelCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
@@ -206,7 +204,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        btnEditCliente.setBackground(new java.awt.Color(255, 255, 255));
         btnEditCliente.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         btnEditCliente.setForeground(new java.awt.Color(51, 51, 51));
         btnEditCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
@@ -224,7 +221,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        btnVisuCliente.setBackground(new java.awt.Color(255, 255, 255));
         btnVisuCliente.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         btnVisuCliente.setForeground(new java.awt.Color(51, 51, 51));
         btnVisuCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
@@ -269,7 +265,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btnClientes.setBackground(new java.awt.Color(255, 255, 255));
         gpSubmenu.add(btnClientes);
         btnClientes.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         btnClientes.setForeground(new java.awt.Color(74, 74, 74));
@@ -287,7 +282,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        btnProdutos.setBackground(new java.awt.Color(255, 255, 255));
         gpSubmenu.add(btnProdutos);
         btnProdutos.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         btnProdutos.setForeground(new java.awt.Color(74, 74, 74));
@@ -307,7 +301,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         pnlProdutos.setPreferredSize(new java.awt.Dimension(209, 0));
 
-        btnCadProduto.setBackground(new java.awt.Color(255, 255, 255));
         btnCadProduto.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         btnCadProduto.setForeground(new java.awt.Color(51, 51, 51));
         btnCadProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
@@ -325,7 +318,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        btnDelProduto.setBackground(new java.awt.Color(255, 255, 255));
         btnDelProduto.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         btnDelProduto.setForeground(new java.awt.Color(51, 51, 51));
         btnDelProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
@@ -343,7 +335,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        btnEditarProduto.setBackground(new java.awt.Color(255, 255, 255));
         btnEditarProduto.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         btnEditarProduto.setForeground(new java.awt.Color(51, 51, 51));
         btnEditarProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
@@ -361,7 +352,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        btnVisuProduto.setBackground(new java.awt.Color(255, 255, 255));
         btnVisuProduto.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         btnVisuProduto.setForeground(new java.awt.Color(51, 51, 51));
         btnVisuProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
@@ -404,7 +394,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         pnlVendas.setPreferredSize(new java.awt.Dimension(209, 0));
 
-        btnCriarVendas.setBackground(new java.awt.Color(255, 255, 255));
         btnCriarVendas.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         btnCriarVendas.setForeground(new java.awt.Color(51, 51, 51));
         btnCriarVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
@@ -422,25 +411,23 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        btnDelProduto2.setBackground(new java.awt.Color(255, 255, 255));
-        btnDelProduto2.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
-        btnDelProduto2.setForeground(new java.awt.Color(51, 51, 51));
-        btnDelProduto2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
-        btnDelProduto2.setText("Relatório de vendas");
-        btnDelProduto2.setBorder(null);
-        btnDelProduto2.setBorderPainted(false);
-        btnDelProduto2.setContentAreaFilled(false);
-        btnDelProduto2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnDelProduto2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnDelProduto2.setPreferredSize(new java.awt.Dimension(100, 25));
-        btnDelProduto2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotaoselionado.png"))); // NOI18N
-        btnDelProduto2.addActionListener(new java.awt.event.ActionListener() {
+        btnRelatorio.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        btnRelatorio.setForeground(new java.awt.Color(51, 51, 51));
+        btnRelatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
+        btnRelatorio.setText("Relatório de vendas");
+        btnRelatorio.setBorder(null);
+        btnRelatorio.setBorderPainted(false);
+        btnRelatorio.setContentAreaFilled(false);
+        btnRelatorio.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnRelatorio.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnRelatorio.setPreferredSize(new java.awt.Dimension(100, 25));
+        btnRelatorio.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotaoselionado.png"))); // NOI18N
+        btnRelatorio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDelProduto2ActionPerformed(evt);
+                btnRelatorioActionPerformed(evt);
             }
         });
 
-        outros.setBackground(new java.awt.Color(255, 255, 255));
         outros.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         outros.setForeground(new java.awt.Color(51, 51, 51));
         outros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
@@ -458,7 +445,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        outros2.setBackground(new java.awt.Color(255, 255, 255));
         outros2.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         outros2.setForeground(new java.awt.Color(51, 51, 51));
         outros2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
@@ -481,7 +467,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         pnlVendasLayout.setHorizontalGroup(
             pnlVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btnCriarVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnDelProduto2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnRelatorio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(outros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(outros2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -491,7 +477,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(btnCriarVendas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDelProduto2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(outros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -499,7 +485,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btnVendas.setBackground(new java.awt.Color(255, 255, 255));
         gpSubmenu.add(btnVendas);
         btnVendas.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         btnVendas.setForeground(new java.awt.Color(74, 74, 74));
@@ -517,7 +502,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        btnOutros.setBackground(new java.awt.Color(255, 255, 255));
         gpSubmenu.add(btnOutros);
         btnOutros.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         btnOutros.setForeground(new java.awt.Color(74, 74, 74));
@@ -537,7 +521,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         pnlOutros.setPreferredSize(new java.awt.Dimension(257, 0));
 
-        btnDelProduto3.setBackground(new java.awt.Color(255, 255, 255));
         btnDelProduto3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         btnDelProduto3.setForeground(new java.awt.Color(51, 51, 51));
         btnDelProduto3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
@@ -555,7 +538,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        btnEditarProduto3.setBackground(new java.awt.Color(255, 255, 255));
         btnEditarProduto3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         btnEditarProduto3.setForeground(new java.awt.Color(51, 51, 51));
         btnEditarProduto3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
@@ -573,7 +555,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        btnVisuProduto3.setBackground(new java.awt.Color(255, 255, 255));
         btnVisuProduto3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         btnVisuProduto3.setForeground(new java.awt.Color(51, 51, 51));
         btnVisuProduto3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/barrabotao.png"))); // NOI18N
@@ -610,7 +591,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addComponent(btnVisuProduto3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        btnCadProduto3.setBackground(new java.awt.Color(255, 255, 255));
         btnCadProduto3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         btnCadProduto3.setForeground(new java.awt.Color(51, 51, 51));
         btnCadProduto3.setText("Cadastrar produto");
@@ -669,7 +649,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addComponent(btnVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pnlBaixoprodutosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(pnlVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnlVendas, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
                 .addContainerGap())
             .addComponent(pnlBaixovendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -845,9 +825,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         showForm(new NovaVenda());
     }//GEN-LAST:event_btnCriarVendasActionPerformed
 
-    private void btnDelProduto2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelProduto2ActionPerformed
+    private void btnRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRelatorioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnDelProduto2ActionPerformed
+         showForm(new RelatorioVendas());
+    }//GEN-LAST:event_btnRelatorioActionPerformed
 
     private void outrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_outrosActionPerformed
         // TODO add your handling code here:
@@ -948,13 +929,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JToggleButton btnCriarVendas;
     private javax.swing.JToggleButton btnDelCliente;
     private javax.swing.JToggleButton btnDelProduto;
-    private javax.swing.JToggleButton btnDelProduto2;
     private javax.swing.JToggleButton btnDelProduto3;
     private javax.swing.JToggleButton btnEditCliente;
     private javax.swing.JToggleButton btnEditarProduto;
     private javax.swing.JToggleButton btnEditarProduto3;
     private javax.swing.JToggleButton btnOutros;
     private javax.swing.JToggleButton btnProdutos;
+    private javax.swing.JToggleButton btnRelatorio;
     private javax.swing.JToggleButton btnVendas;
     private javax.swing.JToggleButton btnVisuCliente;
     private javax.swing.JToggleButton btnVisuProduto;

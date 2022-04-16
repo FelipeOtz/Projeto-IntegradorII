@@ -191,6 +191,11 @@ public class NovaVenda extends javax.swing.JPanel {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtCompra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCompraActionPerformed(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         jLabel7.setText("Código do operador");
@@ -417,6 +422,10 @@ public class NovaVenda extends javax.swing.JPanel {
         table2.removeRow(jTable2.getSelectedRow());
         jTable2.setModel(table2);
     }//GEN-LAST:event_btnRemoverActionPerformed
+
+    private void txtCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCompraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCompraActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
