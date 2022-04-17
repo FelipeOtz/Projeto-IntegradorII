@@ -1,6 +1,7 @@
 package Projeto.IntegradorII.Utils;
 
 import com.toedter.calendar.JDateChooser;
+import java.awt.Color;
 import java.text.SimpleDateFormat;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
@@ -73,6 +74,8 @@ public class ValidadorProduto {
     public void validaString(JTextField txt){
         if(txt.getText().trim().equals("")){
             erros += "Campo " + txt.getName() + " vazio\n";
+            //Deixa a Borda do TextField em Vermelho
+            txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 0, 0)));
         }
     }
     
@@ -80,6 +83,8 @@ public class ValidadorProduto {
     public void validaTxt(JTextArea txt){
         if(txt.getText().trim().equals("")){
             erros += "Campo " + txt.getName() + " vazio\n";
+            //Deixa a Borda do TextField em Vermelho
+            txt.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 0, 0)));
         }
     }   
     
@@ -89,10 +94,12 @@ public class ValidadorProduto {
         try{            
             double t = Double.parseDouble(txt.getText());
             if (t < 0){
-                erros += "Informe um preço de valor positivo\n";
+            erros += "Campo Preço inválido\n";
+            txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 0, 0)));
             }
         }catch(NumberFormatException e){
             erros += "Campo Preço inválido\n";
+            txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 0, 0)));
         }
     }
     
@@ -103,10 +110,12 @@ public class ValidadorProduto {
             int i = Integer.parseInt(txt.getText());
             if (i < 0){
                 erros += "Informe somente valores inteiros positivos em " + txt.getName() + "\n";
+                txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 0, 0)));
             }
         
         }catch(NumberFormatException e){
                 erros+= "Campo " + txt.getName() + " Inválido\n";
+                txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 0, 0)));
         }
     }
     
@@ -116,6 +125,8 @@ public class ValidadorProduto {
     public void validaComboBox (JComboBox cb){
         if(cb.getSelectedIndex() < 1){
             erros += "Nenhum " + cb.getName() + " Foi Selecionado\n";
+            //Deixa combo box em Vermelho
+            cb.setBackground(new java.awt.Color(255, 0, 0));
         }
     }
     

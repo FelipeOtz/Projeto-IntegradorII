@@ -5,6 +5,7 @@
 package Projeto.IntegradorII.Telas;
 
 import Projeto.IntegradorII.Utils.ValidadorProduto;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -123,12 +124,27 @@ public class CadastrarProdutos extends javax.swing.JPanel {
 
         txtNome.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         txtNome.setName("Marca"); // NOI18N
+        txtNome.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtNomeFocusGained(evt);
+            }
+        });
+        txtNome.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNomeKeyTyped(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         jLabel3.setText("Tipo do Produto");
 
         cbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Selecione>", "Perfume", "Óleo Corporal", "Batom", "Sabonete", "Esmalte", "Shampoo", "Máscara Capilar", "Máscara Facial", "Hidratante Corporal", "Protetor Solar" }));
         cbTipo.setName("Tipo Produto"); // NOI18N
+        cbTipo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                cbTipoFocusGained(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         jLabel4.setText("Marca");
@@ -163,20 +179,50 @@ public class CadastrarProdutos extends javax.swing.JPanel {
 
         txtMarca.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         txtMarca.setName("Marca"); // NOI18N
-        txtMarca.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMarcaActionPerformed(evt);
+        txtMarca.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtMarcaFocusGained(evt);
+            }
+        });
+        txtMarca.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtMarcaKeyTyped(evt);
             }
         });
 
         cbSetor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Selecione>", "Perfumaria", "Corpo&Banho", "Maquiagem", "Unhas" }));
         cbSetor.setName("Setor"); // NOI18N
+        cbSetor.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                cbSetorFocusGained(evt);
+            }
+        });
 
         txtCor.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         txtCor.setName("Cor"); // NOI18N
+        txtCor.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtCorFocusGained(evt);
+            }
+        });
+        txtCor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCorKeyTyped(evt);
+            }
+        });
 
         txtQtdEstoque.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         txtQtdEstoque.setName("Qtd. Estoque"); // NOI18N
+        txtQtdEstoque.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtQtdEstoqueFocusGained(evt);
+            }
+        });
+        txtQtdEstoque.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtQtdEstoqueKeyTyped(evt);
+            }
+        });
 
         txtCod.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         try {
@@ -189,11 +235,31 @@ public class CadastrarProdutos extends javax.swing.JPanel {
 
         txtTamanho.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         txtTamanho.setName("Quantidade Produto"); // NOI18N
+        txtTamanho.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtTamanhoFocusGained(evt);
+            }
+        });
+        txtTamanho.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTamanhoKeyTyped(evt);
+            }
+        });
 
         jLabel14.setText("R$");
 
         txtPreco.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         txtPreco.setName("Preço"); // NOI18N
+        txtPreco.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtPrecoFocusGained(evt);
+            }
+        });
+        txtPreco.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPrecoKeyTyped(evt);
+            }
+        });
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/lock.png"))); // NOI18N
 
@@ -220,13 +286,18 @@ public class CadastrarProdutos extends javax.swing.JPanel {
         txtDescricao.setColumns(20);
         txtDescricao.setRows(5);
         txtDescricao.setName("Descrição"); // NOI18N
+        txtDescricao.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtDescricaoFocusGained(evt);
+            }
+        });
         jScrollPane1.setViewportView(txtDescricao);
 
         cbUnidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "g", "ml", "l", "unid." }));
         cbUnidade.setName("Unidade"); // NOI18N
-        cbUnidade.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbUnidadeActionPerformed(evt);
+        cbUnidade.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                cbUnidadeFocusGained(evt);
             }
         });
 
@@ -394,14 +465,113 @@ public class CadastrarProdutos extends javax.swing.JPanel {
     }
     }//GEN-LAST:event_btnCadProdActionPerformed
 
-    private void txtMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMarcaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMarcaActionPerformed
+    
+    
+    /*Eventos KeyTyped - Limite Máximo de 50 Caracteres aceito nos campos */
+    private void txtNomeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeKeyTyped
+        if (txtNome.getText().length() >= 50){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtNomeKeyTyped
 
-    private void cbUnidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbUnidadeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbUnidadeActionPerformed
+    private void txtMarcaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMarcaKeyTyped
+        if (txtMarca.getText().length() >= 50){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtMarcaKeyTyped
 
+    private void txtCorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCorKeyTyped
+        if (txtCor.getText().length() >= 50){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCorKeyTyped
+
+    private void txtPrecoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecoKeyTyped
+        
+        //Permite a entrada somente de números
+            char c = evt.getKeyChar();
+        if ( ((c < '0') || (c > '9')) && (c !=KeyEvent.VK_BACK_SPACE))
+        {
+         evt.consume(); 
+        }
+        
+        if (txtPreco.getText().length() >= 50){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtPrecoKeyTyped
+
+    private void txtTamanhoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTamanhoKeyTyped
+        //Permite a entrada somente de números
+        char c = evt.getKeyChar();
+        
+        if ( ((c < '0') || (c > '9')) && (c !=KeyEvent.VK_BACK_SPACE)){
+             evt.consume(); 
+        }
+
+        if (txtTamanho.getText().length() >= 50){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtTamanhoKeyTyped
+
+    private void txtQtdEstoqueKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtQtdEstoqueKeyTyped
+        //Permite a entrada somente de números
+        char c = evt.getKeyChar();
+        if ( ((c < '0') || (c > '9')) && (c !=KeyEvent.VK_BACK_SPACE)){
+         evt.consume(); 
+        }
+        
+        if (txtQtdEstoque.getText().length() >= 50){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtQtdEstoqueKeyTyped
+
+    
+    
+    /*Eventos FocusGained - fazem os elementos voltarem a ficar na cor padrão 
+    ao serem clicadas ou selecionadas*/
+    private void txtNomeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNomeFocusGained
+        txtNome.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
+    }//GEN-LAST:event_txtNomeFocusGained
+
+    private void txtMarcaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtMarcaFocusGained
+        txtMarca.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
+    }//GEN-LAST:event_txtMarcaFocusGained
+
+    private void txtCorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCorFocusGained
+        txtCor.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
+    }//GEN-LAST:event_txtCorFocusGained
+
+    private void txtTamanhoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTamanhoFocusGained
+        txtTamanho.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
+    }//GEN-LAST:event_txtTamanhoFocusGained
+
+    private void txtQtdEstoqueFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtQtdEstoqueFocusGained
+        txtQtdEstoque.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
+    }//GEN-LAST:event_txtQtdEstoqueFocusGained
+
+    private void txtPrecoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPrecoFocusGained
+        txtPreco.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
+    }//GEN-LAST:event_txtPrecoFocusGained
+
+    private void txtDescricaoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDescricaoFocusGained
+        txtDescricao.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
+    }//GEN-LAST:event_txtDescricaoFocusGained
+
+    private void cbUnidadeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cbUnidadeFocusGained
+        cbUnidade.setBackground(new java.awt.Color(255, 255, 255));
+    }//GEN-LAST:event_cbUnidadeFocusGained
+
+    private void cbTipoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cbTipoFocusGained
+        cbTipo.setBackground(new java.awt.Color(255, 255, 255));
+    }//GEN-LAST:event_cbTipoFocusGained
+
+    private void cbSetorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cbSetorFocusGained
+        cbSetor.setBackground(new java.awt.Color(255, 255, 255));
+    }//GEN-LAST:event_cbSetorFocusGained
+
+    
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.k33ptoo.components.KButton btnCadProd;

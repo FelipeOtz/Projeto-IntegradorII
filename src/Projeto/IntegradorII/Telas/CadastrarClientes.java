@@ -7,6 +7,7 @@ package Projeto.IntegradorII.Telas;
 import Projeto.IntegradorII.Utils.ValidadorCliente;
 import br.com.parg.viacep.ViaCEP;
 import br.com.parg.viacep.ViaCEPException;
+import java.awt.Color;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -109,9 +110,19 @@ public class CadastrarClientes extends javax.swing.JPanel {
         txtNome.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
         txtNome.setMargin(new java.awt.Insets(2, 2, 0, 2));
         txtNome.setName("Nome"); // NOI18N
+        txtNome.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtNomeFocusGained(evt);
+            }
+        });
         txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNomeActionPerformed(evt);
+            }
+        });
+        txtNome.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNomeKeyTyped(evt);
             }
         });
 
@@ -160,6 +171,11 @@ public class CadastrarClientes extends javax.swing.JPanel {
         txtTelefone.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtTelefone.setFont(new java.awt.Font("Microsoft YaHei", 0, 14)); // NOI18N
         txtTelefone.setName("Telefone"); // NOI18N
+        txtTelefone.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtTelefoneFocusGained(evt);
+            }
+        });
 
         jLabel10.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         jLabel10.setText("Estado civil");
@@ -169,6 +185,11 @@ public class CadastrarClientes extends javax.swing.JPanel {
         cbEstadoCivil.setBorder(null);
         cbEstadoCivil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cbEstadoCivil.setName("Estado Civil"); // NOI18N
+        cbEstadoCivil.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                cbEstadoCivilFocusGained(evt);
+            }
+        });
         cbEstadoCivil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbEstadoCivilActionPerformed(evt);
@@ -186,6 +207,11 @@ public class CadastrarClientes extends javax.swing.JPanel {
         txtCPF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtCPF.setFont(new java.awt.Font("Microsoft YaHei", 0, 14)); // NOI18N
         txtCPF.setName("CPF"); // NOI18N
+        txtCPF.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtCPFFocusGained(evt);
+            }
+        });
         txtCPF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCPFActionPerformed(evt);
@@ -208,9 +234,19 @@ public class CadastrarClientes extends javax.swing.JPanel {
         txtSobrenome.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
         txtSobrenome.setMargin(new java.awt.Insets(2, 2, 0, 2));
         txtSobrenome.setName("Sobrenome"); // NOI18N
+        txtSobrenome.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtSobrenomeFocusGained(evt);
+            }
+        });
         txtSobrenome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSobrenomeActionPerformed(evt);
+            }
+        });
+        txtSobrenome.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSobrenomeKeyTyped(evt);
             }
         });
 
@@ -222,6 +258,11 @@ public class CadastrarClientes extends javax.swing.JPanel {
         cbSexo.setBorder(null);
         cbSexo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cbSexo.setName("Sexo"); // NOI18N
+        cbSexo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                cbSexoFocusGained(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         jLabel6.setText("Sexo");
@@ -245,9 +286,19 @@ public class CadastrarClientes extends javax.swing.JPanel {
         txtNum.setMargin(new java.awt.Insets(2, 2, 0, 2));
         txtNum.setName("Número"); // NOI18N
         txtNum.setNextFocusableComponent(txtComplemento);
+        txtNum.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtNumFocusGained(evt);
+            }
+        });
         txtNum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNumActionPerformed(evt);
+            }
+        });
+        txtNum.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNumKeyTyped(evt);
             }
         });
 
@@ -274,9 +325,19 @@ public class CadastrarClientes extends javax.swing.JPanel {
         txtLogradouro.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
         txtLogradouro.setMargin(new java.awt.Insets(2, 2, 0, 2));
         txtLogradouro.setName("Logradouro"); // NOI18N
+        txtLogradouro.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtLogradouroFocusGained(evt);
+            }
+        });
         txtLogradouro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtLogradouroActionPerformed(evt);
+            }
+        });
+        txtLogradouro.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtLogradouroKeyTyped(evt);
             }
         });
 
@@ -291,6 +352,9 @@ public class CadastrarClientes extends javax.swing.JPanel {
         txtCep.setName("CEP"); // NOI18N
         txtCep.setNextFocusableComponent(txtNum);
         txtCep.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtCepFocusGained(evt);
+            }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 txtCepFocusLost(evt);
             }
@@ -312,9 +376,19 @@ public class CadastrarClientes extends javax.swing.JPanel {
         txtComplemento.setName("Complemento"); // NOI18N
         txtComplemento.setNextFocusableComponent(bntSalvar);
         txtComplemento.setOpaque(false);
+        txtComplemento.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtComplementoFocusGained(evt);
+            }
+        });
         txtComplemento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtComplementoActionPerformed(evt);
+            }
+        });
+        txtComplemento.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtComplementoKeyTyped(evt);
             }
         });
 
@@ -326,9 +400,22 @@ public class CadastrarClientes extends javax.swing.JPanel {
         txtEmail.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
         txtEmail.setMargin(new java.awt.Insets(2, 2, 0, 2));
         txtEmail.setName("E-mail"); // NOI18N
+        txtEmail.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtEmailFocusGained(evt);
+            }
+        });
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEmailActionPerformed(evt);
+            }
+        });
+        txtEmail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEmailKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtEmailKeyTyped(evt);
             }
         });
 
@@ -341,6 +428,11 @@ public class CadastrarClientes extends javax.swing.JPanel {
         jDateChooser1.setDateFormatString("dd/MM/yyyy");
         jDateChooser1.setMaxSelectableDate(new java.util.Date(1672545679000L));
         jDateChooser1.setMinSelectableDate(new java.util.Date(-2208974321000L));
+        jDateChooser1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jDateChooser1KeyReleased(evt);
+            }
+        });
 
         txtBairro.setFont(new java.awt.Font("Microsoft YaHei", 0, 14)); // NOI18N
         txtBairro.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -348,9 +440,19 @@ public class CadastrarClientes extends javax.swing.JPanel {
         txtBairro.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
         txtBairro.setMargin(new java.awt.Insets(2, 2, 0, 2));
         txtBairro.setName("Bairro"); // NOI18N
+        txtBairro.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtBairroFocusGained(evt);
+            }
+        });
         txtBairro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBairroActionPerformed(evt);
+            }
+        });
+        txtBairro.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBairroKeyTyped(evt);
             }
         });
 
@@ -370,9 +472,19 @@ public class CadastrarClientes extends javax.swing.JPanel {
         txtCidade.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
         txtCidade.setMargin(new java.awt.Insets(2, 2, 0, 2));
         txtCidade.setName("Cidade"); // NOI18N
+        txtCidade.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtCidadeFocusGained(evt);
+            }
+        });
         txtCidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCidadeActionPerformed(evt);
+            }
+        });
+        txtCidade.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCidadeKeyTyped(evt);
             }
         });
 
@@ -382,9 +494,19 @@ public class CadastrarClientes extends javax.swing.JPanel {
         txtEstado.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
         txtEstado.setMargin(new java.awt.Insets(2, 2, 0, 2));
         txtEstado.setName("Estado"); // NOI18N
+        txtEstado.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtEstadoFocusGained(evt);
+            }
+        });
         txtEstado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEstadoActionPerformed(evt);
+            }
+        });
+        txtEstado.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtEstadoKeyTyped(evt);
             }
         });
 
@@ -755,13 +877,163 @@ public class CadastrarClientes extends javax.swing.JPanel {
 
     private void txtCepFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCepFocusLost
         runViaCEP();
+        txtLogradouro.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
+        txtComplemento.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
+        txtBairro.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
+        txtCidade.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
+        txtEstado.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
     }//GEN-LAST:event_txtCepFocusLost
     
     private void btnSearchCEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchCEPActionPerformed
-                // TODO add your handling code here:
+
          runViaCEP();
+        txtLogradouro.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
+        txtComplemento.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
+        txtBairro.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
+        txtCidade.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
+        txtEstado.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
     }//GEN-LAST:event_btnSearchCEPActionPerformed
 
+    
+    
+    
+    
+    /*Eventos KeyTyped - Limite Máximo de 50 Caracteres aceito nos campos */
+    private void txtNomeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeKeyTyped
+    if(txtNome.getText().length() >= 50){
+        evt.consume();        
+    }
+    }//GEN-LAST:event_txtNomeKeyTyped
+
+    private void txtEmailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyTyped
+    if(txtEmail.getText().length() >= 50){
+        evt.consume();        
+    }
+    }//GEN-LAST:event_txtEmailKeyTyped
+
+    private void txtSobrenomeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSobrenomeKeyTyped
+    if(txtSobrenome.getText().length() >= 50){
+        evt.consume();        
+    }
+    }//GEN-LAST:event_txtSobrenomeKeyTyped
+
+    private void txtLogradouroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLogradouroKeyTyped
+    if(txtLogradouro.getText().length() >= 50){
+        evt.consume();        
+    }
+    }//GEN-LAST:event_txtLogradouroKeyTyped
+
+    private void txtNumKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumKeyTyped
+    if(txtNum.getText().length() >= 50){
+        evt.consume();        
+    }
+    }//GEN-LAST:event_txtNumKeyTyped
+
+    private void txtComplementoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtComplementoKeyTyped
+    if(txtComplemento.getText().length() >= 50){
+        evt.consume();        
+    }
+    }//GEN-LAST:event_txtComplementoKeyTyped
+
+    private void txtBairroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBairroKeyTyped
+    if(txtBairro.getText().length() >= 50){
+        evt.consume();        
+    }
+    }//GEN-LAST:event_txtBairroKeyTyped
+
+    private void txtCidadeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCidadeKeyTyped
+    if(txtCidade.getText().length() >= 50){
+        evt.consume();        
+    }
+    }//GEN-LAST:event_txtCidadeKeyTyped
+
+    private void txtEstadoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEstadoKeyTyped
+        if(txtEstado.getText().length() >= 50){
+        evt.consume();        
+    }
+    }//GEN-LAST:event_txtEstadoKeyTyped
+
+    
+    
+    
+    /*Eventos FocusGained - fazem os elementos voltarem a ficar na cor padrão ao serem clicadas ou selecionadas*/
+    private void txtNomeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNomeFocusGained
+        txtNome.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
+    }//GEN-LAST:event_txtNomeFocusGained
+
+    private void txtCPFFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCPFFocusGained
+        txtCPF.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
+    }//GEN-LAST:event_txtCPFFocusGained
+
+    private void txtTelefoneFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelefoneFocusGained
+        txtTelefone.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
+    }//GEN-LAST:event_txtTelefoneFocusGained
+
+    private void txtEmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusGained
+        txtEmail.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
+    }//GEN-LAST:event_txtEmailFocusGained
+
+    private void txtSobrenomeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtSobrenomeFocusGained
+        txtSobrenome.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
+    }//GEN-LAST:event_txtSobrenomeFocusGained
+
+    private void cbEstadoCivilFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cbEstadoCivilFocusGained
+        cbEstadoCivil.setBackground(new java.awt.Color(255, 255, 255));
+    }//GEN-LAST:event_cbEstadoCivilFocusGained
+
+    private void cbSexoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cbSexoFocusGained
+        cbSexo.setBackground(new java.awt.Color(255, 255, 255));
+    }//GEN-LAST:event_cbSexoFocusGained
+
+    private void txtLogradouroFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtLogradouroFocusGained
+        txtLogradouro.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
+    }//GEN-LAST:event_txtLogradouroFocusGained
+
+    private void txtNumFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNumFocusGained
+       txtNum.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
+    }//GEN-LAST:event_txtNumFocusGained
+
+    private void txtComplementoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtComplementoFocusGained
+        txtComplemento.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
+    }//GEN-LAST:event_txtComplementoFocusGained
+
+    private void txtBairroFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtBairroFocusGained
+        txtBairro.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
+    }//GEN-LAST:event_txtBairroFocusGained
+
+    private void txtCidadeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCidadeFocusGained
+       txtCidade.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
+    }//GEN-LAST:event_txtCidadeFocusGained
+
+    private void txtEstadoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEstadoFocusGained
+       txtEstado.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
+    }//GEN-LAST:event_txtEstadoFocusGained
+
+    private void txtCepFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCepFocusGained
+       txtCep.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 51, 51)));
+    }//GEN-LAST:event_txtCepFocusGained
+
+    
+    
+    
+    /*Coloca os Campos do E-mail em letras minusculas*/
+    private void txtEmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyReleased
+        // TODO add your handling code here:
+        txtEmail.setText(this.txtEmail.getText().toLowerCase());
+    }//GEN-LAST:event_txtEmailKeyReleased
+    
+    //Faz auto inserção das '/' (barras) na data
+    private void jDateChooser1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jDateChooser1KeyReleased
+
+    }//GEN-LAST:event_jDateChooser1KeyReleased
+
+    
+    
+    
+    
+    
+    
+    
     public void runViaCEP(){
         ViaCEP cep = new ViaCEP();
         try {
@@ -776,10 +1048,11 @@ public class CadastrarClientes extends javax.swing.JPanel {
         txtCidade.setText(local);
         
         
-        String estado = cep.getLocalidade();
+        String estado = cep.getUf();
         txtEstado.setText(estado);
         } catch (ViaCEPException ex) {
             JOptionPane.showMessageDialog(this, "CEP inválido");
+               
     }
     
     }

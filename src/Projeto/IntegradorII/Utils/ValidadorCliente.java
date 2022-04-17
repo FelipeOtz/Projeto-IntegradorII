@@ -116,7 +116,7 @@ public class ValidadorCliente {
         catch(Exception e){
             erros += "Nenhuma data foi selecionada\n";
             //Borda Fica e
-             data.setBackground(new java.awt.Color(255, 0, 0));
+            // data.setBackground(new java.awt.Color(255, 0, 0));
         } 
     }
     
