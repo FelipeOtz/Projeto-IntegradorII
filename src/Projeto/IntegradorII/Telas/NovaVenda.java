@@ -8,6 +8,7 @@ import Projeto.IntegradorII.Objetos.Venda;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
+import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
@@ -21,15 +22,14 @@ public class NovaVenda extends javax.swing.JPanel {
     /**
      * Creates new form NovaVenda
      */
-    
     public NovaVenda() {
         initComponents();
-       
+
         SimpleDateFormat dt = new SimpleDateFormat("dd/MM/yyyy");
-         Date data = new Date();
-         
+        Date data = new Date();
+
         String data1 = dt.format(data);
-       txtData.setText(data1);
+        txtData.setText(data1);
     }
 
     /**
@@ -110,57 +110,57 @@ public class NovaVenda extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", "Perfume ", "Burberry Her", "Burberry", "Perfume",  new Integer(23), "342", "Nda", "30", "ml", "24/12/2040", null},
-                {"2", "Perfume ", "Burberry Her", "Burberry", "Perfume",  new Integer(23), "324", "Nda", "50", "ml", "21/11/2067", null},
-                {"344", "Perfume ", "Bad Boy Carolina Herrera Eau de Toilette", "Carolina Herrera", "Perfume",  new Integer(424), "2342", "Nda", "150", "g", "12/02/2032", null},
-                {"555", "Perfume ", "Bad Boy Carolina Herrera Eau de Toilette", "Carolina Herrera", "Perfume",  new Integer(12), "234235436", "Nda", "100", "ml", "10/01/2025", null},
-                {null, "Perfume ", "Idôle Lancôme Eau de Parfum", "Lancôme", "Perfume", null, null, "Nda", "399", "ml", "01/01/2054", null},
-                {"667", "Esmalte", "o Boticário Intense by Manu Gavassi Azul Claro Cute - Esmalte 7ml", "O Boticário", "Esmalte", null, null, "Azul claro Cute", "7", "ml", "12/12/2025", null},
-                {null, "Esmalte", "Esmalte Impala Cremoso Preto", "Impala", "Esmalte", null, null, "Preto", "7,5", "ml", "23/11/2025", null},
-                {null, "Esmalte", "Esmalte Natural Colorama ", "Colorama", "Esmalte", null, null, "Petala", "8", "ml", "05/04/2024", null},
-                {null, "Esmalte", "Granado Pink SOS 7 em 1 - Base Fortalecedora para Unhas", "Granda", "Esmalte", null, null, "Incolor", "10", "ml", "24/06/2026", null},
-                {null, "Esmalte", "Esmalte Risqué Cremoso - Lavanda Alma", "Risqué", "Esmalte", null, null, "Lavanda Alma", "8", "ml", "09/01/2027", null},
-                {null, "Sabonete", "Sephora Collection Bath Bar Soap", "Sephora", "Higiene", null, null, "Nda", "150", "g", "29/04/2027", null},
-                {null, "Sabonete", "Sabonete Líquido Korres Jasmim", "Korres", "Higiene", null, null, "Nda", "250", "ml", "12/01/2024", null},
-                {null, "Sabonete", "Sabonete Líquido Essências do Brasil Vitória Régia", "Lux", "Higiene", null, null, "Nda", "300", "ml", "08/07/2029", null},
-                {null, "Sabonete", "Sabonete Líquido Nutrição Profunda", "Dove", "Higiene", null, null, "Nda", "250", "ml", "10/02/2040", null},
-                {null, "Sabonete", "Sabonete Mandarina Asiática", "Phebo", "Higiene", null, null, "Nda", "100", "g", "20/12/2044", null},
-                {null, "Sabonete ", "Sabonete Líquido Fisher-Price Bebê", "Biotropic", "Higiene", null, null, "Nda", "400", "ml", "06/08/2028", null},
-                {null, "Sabonete ", "Sabonete Barra Lavanda", "Vyedas", "Higiene", null, null, "Nda", "120", "g", null, null},
-                {null, "", null, null, null, null, null, null, null, null, null, null},
-                {null, "", null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null}
+                {"1", "Perfume ", "Burberry Her", "Burberry",  new Integer(23), "342", "30", "ml"},
+                {"2", "Perfume ", "Burberry Her", "Burberry",  new Integer(23), "324", "50", "ml"},
+                {"344", "Perfume ", "Bad Boy Carolina Herrera Eau de Toilette", "Carolina Herrera",  new Integer(424), "2342", "150", "g"},
+                {"555", "Perfume ", "Bad Boy Carolina Herrera Eau de Toilette", "Carolina Herrera",  new Integer(12), "234235436", "100", "ml"},
+                {null, "Perfume ", "Idôle Lancôme Eau de Parfum", "Lancôme", null, null, "399", "ml"},
+                {"667", "Esmalte", "o Boticário Intense by Manu Gavassi Azul Claro Cute - Esmalte 7ml", "O Boticário", null, null, "7", "ml"},
+                {null, "Esmalte", "Esmalte Impala Cremoso Preto", "Impala", null, null, "7,5", "ml"},
+                {null, "Esmalte", "Esmalte Natural Colorama ", "Colorama", null, null, "8", "ml"},
+                {null, "Esmalte", "Granado Pink SOS 7 em 1 - Base Fortalecedora para Unhas", "Granda", null, null, "10", "ml"},
+                {null, "Esmalte", "Esmalte Risqué Cremoso - Lavanda Alma", "Risqué", null, null, "8", "ml"},
+                {null, "Sabonete", "Sephora Collection Bath Bar Soap", "Sephora", null, null, "150", "g"},
+                {null, "Sabonete", "Sabonete Líquido Korres Jasmim", "Korres", null, null, "250", "ml"},
+                {null, "Sabonete", "Sabonete Líquido Essências do Brasil Vitória Régia", "Lux", null, null, "300", "ml"},
+                {null, "Sabonete", "Sabonete Líquido Nutrição Profunda", "Dove", null, null, "250", "ml"},
+                {null, "Sabonete", "Sabonete Mandarina Asiática", "Phebo", null, null, "100", "g"},
+                {null, "Sabonete ", "Sabonete Líquido Fisher-Price Bebê", "Biotropic", null, null, "400", "ml"},
+                {null, "Sabonete ", "Sabonete Barra Lavanda", "Vyedas", null, null, "120", "g"},
+                {null, "", null, null, null, null, null, null},
+                {null, "", null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Cód. Produto", "Tipo de Produto", "Nome", "Marca", "Setor", "Preço", "Qtd. em estoque", "Cor", "Tamanho", "Unidade", "Validade", "Descrição"
+                "Cód. Produto", "Tipo de Produto", "Nome", "Marca", "Preço", "Qtd. em estoque", "Tamanho", "Unidade"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -177,6 +177,7 @@ public class NovaVenda extends javax.swing.JPanel {
         jTable1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
+        jTable1.getAccessibleContext().setAccessibleName("");
 
         try {
             txtData.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
@@ -191,7 +192,7 @@ public class NovaVenda extends javax.swing.JPanel {
         });
 
         jLabel5.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
-        jLabel5.setText("Total da Compra");
+        jLabel5.setText("Total da Compra:  R$");
 
         jLabel7.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         jLabel7.setText("Código do operador");
@@ -248,6 +249,7 @@ public class NovaVenda extends javax.swing.JPanel {
         bntFinalizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/icons8_add_shopping_cart_20px.png"))); // NOI18N
         bntFinalizar.setText("FINALIZAR");
         bntFinalizar.setBorder(null);
+        bntFinalizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bntFinalizar.setEnabled(false);
         bntFinalizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -277,6 +279,8 @@ public class NovaVenda extends javax.swing.JPanel {
             }
         });
 
+        txtCompra.setEditable(false);
+        txtCompra.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 14)); // NOI18N
         txtCompra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCompraActionPerformed(evt);
@@ -347,34 +351,33 @@ public class NovaVenda extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addGap(7, 7, 7)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnRemover, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(btnRemover, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 462, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(17, 17, 17))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
+                        .addGap(58, 58, 58)
                         .addComponent(jLabel5)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addComponent(bntFinalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(bntFinalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(70, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -383,18 +386,19 @@ public class NovaVenda extends javax.swing.JPanel {
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(56, 56, 56)
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(70, 70, 70))
+                        .addGap(56, 56, 56))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel9)
-                        .addGap(248, 248, 248))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel9))
+                .addGap(70, 70, 70))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -410,16 +414,20 @@ public class NovaVenda extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel3)))
-                .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel6)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel5)
@@ -439,12 +447,12 @@ public class NovaVenda extends javax.swing.JPanel {
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
         // TODO add your handling code here:
-        DefaultTableModel table = (DefaultTableModel)jTable1.getModel();
+        DefaultTableModel table = (DefaultTableModel) jTable1.getModel();
         String search = jTextField1.getText();
         TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(table);
         jTable1.setRowSorter(tr);
@@ -452,48 +460,62 @@ public class NovaVenda extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextField1KeyTyped
 
     private void bntFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntFinalizarActionPerformed
-       
+        JOptionPane.showMessageDialog(this, "Compra finalizada com suceseso!", "Compra finalizada",1);
     }//GEN-LAST:event_bntFinalizarActionPerformed
 
     private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
         // TODO add your handling code here:
-               
-        
-        DefaultTableModel table2 = (DefaultTableModel)jTable2.getModel();
-        
-        
-        String codProduto = (String) jTable1.getModel().getValueAt(jTable1.getSelectedRow(),0);
-        String nome = (String) jTable1.getModel().getValueAt(jTable1.getSelectedRow(),2);
-        String Quantidade = txtQtd.getText();
-        
-        int valor = ((int) jTable1.getModel().getValueAt(jTable1.getSelectedRow(),5));
-        
-        valor = valor * Integer.parseInt(Quantidade);
-       
-        jTable2.setModel(table2);
-        
-        Object objeto[] = {codProduto,nome,Quantidade,valor};
-        Venda venda = new Venda();
-        table2.addRow(objeto);
-        String produtos = Arrays.toString(objeto);
-        int valortotal = 0;
-        for (int i = 0; i < jTable2.getRowCount(); i++) {
-            valortotal += (int)jTable2.getValueAt(i, 3);
+
+        try {
+            DefaultTableModel table2 = (DefaultTableModel) jTable2.getModel();
+
+            String codProduto = (String) jTable1.getModel().getValueAt(jTable1.getSelectedRow(), 0);
+            String nome = (String) jTable1.getModel().getValueAt(jTable1.getSelectedRow(), 2);
+            String Quantidade = txtQtd.getText();
+
+            int valor = ((int) jTable1.getModel().getValueAt(jTable1.getSelectedRow(), 4));
+
+            valor = valor * Integer.parseInt(Quantidade);
+
+            jTable2.setModel(table2);
+
+            Object objeto[] = {codProduto, nome, Quantidade, valor};
+            Venda venda = new Venda();
+            table2.addRow(objeto);
+            String produtos = Arrays.toString(objeto);
+            int valortotal = 0;
+            for (int i = 0; i < jTable2.getRowCount(); i++) {
+                valortotal += (int) jTable2.getValueAt(i, 3);
+            }
+            String texto = "" + valortotal;
+            txtCompra.setText(texto);
+            venda.setProdutos(Arrays.toString(objeto));
+
+            bntFinalizar.setEnabled(true);
+        } catch (Exception e) {
+             JOptionPane.showMessageDialog(this, "Selecione um produto para adicionar ao carrinho");
         }
-        String texto = ""+ valortotal;        
-        txtCompra.setText(texto);
-        venda.setProdutos(Arrays.toString(objeto));
-        
-        
-        bntFinalizar.setEnabled(true);
+
     }//GEN-LAST:event_btnAdicionarActionPerformed
 
     private void btnRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel table2 = (DefaultTableModel)jTable2.getModel();
-        
-        table2.removeRow(jTable2.getSelectedRow());
-        jTable2.setModel(table2);
+
+        try {
+            DefaultTableModel table2 = (DefaultTableModel) jTable2.getModel();
+
+            table2.removeRow(jTable2.getSelectedRow());
+            jTable2.setModel(table2);
+
+            int valortotal = 0;
+            for (int i = 0; i < jTable2.getRowCount(); i++) {
+                valortotal += (int) jTable2.getValueAt(i, 3);
+            }
+            String texto = "" + valortotal;
+            txtCompra.setText(texto);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Selecione um item do carrinho para remover");
+        }
     }//GEN-LAST:event_btnRemoverActionPerformed
 
     private void btnMaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaisActionPerformed
@@ -503,7 +525,7 @@ public class NovaVenda extends javax.swing.JPanel {
 
     private void btnMenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenosActionPerformed
 
-        if (Integer.parseInt(txtQtd.getText()) > 0){
+        if (Integer.parseInt(txtQtd.getText()) > 0) {
             int qtd = Integer.parseInt(txtQtd.getText()) - 1;
             txtQtd.setText(String.valueOf(qtd));
         }
