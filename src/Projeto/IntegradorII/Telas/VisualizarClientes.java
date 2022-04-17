@@ -102,10 +102,8 @@ public class VisualizarClientes extends javax.swing.JPanel {
             }
         });
         jTable1.setFocusable(false);
-        jTable1.setIntercellSpacing(new java.awt.Dimension(0, 0));
         jTable1.setRowHeight(25);
         jTable1.setSelectionBackground(new java.awt.Color(205, 203, 203));
-        jTable1.setShowVerticalLines(false);
         jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
 
@@ -128,7 +126,7 @@ public class VisualizarClientes extends javax.swing.JPanel {
 
         jLabel33.setFont(new java.awt.Font("Microsoft YaHei", 1, 24)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel33.setText("VISUALIZAR PRODUTOS");
+        jLabel33.setText("VISUALIZAR CLIENTES");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
