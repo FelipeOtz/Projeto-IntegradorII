@@ -59,4 +59,48 @@ public class ProdutoDAO {
         
         return retorno;
     }
+    
+    
+    public static boolean update(Produto produto){
+        boolean retorno = false;
+        
+        
+        SimpleDateFormat formatoData = new SimpleDateFormat("YYYY-MM-dd");
+        Connection conexao = Conexao.abreConexao();
+
+        PreparedStatement comando;
+        int linhas = 0;
+        try {
+            comando = conexao.prepareStatement("insert into produtos (nome, marca, setor, tipo, cor, estoque, preco, tamanho, unidade, validade, descricao) "
+                    + "values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            
+            comando.setString(1, produto.getNome());
+            comando.setString(2, produto.getMarca());
+            comando.setString(3, produto.getSetor());
+            comando.setString(4, produto.getTipo());
+            comando.setString(5, produto.getCor());
+            comando.setInt(6, produto.getEstoque());
+            comando.setDouble(7, produto.getPreco());
+            comando.setDouble(8, produto.getTamanho());
+            comando.setString(9, produto.getUnidade());
+            comando.setString(10,formatoData.format(produto.getValidade()));
+            comando.setString(11, produto.getDescricao());
+       
+            linhas = comando.executeUpdate();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+         if (linhas > 0) {
+            retorno = true;
+        }
+
+        if (conexao != null) {
+            Conexao.fechaConexao(conexao);
+        }
+        
+        return retorno;
+
+    }
 }

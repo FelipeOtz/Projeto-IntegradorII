@@ -12,8 +12,11 @@ import Projeto.IntegradorII.Model.Cliente;
  */
 public class ClienteController {
     public static boolean inserir(String nome){
+        
     Cliente cliente = new Cliente();
+    
     cliente.setNome(nome);
+    
       return true ;
     }
 }
