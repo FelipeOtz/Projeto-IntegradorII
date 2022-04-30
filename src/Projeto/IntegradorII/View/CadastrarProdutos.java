@@ -509,10 +509,10 @@ public class CadastrarProdutos extends javax.swing.JPanel {
     private void txtPrecoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecoKeyTyped
 
         //Permite a entrada somente de números
-        char c = evt.getKeyChar();
+       /* char c = evt.getKeyChar();
         if (((c < '0') || (c > '9')) && (c != KeyEvent.VK_BACK_SPACE)) {
             evt.consume();
-        }
+        }*/
 
         if (txtPreco.getText().length() >= 50) {
             evt.consume();
