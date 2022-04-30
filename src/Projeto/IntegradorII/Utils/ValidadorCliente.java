@@ -1,6 +1,6 @@
 package Projeto.IntegradorII.Utils;
 
-import Projeto.IntegradorII.Telas.EditarClientes;
+import Projeto.IntegradorII.View.EditarClientes;
 import com.toedter.calendar.JDateChooser;
 import java.awt.Color;
 import java.text.SimpleDateFormat;

@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,72,0,0,3,-5"/>
+  </AuxValues>
+
+  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+          <BorderConstraints direction="Center"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace pref="293" max="32767" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jTextField1" min="-2" pref="184" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="380" max="-2" attributes="0"/>
+              </Group>
+              <Component id="jPanel5" alignment="0" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="37" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="452" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Pesquisar Produtos:"/>
+          </Properties>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTable" name="jTable1">
+              <Properties>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                  <Table columnCount="11" rowCount="41">
+                    <Column editable="false" title="Tipo de Produto" type="java.lang.String">
+                      <Data value="Perfume "/>
+                      <Data value="Perfume "/>
+                      <Data value="Perfume "/>
+                      <Data value="Perfume "/>
+                      <Data value="Perfume "/>
+                      <Data value="Esmalte"/>
+                      <Data value="Esmalte"/>
+                      <Data value="Esmalte"/>
+                      <Data value="Esmalte"/>
+                      <Data value="Esmalte"/>
+                      <Data value="Sabonete"/>
+                      <Data value="Sabonete"/>
+                      <Data value="Sabonete"/>
+                      <Data value="Sabonete"/>
+                      <Data value="Sabonete"/>
+                      <Data value="Sabonete "/>
+                      <Data value="Sabonete "/>
+                      <Data value=""/>
+                      <Data value=""/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                    </Column>
+                    <Column editable="false" title="Nome" type="java.lang.String">
+                      <Data value="Burberry Her"/>
+                      <Data value="Burberry Her"/>
+                      <Data value="Bad Boy Carolina Herrera Eau de Toilette"/>
+                      <Data value="Bad Boy Carolina Herrera Eau de Toilette"/>
+                      <Data value="Id&#xf4;le Lanc&#xf4;me Eau de Parfum"/>
+                      <Data value="o Botic&#xe1;rio Intense by Manu Gavassi Azul Claro Cute - Esmalte 7ml"/>
+                      <Data value="Esmalte Impala Cremoso Preto"/>
+                      <Data value="Esmalte Natural Colorama "/>
+                      <Data value="Granado Pink SOS 7 em 1 - Base Fortalecedora para Unhas"/>
+                      <Data value="Esmalte Risqu&#xe9; Cremoso - Lavanda Alma"/>
+                      <Data value="Sephora Collection Bath Bar Soap"/>
+                      <Data value="Sabonete L&#xed;quido Korres Jasmim"/>
+                      <Data value="Sabonete L&#xed;quido Ess&#xea;ncias do Brasil Vit&#xf3;ria R&#xe9;gia"/>
+                      <Data value="Sabonete L&#xed;quido Nutri&#xe7;&#xe3;o Profunda"/>
+                      <Data value="Sabonete Mandarina Asi&#xe1;tica"/>
+                      <Data value="Sabonete L&#xed;quido Fisher-Price Beb&#xea;"/>
+                      <Data value="Sabonete Barra Lavanda"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                    </Column>
+                    <Column editable="false" title="Marca" type="java.lang.String">
+                      <Data value="Burberry"/>
+                      <Data value="Burberry"/>
+                      <Data value="Carolina Herrera"/>
+                      <Data value="Carolina Herrera"/>
+                      <Data value="Lanc&#xf4;me"/>
+                      <Data value="O Botic&#xe1;rio"/>
+                      <Data value="Impala"/>
+                      <Data value="Colorama"/>
+                      <Data value="Granda"/>
+                      <Data value="Risqu&#xe9;"/>
+                      <Data value="Sephora"/>
+                      <Data value="Korres"/>
+                      <Data value="Lux"/>
+                      <Data value="Dove"/>
+                      <Data value="Phebo"/>
+                      <Data value="Biotropic"/>
+                      <Data value="Vyedas"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                    </Column>
+                    <Column editable="false" title="Setor" type="java.lang.String">
+                      <Data value="Perfume"/>
+                      <Data value="Perfume"/>
+                      <Data value="Perfume"/>
+                      <Data value="Perfume"/>
+                      <Data value="Perfume"/>
+                      <Data value="Esmalte"/>
+                      <Data value="Esmalte"/>
+                      <Data value="Esmalte"/>
+                      <Data value="Esmalte"/>
+                      <Data value="Esmalte"/>
+                      <Data value="Higiene"/>
+                      <Data value="Higiene"/>
+                      <Data value="Higiene"/>
+                      <Data value="Higiene"/>
+                      <Data value="Higiene"/>
+                      <Data value="Higiene"/>
+                      <Data value="Higiene"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                    </Column>
+                    <Column editable="false" title="Pre&#xe7;o" type="java.lang.String">
+                      <Data value="R$ 269"/>
+                      <Data value="R$ 300"/>
+                      <Data value="R$ 738.90"/>
+                      <Data value="R$ 598.90"/>
+                      <Data value="R$ 720"/>
+                      <Data value="R$ 7,99"/>
+                      <Data value="R$ 2,59"/>
+                      <Data value="R$ 4,75"/>
+                      <Data value="R$ 29,99"/>
+                      <Data value="R$ 3,99"/>
+                      <Data value="R$ 39,00"/>
+                      <Data value="R$ 28,99"/>
+                      <Data value="R$ 11,49"/>
+                      <Data value="R$ 10,39"/>
+                      <Data value="R$ 6,49"/>
+                      <Data value="R$ 14,49"/>
+                      <Data value="R$ 17.80"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                    </Column>
+                    <Column editable="false" title="Qtd. em estoque" type="java.lang.String">
+                      <Data value="89327"/>
+                      <Data value="30485"/>
+                      <Data value="49202"/>
+                      <Data value="3947"/>
+                      <Data value="1045"/>
+                      <Data value="1245"/>
+                      <Data value="2918"/>
+                      <Data value="281"/>
+                      <Data value="4967"/>
+                      <Data value="19183"/>
+                      <Data value="24"/>
+                      <Data value="623"/>
+                      <Data value="2873"/>
+                      <Data value="29485"/>
+                      <Data value="0"/>
+                      <Data value="20439"/>
+                      <Data value="23495"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                    </Column>
+                    <Column editable="false" title="Cor" type="java.lang.String">
+                      <Data value="Nda"/>
+                      <Data value="Nda"/>
+                      <Data value="Nda"/>
+                      <Data value="Nda"/>
+                      <Data value="Nda"/>
+                      <Data value="Azul claro Cute"/>
+                      <Data value="Preto"/>
+                      <Data value="Petala"/>
+                      <Data value="Incolor"/>
+                      <Data value="Lavanda Alma"/>
+                      <Data value="Nda"/>
+                      <Data value="Nda"/>
+                      <Data value="Nda"/>
+                      <Data value="Nda"/>
+                      <Data value="Nda"/>
+                      <Data value="Nda"/>
+                      <Data value="Nda"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                    </Column>
+                    <Column editable="false" title="Tamanho" type="java.lang.String">
+                      <Data value="30"/>
+                      <Data value="50"/>
+                      <Data value="150"/>
+                      <Data value="100"/>
+                      <Data value="399"/>
+                      <Data value="7"/>
+                      <Data value="7,5"/>
+                      <Data value="8"/>
+                      <Data value="10"/>
+                      <Data value="8"/>
+                      <Data value="150"/>
+                      <Data value="250"/>
+                      <Data value="300"/>
+                      <Data value="250"/>
+                      <Data value="100"/>
+                      <Data value="400"/>
+                      <Data value="120"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                    </Column>
+                    <Column editable="false" title="Unidade" type="java.lang.Object">
+                      <Data value="ml"/>
+                      <Data value="ml"/>
+                      <Data value="g"/>
+                      <Data value="ml"/>
+                      <Data value="ml"/>
+                      <Data value="ml"/>
+                      <Data value="ml"/>
+                      <Data value="ml"/>
+                      <Data value="ml"/>
+                      <Data value="ml"/>
+                      <Data value="g"/>
+                      <Data value="ml"/>
+                      <Data value="ml"/>
+                      <Data value="ml"/>
+                      <Data value="g"/>
+                      <Data value="ml"/>
+                      <Data value="g"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                    </Column>
+                    <Column editable="false" title="Validade" type="java.lang.Object">
+                      <Data value="24/12/2040"/>
+                      <Data value="21/11/2067"/>
+                      <Data value="12/02/2032"/>
+                      <Data value="10/01/2025"/>
+                      <Data value="01/01/2054"/>
+                      <Data value="12/12/2025"/>
+                      <Data value="23/11/2025"/>
+                      <Data value="05/04/2024"/>
+                      <Data value="24/06/2026"/>
+                      <Data value="09/01/2027"/>
+                      <Data value="29/04/2027"/>
+                      <Data value="12/01/2024"/>
+                      <Data value="08/07/2029"/>
+                      <Data value="10/02/2040"/>
+                      <Data value="20/12/2044"/>
+                      <Data value="06/08/2028"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                    </Column>
+                    <Column editable="false" title="Descri&#xe7;&#xe3;o" type="java.lang.Object"/>
+                  </Table>
+                </Property>
+                <Property name="focusable" type="boolean" value="false"/>
+                <Property name="rowHeight" type="int" value="25"/>
+                <Property name="selectionBackground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cb" green="cb" red="cd" type="rgb"/>
+                </Property>
+                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                  <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
+                </Property>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JTextField" name="jTextField1">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextField1KeyReleased"/>
+          </Events>
+        </Component>
+        <Container class="javax.swing.JPanel" name="jPanel5">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="c7" green="9e" red="9" type="rgb"/>
+            </Property>
+            <Property name="autoscrolls" type="boolean" value="true"/>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel33" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel33">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei" size="24" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="VISUALIZAR PRODUTOS"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Projeto/IntegradorII/Imagens/icons8_box_24px.png"/>
+            </Property>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
