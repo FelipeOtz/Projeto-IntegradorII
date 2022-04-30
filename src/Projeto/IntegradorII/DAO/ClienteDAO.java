@@ -27,7 +27,7 @@ public class ClienteDAO {
         int linhas = 0;
         try {
             comando = conexao.prepareStatement("insert into produtos (nome, sobrenome, cpf, sexo, email, dataNascimento, estadoCivil, telefone, cep, logradouro, numero, complemento, bairro, cidade, estado) "
-                    + "values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                    + "values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             
             comando.setString(1, cliente.getNome());
             comando.setString(2, cliente.getSobrenome());
