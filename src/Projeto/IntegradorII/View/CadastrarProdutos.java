@@ -9,6 +9,7 @@ import Projeto.IntegradorII.Utils.ValidadorProduto;
 import java.awt.event.KeyEvent;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,6 +20,7 @@ import javax.swing.JOptionPane;
  * @author Lenovo
  */
 public class CadastrarProdutos extends javax.swing.JPanel {
+    String car = "";
 
     /**
      * Creates new form Produtos
@@ -262,6 +264,9 @@ public class CadastrarProdutos extends javax.swing.JPanel {
             }
         });
         txtPreco.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPrecoKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtPrecoKeyTyped(evt);
             }
@@ -513,7 +518,6 @@ public class CadastrarProdutos extends javax.swing.JPanel {
         if (((c < '0') || (c > '9')) && (c != KeyEvent.VK_BACK_SPACE)) {
             evt.consume();
         }*/
-
         if (txtPreco.getText().length() >= 50) {
             evt.consume();
         }
@@ -585,6 +589,10 @@ public class CadastrarProdutos extends javax.swing.JPanel {
     private void cbSetorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cbSetorFocusGained
         cbSetor.setBackground(new java.awt.Color(255, 255, 255));
     }//GEN-LAST:event_cbSetorFocusGained
+
+    private void txtPrecoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecoKeyReleased
+        
+    }//GEN-LAST:event_txtPrecoKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
