@@ -465,24 +465,23 @@ public class CadastrarProdutos extends javax.swing.JPanel {
 
     private void btnCadProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadProdActionPerformed
         ValidadorProduto v = new ValidadorProduto();
-        SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy");
         
         if (v.validarProduto(txtCod, txtNome, txtMarca, jDateChooser1, txtCor, txtPreco, txtTamanho,
                 cbUnidade, txtDescricao, cbSetor, cbTipo, txtQtdEstoque)) {
-            //se não houver erros
-            String nome = txtNome.getText();
-            String marca = txtMarca.getText();
-            String tipo = cbTipo.getSelectedItem().toString();
-            String setor = cbSetor.getSelectedItem().toString();
-            String cor = txtCor.getText();
-            double preco = Double.parseDouble(txtPreco.getText());
-            int estoque = Integer.parseInt(txtQtdEstoque.getText());
-            double tamanho = Double.parseDouble(txtTamanho.getText());
-            String unidade = cbUnidade.getSelectedItem().toString();
-            Date validate = jDateChooser1.getDate();
-            String descricao = txtDescricao.getText();
+//            //se não houver erros
+//            String nome = txtNome.getText();
+//            String marca = txtMarca.getText();
+//            String tipo = cbTipo.getSelectedItem().toString();
+//            String setor = cbSetor.getSelectedItem().toString();
+//            String cor = txtCor.getText();
+//            double preco = Double.parseDouble(txtPreco.getText());
+//            int estoque = Integer.parseInt(txtQtdEstoque.getText());
+//            double tamanho = Double.parseDouble(txtTamanho.getText());
+//            String unidade = cbUnidade.getSelectedItem().toString();
+//            Date validate = jDateChooser1.getDate();
+//            String descricao = txtDescricao.getText();
             
-            ProdutoController.inserir(nome, marca, tipo, setor, cor, preco, estoque, tamanho, unidade, validate, descricao);
+          //  ProdutoController.inserir(nome, marca, tipo, setor, cor, preco, estoque, tamanho, unidade, validate, descricao);
             
             
             JOptionPane.showMessageDialog(this, "Informações Salvas");
