@@ -51,20 +51,19 @@ public class ValidadorProduto {
     //Se não houver erros, atribui os valores às variáveis e retorna true.    
         if(erros.trim().equals("")){
             
-            ProdutoController p = new ProdutoController();
-
-            p.inserir
-            (txtNome.getText(),
-            txtMarca.getText(),
-            txtDescricao.getText(),
-            cbSetor.getSelectedItem().toString(),
-            txtCor.getText(),
-            Double.parseDouble(txtPreco.getText()),
-            Integer.parseInt(txtQtdEstoque.getText()),
-            Double.parseDouble(txtPreco.getText()),
-            cbUnidade.getSelectedItem().toString(),
-            dataValidade.getDate(),
-            txtDescricao.getText());
+//            ProdutoController p = new ProdutoController();
+//            p.inserir
+//            (txtNome.getText(),
+//            txtMarca.getText(),
+//            txtDescricao.getText(),
+//            cbSetor.getSelectedItem().toString(),
+//            txtCor.getText(),
+//            Double.parseDouble(txtPreco.getText()),
+//            Integer.parseInt(txtQtdEstoque.getText()),
+//            Double.parseDouble(txtPreco.getText()),
+//            cbUnidade.getSelectedItem().toString(),
+//            dataValidade.getDate(),
+//            txtDescricao.getText());
    
             
             return true;
@@ -73,6 +72,10 @@ public class ValidadorProduto {
         }
     }
     
+    
+    public void inserir(){
+        
+    }
     
     //Validadores:
     
