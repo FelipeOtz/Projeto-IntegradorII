@@ -467,7 +467,7 @@ public class CadastrarProdutos extends javax.swing.JPanel {
         ValidadorProduto v = new ValidadorProduto();
         
         if (v.validarProduto(txtCod, txtNome, txtMarca, jDateChooser1, txtCor, txtPreco, txtTamanho,
-                cbUnidade, txtDescricao, cbSetor, cbTipo, txtQtdEstoque)) {
+            cbUnidade, txtDescricao, cbSetor, cbTipo, txtQtdEstoque)) {
             //se não houver erros, insere no banco
             String nome = txtNome.getText();
             String marca = txtMarca.getText();

@@ -6,6 +6,7 @@ package Projeto.IntegradorII.Controller;
 
 import Projeto.IntegradorII.DAO.ClienteDAO;
 import Projeto.IntegradorII.Model.Cliente;
+import java.util.Date;
 
 /**
  *
@@ -18,7 +19,7 @@ public class ClienteController {
         String cpf,
         String email,
         String telefone,
-        String dataNasc,
+        Date dataNasc,
         String sexo,
         String estadoCivil,
         String cep,

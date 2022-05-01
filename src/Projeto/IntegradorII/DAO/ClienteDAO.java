@@ -26,7 +26,7 @@ public class ClienteDAO {
         PreparedStatement comando;
         int linhas = 0;
         try {
-            comando = conexao.prepareStatement("insert into produtos (nome, sobrenome, cpf, sexo, email, dataNascimento, estadoCivil, telefone, cep, logradouro, numero, complemento, bairro, cidade, estado) "
+            comando = conexao.prepareStatement("insert into clientes(nome, sobrenome, cpf, sexo, email, datanascimento, estadocivil, telefone, cep, logradouro, numero, complemento, bairro, cidade, estado) "
                     + "values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             
             comando.setString(1, cliente.getNome());
@@ -34,7 +34,7 @@ public class ClienteDAO {
             comando.setString(3, cliente.getCpf());
             comando.setString(4, cliente.getSexo());
             comando.setString(5, cliente.getEmail());
-            comando.setString(6,formatoData.format(cliente.getDataNascimento()));       
+            comando.setString(6,formatoData.format(cliente.getDataNasc()));       
             comando.setString(7, cliente.getEstadoCivil());
             comando.setString(8, cliente.getTelefone());           
             comando.setString(9, cliente.getCep());
@@ -47,7 +47,7 @@ public class ClienteDAO {
        
             linhas = comando.executeUpdate();
             
-        } catch (SQLException ex) {
+        } catch (SQLException ex) { 
             Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         

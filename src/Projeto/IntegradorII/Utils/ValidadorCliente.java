@@ -43,7 +43,7 @@ public class ValidadorCliente {
             
             ClienteController c1 = new ClienteController();    
 
-            c1.inserir(
+            /*c1.inserir(
                 txtNome.getText(),
                 txtSobrenome.getText(),
                 txtCPF.getText(),
@@ -58,8 +58,8 @@ public class ValidadorCliente {
                 txtComplemento.getText(),
                 txtBairro.getText(),
                 txtCidade.getText(),
-                txtEstado.getText()
-            );
+                txtEstado.getText() 
+            );*/
         
             return true;
         }

@@ -4,11 +4,13 @@
  */
 package Projeto.IntegradorII.View;
 
+import Projeto.IntegradorII.Controller.ClienteController;
 import Projeto.IntegradorII.DAO.*;
 import Projeto.IntegradorII.Utils.ValidadorCliente;
 import Projeto.IntegradorII.ViaCep.ViaCEP;
 import Projeto.IntegradorII.ViaCep.ViaCEPException;
 import java.awt.Color;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -861,7 +863,26 @@ public class CadastrarClientes extends javax.swing.JPanel {
 
         //Retorna true se não houver erros na validação
         if (v.validarCliente(txtNome, txtSobrenome, txtCPF, txtEmail, txtTelefone, jDateChooser1,
-        cbSexo, cbEstadoCivil,txtCep, txtLogradouro, txtNum, txtComplemento, txtBairro, txtCidade, txtEstado)){         
+        cbSexo, cbEstadoCivil,txtCep, txtLogradouro, txtNum, txtComplemento, txtBairro, txtCidade, txtEstado)){     
+            
+                    
+                String nome = txtNome.getText();
+                String sobrenome = txtSobrenome.getText();
+                String cpf = txtCPF.getText();
+                String email = txtEmail.getText().toLowerCase();
+                String telefone = txtTelefone.getText();
+                Date datanascimento = jDateChooser1.getDate();
+                String sexo = cbSexo.getSelectedItem().toString();
+                String estadocivil = cbEstadoCivil.getSelectedItem().toString();
+                String cep = txtCep.getText();
+                String logradouro = txtLogradouro.getText();
+                String num = txtNum.getText();
+                String complemento = txtComplemento.getText();
+                String bairro = txtBairro.getText();
+                String cidade = txtCidade.getText();
+                String estado = txtEstado.getText();
+                
+                ClienteController.inserir(nome, sobrenome, cpf, email, telefone, datanascimento, sexo, estadocivil, cep, logradouro, num, complemento, bairro, cidade, estado);
             
             JOptionPane.showMessageDialog(this, "Cliente Cadastrado com Sucesso");
  

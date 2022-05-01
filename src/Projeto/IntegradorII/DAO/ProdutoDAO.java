@@ -24,7 +24,7 @@ public class ProdutoDAO {
         SimpleDateFormat formatoData = new SimpleDateFormat("YYYY-MM-dd");
         boolean retorno = false;
         Connection conexao = Conexao.abreConexao();
-
+        
         PreparedStatement comando;
         int linhas = 0;
         try {

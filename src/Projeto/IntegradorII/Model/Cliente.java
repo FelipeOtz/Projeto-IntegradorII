@@ -4,6 +4,8 @@
  */
 package Projeto.IntegradorII.Model;
 
+import java.util.Date;
+
 /**
  *
  * @author Lenovo
@@ -15,7 +17,7 @@ public class Cliente {
     private String cpf; 
     private String email;
     private String telefone;
-    private String dataNasc;
+    private Date dataNasc;
     private String sexo;
     private String estadoCivil;
     private String cep;
@@ -33,7 +35,7 @@ public class Cliente {
     }
     
     public Cliente(String nome, String sobreNome, String cpf, String email, String telefone,
-        String dataNasc, String sexo, String estadoCivil, String cep, String logradouro,
+        Date dataNasc, String sexo, String estadoCivil, String cep, String logradouro,
         String numero, String complemento, String bairro, String cidade, String estado){
     this.setNome(nome);
     this.setSobreNome(sobreNome);
@@ -165,11 +167,11 @@ public class Cliente {
         this.telefone = telefone;
     }
 
-    public String getDataNasc() {
+    public Date getDataNasc() {
         return dataNasc;
     }
 
-    public void setDataNasc(String dataNasc) {
+    public void setDataNasc(Date dataNasc) {
         this.dataNasc = dataNasc;
     }
 
@@ -190,12 +192,10 @@ public class Cliente {
     }
 
     public String getSobrenome() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return sobreNome;
     }
 
-    public Object getDataNascimento() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+  
     
     
     
