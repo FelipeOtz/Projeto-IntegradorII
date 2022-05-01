@@ -9,8 +9,6 @@ package Projeto.IntegradorII.Model;
  * @author Lenovo
  */
 public class Cliente {
-
-    
     private int codigo;
     private String nome;
     private String sobreNome;
@@ -27,6 +25,41 @@ public class Cliente {
     private String bairro;
     private String cidade;
     private String estado;
+    
+    
+    
+    //Construtores
+    public Cliente(){
+    }
+    
+    public Cliente(String nome, String sobreNome, String cpf, String email, String telefone,
+        String dataNasc, String sexo, String estadoCivil, String cep, String logradouro,
+        String numero, String complemento, String bairro, String cidade, String estado){
+    this.setNome(nome);
+    this.setSobreNome(sobreNome);
+    this.setCpf(cpf);
+    this.setEmail(email);
+    this.setTelefone(telefone);
+    this.setDataNasc(dataNasc);
+    this.setSexo(sexo);
+    this.setEstadoCivil(estadoCivil);
+    this.setCep(cep);
+    this.setCep(cep);
+    this.setLogradouro(logradouro);
+    this.setNumero(numero);
+    this.setComplemento(complemento);
+    this.setBairro(bairro);
+    this.setCidade(cidade);
+    this.setCidade(cidade);
+    this.setEstado(estado);
+    }
+    
+    
+    
+    
+    
+    
+    
     
     public int getCodigo() {
         return codigo;

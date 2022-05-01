@@ -857,16 +857,16 @@ public class CadastrarClientes extends javax.swing.JPanel {
     }//GEN-LAST:event_txtEstadoActionPerformed
 
     private void bntSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntSalvarActionPerformed
-        //nome, sobrenome, cpf, email, telefone, dt nasc, sexo, estado civil
-        //O replaceAll Remove os Traços e Pontos, Parenteses deixando apenas os números
         ValidadorCliente v = new ValidadorCliente();
 
         //Retorna true se não houver erros na validação
         if (v.validarCliente(txtNome, txtSobrenome, txtCPF, txtEmail, txtTelefone, jDateChooser1,
-        cbSexo, cbEstadoCivil,txtCep, txtLogradouro, txtNum, txtComplemento, txtBairro, txtCidade, txtEstado)){
-         
+        cbSexo, cbEstadoCivil,txtCep, txtLogradouro, txtNum, txtComplemento, txtBairro, txtCidade, txtEstado)){         
+            
             JOptionPane.showMessageDialog(this, "Cliente Cadastrado com Sucesso");
+ 
         }else{
+        
             v.exibirErros();
         }
     }//GEN-LAST:event_bntSalvarActionPerformed

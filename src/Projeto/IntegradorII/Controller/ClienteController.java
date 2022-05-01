@@ -10,12 +10,27 @@ import Projeto.IntegradorII.Model.Cliente;
  *
  * @author felip
  */
-public class ClienteController {
-    public static boolean inserir(String nome){
+public class ClienteController {        
+     public static boolean inserir(
+        String nome,
+        String sobreNome,
+        String cpf,
+        String email,
+        String telefone,
+        String dataNasc,
+        String sexo,
+        String estadoCivil,
+        String cep,
+        String logradouro,
+        String numero,
+        String complemento,
+        String bairro,
+        String cidade,
+        String Estado){
+ 
         
-    Cliente cliente = new Cliente();
-    
-    cliente.setNome(nome);
+        Cliente cliente = new Cliente(nome, sobreNome, cpf, email, telefone, dataNasc,
+           sexo, estadoCivil, cep, logradouro, numero, complemento, bairro, cidade, Estado);
     
       return true ;
     }

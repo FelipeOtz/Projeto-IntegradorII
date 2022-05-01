@@ -1,5 +1,6 @@
 package Projeto.IntegradorII.Utils;
 
+import Projeto.IntegradorII.Controller.ClienteController;
 import Projeto.IntegradorII.View.EditarClientes;
 import com.toedter.calendar.JDateChooser;
 import java.awt.Color;
@@ -11,18 +12,13 @@ import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+
+
+
 public class ValidadorCliente {
     SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy");
     
     String erros = "";
-    private String nome;
-    private String sobreNome;
-    private String cpf; 
-    private String email;
-    private String telefone;
-    private String dataNasc;
-    private String sexo;
-    private String estadoCivil;
     
     public boolean validarCliente (JTextField txtNome, JTextField txtSobrenome, JTextField txtCPF,
     JTextField txtEmail, JTextField txtTelefone, JDateChooser jDateChooser1, JComboBox cbSexo, JComboBox cbEstadoCivil,
@@ -39,24 +35,34 @@ public class ValidadorCliente {
         validaData(jDateChooser1);
         validaComboBox(cbSexo);
         validaComboBox(cbEstadoCivil);
-
-        //Aciona Validação de Endereço
         validaEndereco(txtCep, txtLogradouro, txtNum, txtComplemento, txtBairro, txtCidade, txtEstado);  
         
         
-        //Se não houver erros, atribui os valores às variáveis e retorna true.    
+        //Se não houver erros    
         if(erros.trim().equals("")){
-            this.nome = txtNome.getText();
-            this.sobreNome = txtSobrenome.getText();
-            this.cpf = txtCPF.getText().replaceAll("\\D", "");
-            this.email = txtEmail.getText().toLowerCase();
-            this.telefone = txtTelefone.getText().replaceAll("\\D", "");    
-            this.dataNasc = formatoData.format(jDateChooser1.getDate());
-            this.sexo = cbSexo.getSelectedItem().toString();
-            this.estadoCivil = cbEstadoCivil.getSelectedItem().toString();
+            
+            ClienteController c1 = new ClienteController();    
+
+            c1.inserir(
+                txtNome.getText(),
+                txtSobrenome.getText(),
+                txtCPF.getText(),
+                txtEmail.getText().toLowerCase(),
+                txtTelefone.getText(),
+                formatoData.format(jDateChooser1.getDate()),
+                cbSexo.getSelectedItem().toString(),
+                cbEstadoCivil.getSelectedItem().toString(),
+                txtCep.getText(),
+                txtLogradouro.getText(),
+                txtNum.getText(),
+                txtComplemento.getText(),
+                txtBairro.getText(),
+                txtCidade.getText(),
+                txtEstado.getText()
+            );
+        
             return true;
         }
-
         else{
             return false;
         }
@@ -137,7 +143,6 @@ public class ValidadorCliente {
     
     //Exibe Erros
     public void exibirErros (){
-//        JOptionPane.showMessageDialog(null, erros, JOptionPane.WARNING_MESSAGE);
         JOptionPane.showMessageDialog(null, erros, "Falha ao Salvar", JOptionPane.WARNING_MESSAGE);
         
         
