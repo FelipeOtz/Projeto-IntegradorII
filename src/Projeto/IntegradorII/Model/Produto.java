@@ -25,6 +25,28 @@ public class Produto {
   private Date validade;
   private String descricao;
 
+  //Construtores
+    public Produto(){
+    
+    }
+    public Produto(String nome, String marca, String tipo, String setor, String cor, 
+        double preco, int estoque, double tamanho, String unidade, Date validade, String descricao){
+        this.setNome(nome);
+        this.setMarca(marca);
+        this.setTipo(tipo);
+        this.setSetor(setor);
+        this.setCor(cor);
+        this.setPreco(preco);
+        this.setEstoque(estoque);
+        this.setTamanho(tamanho);
+        this.setUnidade(unidade);
+        this.setValidade(validade);
+        this.setDescricao(descricao);
+    }
+  
+  
+  
+  
     public int getCodigo() {
         return codigo;
     }

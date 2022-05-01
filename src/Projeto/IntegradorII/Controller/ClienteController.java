@@ -4,6 +4,7 @@
  */
 package Projeto.IntegradorII.Controller;
 
+import Projeto.IntegradorII.DAO.ClienteDAO;
 import Projeto.IntegradorII.Model.Cliente;
 
 /**
@@ -32,6 +33,7 @@ public class ClienteController {
         Cliente cliente = new Cliente(nome, sobreNome, cpf, email, telefone, dataNasc,
            sexo, estadoCivil, cep, logradouro, numero, complemento, bairro, cidade, Estado);
     
-      return true ;
+      //return true ;
+      return ClienteDAO.inserir(cliente);
     }
 }

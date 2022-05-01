@@ -1,5 +1,6 @@
 package Projeto.IntegradorII.Utils;
 
+import Projeto.IntegradorII.Controller.ProdutoController;
 import com.toedter.calendar.JDateChooser;
 import java.awt.Color;
 import java.text.SimpleDateFormat;
@@ -49,17 +50,22 @@ public class ValidadorProduto {
 
     //Se não houver erros, atribui os valores às variáveis e retorna true.    
         if(erros.trim().equals("")){
-            this.nome = txtNome.getText();
-            this.marca = txtMarca.getText();
-            this.descricao = txtDescricao.getText();
-            this.cor = txtCor.getText();
-            this.preco = Double.parseDouble(txtPreco.getText());
-            this.tamanho = Integer.parseInt(txtTamanho.getText());
-            this.unidade = cbUnidade.getSelectedItem().toString();
-            this.validade =  formatoData.format(dataValidade.getDate());
-            this.setor = cbSetor.getSelectedItem().toString();
-            this.tipo = cbTipo.getSelectedItem().toString();
-            this.qtdEstoque = Integer.parseInt(txtQtdEstoque.getText());
+            
+            ProdutoController p = new ProdutoController();
+
+            p.inserir
+            (txtNome.getText(),
+            txtMarca.getText(),
+            txtDescricao.getText(),
+            cbSetor.getSelectedItem().toString(),
+            txtCor.getText(),
+            Double.parseDouble(txtPreco.getText()),
+            Integer.parseInt(txtQtdEstoque.getText()),
+            Double.parseDouble(txtPreco.getText()),
+            cbUnidade.getSelectedItem().toString(),
+            dataValidade.getDate(),
+            txtDescricao.getText());
+   
             
             return true;
         }else{
