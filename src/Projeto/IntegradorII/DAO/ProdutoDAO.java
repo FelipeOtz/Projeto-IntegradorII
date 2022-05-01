@@ -61,7 +61,7 @@ public class ProdutoDAO {
     }
     
     
-    public static boolean update(Produto produto){
+    public static boolean alterar(Produto produto){
         boolean retorno = false;
         
         
@@ -71,8 +71,7 @@ public class ProdutoDAO {
         PreparedStatement comando;
         int linhas = 0;
         try {
-            comando = conexao.prepareStatement("insert into produtos (nome, marca, setor, tipo, cor, estoque, preco, tamanho, unidade, validade, descricao) "
-                    + "values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            comando = conexao.prepareStatement("UPDATE produtos SET nome = ?, marca = ?, setor = ?, tipo = ?, cor = ?, estoque = ?, preco = ?, tamanho = ?, unidade = ?, validade = ?, descricao = ? WHERE id_produto = ?");
             
             comando.setString(1, produto.getNome());
             comando.setString(2, produto.getMarca());
@@ -85,6 +84,7 @@ public class ProdutoDAO {
             comando.setString(9, produto.getUnidade());
             comando.setString(10,formatoData.format(produto.getValidade()));
             comando.setString(11, produto.getDescricao());
+            comando.setInt(12, produto.getCodigo());
        
             linhas = comando.executeUpdate();
             

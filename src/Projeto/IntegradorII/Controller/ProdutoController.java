@@ -15,31 +15,65 @@ import java.util.Date;
 public class ProdutoController {
 
     public static boolean inserir(
-        String nome,
-        String marca,
-        String tipo,
-        String setor,
-        String cor,
-        double preco,
-        int estoque,
-        double tamanho,
-        String unidade,
-        Date validade,
-        String descricao) {
+            String nome,
+            String marca,
+            String tipo,
+            String setor,
+            String cor,
+            double preco,
+            int estoque,
+            double tamanho,
+            String unidade,
+            Date validade,
+            String descricao) {
 
         Produto produto = new Produto(
-            nome,
-            marca,
-            tipo,
-            setor,
-            cor,
-            preco,
-            estoque,
-            tamanho,
-            unidade,
-            validade,
-            descricao);
-        
+                nome,
+                marca,
+                tipo,
+                setor,
+                cor,
+                preco,
+                estoque,
+                tamanho,
+                unidade,
+                validade,
+                descricao);
+
         return ProdutoDAO.inserir(produto);
+
+    }
+
+    public static boolean alterar(
+            int id,
+            String nome,
+            String marca,
+            String tipo,
+            String setor,
+            String cor,
+            double preco,
+            int estoque,
+            double tamanho,
+            String unidade,
+            Date validade,
+            String descricao
+    ) {
+
+        Produto produto = new Produto();
+
+        produto.setCodigo(id);
+        produto.setNome(nome);
+        produto.setMarca(marca);
+        produto.setTipo(tipo);
+        produto.setSetor(setor);
+        produto.setCor(cor);
+        produto.setPreco(preco);
+        produto.setEstoque(estoque);
+        produto.setTamanho(tamanho);
+        produto.setUnidade(unidade);
+        produto.setValidade(validade);
+        produto.setDescricao(descricao);
+
+        return ProdutoDAO.alterar(produto);
     }
 }
