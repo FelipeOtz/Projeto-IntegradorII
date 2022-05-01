@@ -30,37 +30,31 @@ public class Cliente {
     
     
     
-    //Construtores
-    public Cliente(){
-    }
     
-    public Cliente(String nome, String sobreNome, String cpf, String email, String telefone,
-        Date dataNasc, String sexo, String estadoCivil, String cep, String logradouro,
-        String numero, String complemento, String bairro, String cidade, String estado){
-    this.setNome(nome);
-    this.setSobreNome(sobreNome);
-    this.setCpf(cpf);
-    this.setEmail(email);
-    this.setTelefone(telefone);
-    this.setDataNasc(dataNasc);
-    this.setSexo(sexo);
-    this.setEstadoCivil(estadoCivil);
-    this.setCep(cep);
-    this.setCep(cep);
-    this.setLogradouro(logradouro);
-    this.setNumero(numero);
-    this.setComplemento(complemento);
-    this.setBairro(bairro);
-    this.setCidade(cidade);
-    this.setCidade(cidade);
-    this.setEstado(estado);
-    }
-    
-    
-    
-    
-    
-    
+//    public Cliente(int id, String nome, String sobreNome, String cpf, String email, String telefone,
+//        Date dataNasc, String sexo, String estadoCivil, String cep, String logradouro,
+//        String numero, String complemento, String bairro, String cidade, String estado){
+//        
+//    this.setId(id);    
+//    this.setNome(nome);
+//    this.setSobreNome(sobreNome);
+//    this.setCpf(cpf);
+//    this.setEmail(email);
+//    this.setTelefone(telefone);
+//    this.setDataNasc(dataNasc);
+//    this.setSexo(sexo);
+//    this.setEstadoCivil(estadoCivil);
+//    this.setCep(cep);
+//    this.setCep(cep);
+//    this.setLogradouro(logradouro);
+//    this.setNumero(numero);
+//    this.setComplemento(complemento);
+//    this.setBairro(bairro);
+//    this.setCidade(cidade);
+//    this.setCidade(cidade);
+//    this.setEstado(estado);
+//    }
+     
     
     
     public int getCodigo() {
@@ -195,9 +189,9 @@ public class Cliente {
         return sobreNome;
     }
 
-    public Object getDataNascimento() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+ 
+
+  
 
   
     

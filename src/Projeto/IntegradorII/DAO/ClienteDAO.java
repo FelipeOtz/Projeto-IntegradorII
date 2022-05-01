@@ -29,6 +29,7 @@ public class ClienteDAO {
             comando = conexao.prepareStatement("insert into clientes(nome, sobrenome, cpf, sexo, email, datanascimento, estadocivil, telefone, cep, logradouro, numero, complemento, bairro, cidade, estado) "
                     + "values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             
+            
             comando.setString(1, cliente.getNome());
             comando.setString(2, cliente.getSobrenome());
             comando.setString(3, cliente.getCpf());
@@ -48,7 +49,7 @@ public class ClienteDAO {
             linhas = comando.executeUpdate();
             
         } catch (SQLException ex) { 
-            Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         
          if (linhas > 0) {
@@ -72,7 +73,7 @@ public class ClienteDAO {
         PreparedStatement comando;
         int linhas = 0;
         try {
-            comando = conexao.prepareStatement("UPDATE clientes SET nome = ?, sobrenome = ?, cpf = ?, sexo = ?, email = ?, dataNascimento = ?, estadoCivil = ?, "
+            comando = conexao.prepareStatement("UPDATE clientes SET nome = ?, sobrenome = ?, cpf = ?, sexo = ?, email = ?, datanascimento = ?, estadocivil = ?, "
                     + "telefone = ?, cep = ?, logradouro = ?, numero = ?, complemento = ?, bairro = ?, cidade = ?, estado = ? WHERE id_cliente = ?");
           
             
@@ -81,7 +82,7 @@ public class ClienteDAO {
             comando.setString(3, cliente.getCpf());
             comando.setString(4, cliente.getSexo());
             comando.setString(5, cliente.getEmail());
-            comando.setString(6,formatoData.format(cliente.getDataNascimento()));       
+            comando.setString(6,formatoData.format(cliente.getDataNasc()));       
             comando.setString(7, cliente.getEstadoCivil());
             comando.setString(8, cliente.getTelefone());           
             comando.setString(9, cliente.getCep());
@@ -91,11 +92,12 @@ public class ClienteDAO {
             comando.setString(13, cliente.getBairro());
             comando.setString(14, cliente.getCidade());
             comando.setString(15, cliente.getEstado());
+            comando.setInt(16, cliente.getCodigo());
        
             linhas = comando.executeUpdate();
             
         } catch (SQLException ex) {
-            Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         
          if (linhas > 0) {

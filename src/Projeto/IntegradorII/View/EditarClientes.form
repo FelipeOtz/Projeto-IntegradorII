@@ -135,7 +135,7 @@
                                       <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
                                       <Component id="jLabel40" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jFormattedTextField2" min="-2" pref="109" max="-2" attributes="0"/>
+                                      <Component id="txtCod" min="-2" pref="122" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="jButton1" min="-2" pref="118" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -179,13 +179,13 @@
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="txtBairro" max="32767" attributes="0"/>
+                                              <Component id="txtBairro" pref="182" max="32767" attributes="0"/>
                                               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                                               <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="txtCidade" max="32767" attributes="0"/>
+                                              <Component id="txtCidade" pref="183" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -240,9 +240,9 @@
                           </Group>
                           <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jFormattedTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel40" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jButton1" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="txtCod" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -293,7 +293,7 @@
                                       <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="23" max="32767" attributes="0"/>
                                       <Component id="txtSobrenome" min="-2" pref="28" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                                   </Group>
@@ -305,7 +305,7 @@
                                           <Component id="jLabel17" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                           <Component id="jDateChooser1" alignment="0" min="-2" pref="28" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -359,7 +359,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="28" max="32767" attributes="0"/>
+                      <EmptySpace pref="32" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" alignment="0" groupAlignment="0" attributes="0">
                               <Component id="jLabel35" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
@@ -1124,12 +1124,19 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField2">
+            <Component class="javax.swing.JTextField" name="txtCod">
               <Properties>
-                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                  <Format format="########" subtype="-1" type="5"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
+                    <MatteColorBorder bottom="1" left="0" right="0" top="0"/>
+                  </Border>
                 </Property>
+                <Property name="name" type="java.lang.String" value="Marca" noResource="true"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCodActionPerformed"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCodKeyTyped"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

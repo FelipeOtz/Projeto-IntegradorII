@@ -31,10 +31,69 @@ public class ClienteController {
         String Estado){
  
         
-        Cliente cliente = new Cliente(nome, sobreNome, cpf, email, telefone, dataNasc,
-           sexo, estadoCivil, cep, logradouro, numero, complemento, bairro, cidade, Estado);
-    
+        Cliente cliente = new Cliente();
+        
+         cliente.setNome(nome);
+         cliente.setSobreNome(sobreNome);
+         cliente.setCpf(cpf);
+         cliente.setEmail(email);
+         cliente.setTelefone(telefone);
+         cliente.setDataNasc(dataNasc);
+         cliente.setSexo(sexo);
+         cliente.setEstadoCivil(estadoCivil);
+         cliente.setCep(cep);
+         cliente.setLogradouro(logradouro);
+         cliente.setNumero(numero);
+         cliente.setComplemento(complemento);
+         cliente.setBairro(bairro);
+         cliente.setCidade(cidade);
+         cliente.setEstado(Estado);
       //return true ;
       return ClienteDAO.inserir(cliente);
     }
+     public static boolean alterar(
+        
+        int id,
+        String nome,
+        String sobreNome,
+        String cpf,
+        String email,
+        String telefone,
+        Date dataNasc,
+        String sexo,
+        String estadoCivil,
+        String cep,
+        String logradouro,
+        String numero,
+        String complemento,
+        String bairro,
+        String cidade,
+        String Estado)
+     {
+         Cliente cliente = new Cliente();
+         
+         cliente.setCodigo(id);
+         cliente.setNome(nome);
+         cliente.setSobreNome(sobreNome);
+         cliente.setCpf(cpf);
+         cliente.setEmail(email);
+         cliente.setTelefone(telefone);
+         cliente.setDataNasc(dataNasc);
+         cliente.setSexo(sexo);
+         cliente.setEstadoCivil(estadoCivil);
+         cliente.setCep(cep);
+         cliente.setLogradouro(logradouro);
+         cliente.setNumero(numero);
+         cliente.setComplemento(complemento);
+         cliente.setBairro(bairro);
+         cliente.setCidade(cidade);
+         cliente.setEstado(Estado);
+         
+         
+         
+    
+      //return true ;
+      return ClienteDAO.alterar(cliente); 
+     }
+
 }
