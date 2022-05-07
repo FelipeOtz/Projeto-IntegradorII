@@ -4,6 +4,11 @@
  */
 package Projeto.IntegradorII.View;
 
+import Projeto.IntegradorII.Controller.ClienteController;
+import Projeto.IntegradorII.Model.Cliente;
+import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author felip
@@ -32,7 +37,7 @@ public class DeletarClientes extends javax.swing.JPanel {
         jLabel12 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
-        btnEntrar2 = new com.k33ptoo.components.KButton();
+        btnDeletar = new com.k33ptoo.components.KButton();
         jFormattedTextField5 = new javax.swing.JFormattedTextField();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
@@ -74,9 +79,9 @@ public class DeletarClientes extends javax.swing.JPanel {
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
-        jFormattedTextField2 = new javax.swing.JFormattedTextField();
         jLabel32 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        txtCod = new javax.swing.JTextField();
 
         setPreferredSize(new java.awt.Dimension(923, 584));
         setLayout(new java.awt.BorderLayout());
@@ -113,18 +118,18 @@ public class DeletarClientes extends javax.swing.JPanel {
 
         jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/home.png"))); // NOI18N
 
-        btnEntrar2.setText("Deletar");
-        btnEntrar2.setFont(new java.awt.Font("Microsoft YaHei", 1, 18)); // NOI18N
-        btnEntrar2.setkBorderRadius(20);
-        btnEntrar2.setkEndColor(new java.awt.Color(204, 204, 204));
-        btnEntrar2.setkForeGround(new java.awt.Color(102, 102, 102));
-        btnEntrar2.setkHoverEndColor(new java.awt.Color(2, 182, 223));
-        btnEntrar2.setkHoverForeGround(new java.awt.Color(255, 255, 255));
-        btnEntrar2.setkHoverStartColor(new java.awt.Color(9, 158, 199));
-        btnEntrar2.setkStartColor(new java.awt.Color(204, 204, 204));
-        btnEntrar2.addActionListener(new java.awt.event.ActionListener() {
+        btnDeletar.setText("Deletar");
+        btnDeletar.setFont(new java.awt.Font("Microsoft YaHei", 1, 18)); // NOI18N
+        btnDeletar.setkBorderRadius(20);
+        btnDeletar.setkEndColor(new java.awt.Color(204, 204, 204));
+        btnDeletar.setkForeGround(new java.awt.Color(102, 102, 102));
+        btnDeletar.setkHoverEndColor(new java.awt.Color(2, 182, 223));
+        btnDeletar.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        btnDeletar.setkHoverStartColor(new java.awt.Color(9, 158, 199));
+        btnDeletar.setkStartColor(new java.awt.Color(204, 204, 204));
+        btnDeletar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEntrar2ActionPerformed(evt);
+                btnDeletarActionPerformed(evt);
             }
         });
 
@@ -283,12 +288,6 @@ public class DeletarClientes extends javax.swing.JPanel {
             }
         });
 
-        try {
-            jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-
         jLabel32.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         jLabel32.setText("Pesquisar cliente via código:");
 
@@ -299,6 +298,19 @@ public class DeletarClientes extends javax.swing.JPanel {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+            }
+        });
+
+        txtCod.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        txtCod.setName("Marca"); // NOI18N
+        txtCod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCodActionPerformed(evt);
+            }
+        });
+        txtCod.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCodKeyTyped(evt);
             }
         });
 
@@ -368,7 +380,7 @@ public class DeletarClientes extends javax.swing.JPanel {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addGap(80, 80, 80)
-                                .addComponent(jTextField4))
+                                .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel30)
@@ -408,7 +420,7 @@ public class DeletarClientes extends javax.swing.JPanel {
             .addComponent(jSeparator2)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnEntrar2, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnDeletar, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(345, 345, 345))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
@@ -418,8 +430,8 @@ public class DeletarClientes extends javax.swing.JPanel {
                 .addGap(91, 91, 91)
                 .addComponent(jLabel32)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtCod, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -432,9 +444,9 @@ public class DeletarClientes extends javax.swing.JPanel {
                     .addComponent(jLabel12)
                     .addComponent(jLabel18)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel32)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
@@ -481,7 +493,7 @@ public class DeletarClientes extends javax.swing.JPanel {
                                         .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel5))
                                     .addComponent(jLabel23))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -489,7 +501,7 @@ public class DeletarClientes extends javax.swing.JPanel {
                                         .addGap(0, 0, Short.MAX_VALUE)
                                         .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(120, 120, 120)
-                                        .addComponent(btnEntrar2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnDeletar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(28, 28, 28))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel21)
@@ -500,7 +512,7 @@ public class DeletarClientes extends javax.swing.JPanel {
                                         .addGap(142, 142, 142))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel22)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -543,9 +555,17 @@ public class DeletarClientes extends javax.swing.JPanel {
         add(jPanel1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnEntrar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrar2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEntrar2ActionPerformed
+    private void btnDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarActionPerformed
+  
+        if (ClienteController.delete(Integer.parseInt(txtCod.getText()))) {
+            JOptionPane.showMessageDialog(this, "Cliente deletado com sucesso");
+        }else{
+            JOptionPane.showMessageDialog(this, "Código inválido");
+        }
+
+            
+        
+    }//GEN-LAST:event_btnDeletarActionPerformed
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
         // TODO add your handling code here:
@@ -557,17 +577,32 @@ public class DeletarClientes extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+       
+        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtCodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCodActionPerformed
+
+    private void txtCodKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodKeyTyped
+        char c = evt.getKeyChar();
+        if (((c < '0') || (c > '9')) && (c != KeyEvent.VK_BACK_SPACE)) {
+            evt.consume();
+        }
+        if (txtCod.getText().length() >= 50) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCodKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.k33ptoo.components.KButton btnEntrar2;
+    private com.k33ptoo.components.KButton btnDeletar;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JFormattedTextField jFormattedTextField2;
     private javax.swing.JFormattedTextField jFormattedTextField3;
     private javax.swing.JFormattedTextField jFormattedTextField4;
     private javax.swing.JFormattedTextField jFormattedTextField5;
@@ -612,5 +647,6 @@ public class DeletarClientes extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField txtCod;
     // End of variables declaration//GEN-END:variables
 }

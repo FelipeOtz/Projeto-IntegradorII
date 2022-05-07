@@ -111,6 +111,39 @@ public class ClienteDAO {
         return retorno;
 
     }
+     
+     public static boolean delete(Cliente cliente){
+        boolean retorno = false;
+        
+        Connection conexao = Conexao.abreConexao();
+
+        PreparedStatement comando;
+        int linhas = 0;
+        try {
+            comando = conexao.prepareStatement("DELETE FROM clientes WHERE id_cliente = ?");
+          
+            
+            comando.setInt(1, cliente.getCodigo());
+
+            linhas = comando.executeUpdate();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+         if (linhas > 0) {
+            retorno = true;
+        }
+
+        if (conexao != null) {
+            Conexao.fechaConexao(conexao);
+        }
+        
+        return retorno;
+
+    }
+    
+
 
 }
 

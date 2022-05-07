@@ -5,6 +5,7 @@
 package Projeto.IntegradorII.DAO;
 
 import Projeto.IntegradorII.Connection.Conexao;
+import Projeto.IntegradorII.Model.Cliente;
 import Projeto.IntegradorII.Model.Produto;
 import java.sql.Connection;
 import java.sql.Date;
@@ -102,5 +103,34 @@ public class ProdutoDAO {
         
         return retorno;
 
+    }
+    public static boolean delete(Produto produto){
+        boolean retorno = false;
+        
+        Connection conexao = Conexao.abreConexao();
+
+        PreparedStatement comando;
+        int linhas = 0;
+        try {
+            comando = conexao.prepareStatement("DELETE FROM produtos WHERE id_produto = ?");
+          
+            
+            comando.setInt(1, produto.getCodigo());
+
+            linhas = comando.executeUpdate();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+         if (linhas > 0) {
+            retorno = true;
+        }
+
+        if (conexao != null) {
+            Conexao.fechaConexao(conexao);
+        }
+        
+        return retorno;
     }
 }

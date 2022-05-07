@@ -95,5 +95,17 @@ public class ClienteController {
       //return true ;
       return ClienteDAO.alterar(cliente); 
      }
+     
+     public static boolean delete(
+            int id
+    ) {
+
+        Cliente cliente = new Cliente();
+
+        cliente.setCodigo(id);
+
+        return ClienteDAO.delete(cliente);
+        
+    }
 
 }

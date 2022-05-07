@@ -76,4 +76,15 @@ public class ProdutoController {
 
         return ProdutoDAO.alterar(produto);
     }
+    
+    public static boolean delete(
+            int id
+    ) {
+
+        Produto produto = new Produto();
+
+        produto.setCodigo(id);
+
+        return ProdutoDAO.delete(produto);
+    }
 }
