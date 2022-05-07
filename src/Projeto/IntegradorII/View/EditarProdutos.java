@@ -22,7 +22,23 @@ public class EditarProdutos extends javax.swing.JPanel {
     public EditarProdutos() {
         initComponents();
     }
-
+    
+    public void limparCampos (){
+        txtNome.setText("");
+        txtMarca.setText("");
+        txtCor.setText("");
+        txtTamanho.setText("");
+        cbUnidade.setSelectedIndex(0);
+        cbSetor.setSelectedIndex(0);
+        cbTipo.setSelectedIndex(0);
+        txtPreco.setText("");
+        txtQtdEstoque.setText("");
+        txtCod.setText(null);
+        jDateChooser1.setDate(null);
+        txtDescricao.setText("");
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -393,8 +409,8 @@ public class EditarProdutos extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
-                .addComponent(btnCadProd, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
+                .addComponent(btnCadProd, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jPanel1.add(jPanel2, java.awt.BorderLayout.CENTER);
@@ -425,6 +441,7 @@ public class EditarProdutos extends javax.swing.JPanel {
         
         
         JOptionPane.showMessageDialog(this, "Informações Salvas");
+        limparCampos();
         }else{
             //Se houver erros
             v.exibirErros();

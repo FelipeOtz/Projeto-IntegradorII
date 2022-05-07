@@ -29,6 +29,22 @@ public class CadastrarProdutos extends javax.swing.JPanel {
         initComponents();
     }
 
+        public void limparCampos (){
+        txtNome.setText("");
+        txtMarca.setText("");
+        txtCor.setText("");
+        txtTamanho.setText("");
+        cbUnidade.setSelectedIndex(0);
+        cbSetor.setSelectedIndex(0);
+        cbTipo.setSelectedIndex(0);
+        txtPreco.setText("");
+        txtQtdEstoque.setText("");
+        txtCod.setText(null);
+        jDateChooser1.setDate(null);
+        txtDescricao.setText("");
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -463,34 +479,6 @@ public class CadastrarProdutos extends javax.swing.JPanel {
         add(jPanel1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCadProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadProdActionPerformed
-        ValidadorProduto v = new ValidadorProduto();
-        
-        if (v.validarProduto(txtCod, txtNome, txtMarca, jDateChooser1, txtCor, txtPreco, txtTamanho,
-            cbUnidade, txtDescricao, cbSetor, cbTipo, txtQtdEstoque)) {
-            //se não houver erros, insere no banco
-            String nome = txtNome.getText();
-            String marca = txtMarca.getText();
-            String tipo = cbTipo.getSelectedItem().toString();
-            String setor = cbSetor.getSelectedItem().toString();
-            String cor = txtCor.getText();
-            double preco = Double.parseDouble(txtPreco.getText());
-            int estoque = Integer.parseInt(txtQtdEstoque.getText());
-            double tamanho = Double.parseDouble(txtTamanho.getText());
-            String unidade = cbUnidade.getSelectedItem().toString();
-            Date validate = jDateChooser1.getDate();
-            String descricao = txtDescricao.getText();
-            
-            ProdutoController.inserir(nome, marca, tipo, setor, cor, preco, estoque, tamanho, unidade, validate, descricao);
-            
-            
-            JOptionPane.showMessageDialog(this, "Informações Salvas");
-        } else {
-            //Se houver erros
-            v.exibirErros();
-        }
-    }//GEN-LAST:event_btnCadProdActionPerformed
-
     /*Eventos KeyTyped - Limite Máximo de 50 Caracteres aceito nos campos */
     private void txtNomeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeKeyTyped
         if (txtNome.getText().length() >= 50) {
@@ -592,6 +580,34 @@ public class CadastrarProdutos extends javax.swing.JPanel {
     private void txtPrecoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecoKeyReleased
         
     }//GEN-LAST:event_txtPrecoKeyReleased
+
+    private void btnCadProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadProdActionPerformed
+        ValidadorProduto v = new ValidadorProduto();
+
+        if (v.validarProduto(txtCod, txtNome, txtMarca, jDateChooser1, txtCor, txtPreco, txtTamanho,
+            cbUnidade, txtDescricao, cbSetor, cbTipo, txtQtdEstoque)) {
+        //se não houver erros, insere no banco
+        String nome = txtNome.getText();
+        String marca = txtMarca.getText();
+        String tipo = cbTipo.getSelectedItem().toString();
+        String setor = cbSetor.getSelectedItem().toString();
+        String cor = txtCor.getText();
+        double preco = Double.parseDouble(txtPreco.getText());
+        int estoque = Integer.parseInt(txtQtdEstoque.getText());
+        double tamanho = Double.parseDouble(txtTamanho.getText());
+        String unidade = cbUnidade.getSelectedItem().toString();
+        Date validate = jDateChooser1.getDate();
+        String descricao = txtDescricao.getText();
+
+        ProdutoController.inserir(nome, marca, tipo, setor, cor, preco, estoque, tamanho, unidade, validate, descricao);
+
+        JOptionPane.showMessageDialog(this, "Informações Salvas");
+        limparCampos();
+        } else {
+            //Se houver erros
+            v.exibirErros();
+        }
+    }//GEN-LAST:event_btnCadProdActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

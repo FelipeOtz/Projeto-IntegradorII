@@ -28,6 +28,24 @@ public class CadastrarClientes extends javax.swing.JPanel {
         initComponents();
     }
 
+    public void limparCampos (){
+        txtNome.setText("");
+        txtSobrenome.setText("");
+        txtTelefone.setText("");
+        txtCPF.setText("");
+        txtEmail.setText("");
+        jDateChooser1.setDate(null);
+        cbEstadoCivil.setSelectedIndex(0);
+        cbSexo.setSelectedIndex(0);
+        txtCep.setText("");
+        txtLogradouro.setText("");
+        txtNum.setText("");
+        txtComplemento.setText("");
+        txtBairro.setText("");
+        txtCidade.setText("");
+        txtEstado.setText("");
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -885,15 +903,14 @@ public class CadastrarClientes extends javax.swing.JPanel {
                 ClienteController.inserir(nome, sobrenome, cpf, email, telefone, datanascimento, sexo, estadocivil, cep, logradouro, num, complemento, bairro, cidade, estado);
             
             JOptionPane.showMessageDialog(this, "Cliente Cadastrado com Sucesso");
- 
+            limparCampos();
         }else{
-        
             v.exibirErros();
         }
     }//GEN-LAST:event_bntSalvarActionPerformed
 
     private void btnDesfazerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDesfazerActionPerformed
-    
+            limparCampos();
     }//GEN-LAST:event_btnDesfazerActionPerformed
 
     private void txtCepFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCepFocusLost

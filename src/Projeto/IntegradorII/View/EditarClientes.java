@@ -27,6 +27,25 @@ public class EditarClientes extends javax.swing.JPanel {
         initComponents();
     }
 
+    public void limparCampos (){
+        txtNome.setText("");
+        txtSobrenome.setText("");
+        txtTelefone.setText("");
+        txtCPF.setText("");
+        txtEmail.setText("");
+        jDateChooser1.setDate(null);
+        cbEstadoCivil.setSelectedIndex(0);
+        cbSexo.setSelectedIndex(0);
+        txtCep.setText("");
+        txtLogradouro.setText("");
+        txtNum.setText("");
+        txtComplemento.setText("");
+        txtBairro.setText("");
+        txtCidade.setText("");
+        txtEstado.setText("");
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -807,6 +826,7 @@ public class EditarClientes extends javax.swing.JPanel {
                 ClienteController.alterar(id, nome, sobrenome, cpf, email, telefone, datanascimento, sexo, estadocivil, cep, logradouro, num, complemento, bairro, cidade, estado);
             
         JOptionPane.showMessageDialog(this, "Cliente Cadastrado com Sucesso");
+        limparCampos();
         }else{
             v.exibirErros();
         }
@@ -814,7 +834,7 @@ public class EditarClientes extends javax.swing.JPanel {
     }//GEN-LAST:event_bntSalvarActionPerformed
 
     private void btnDesfazerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDesfazerActionPerformed
-        // TODO add your handling code here:
+        limparCampos();
     }//GEN-LAST:event_btnDesfazerActionPerformed
 
     private void btnSearchCEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchCEPActionPerformed
