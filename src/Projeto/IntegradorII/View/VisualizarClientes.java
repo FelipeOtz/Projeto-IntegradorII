@@ -4,12 +4,16 @@
  */
 package Projeto.IntegradorII.View;
 
-
+import Projeto.IntegradorII.Controller.ClienteController;
+import Projeto.IntegradorII.Model.Cliente;
 import java.awt.Color;
 import java.awt.Font;
+import java.text.SimpleDateFormat;
+import java.util.List;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
+
 /**
  *
  * @author felip
@@ -21,18 +25,48 @@ public class VisualizarClientes extends javax.swing.JPanel {
      */
     public VisualizarClientes() {
         initComponents();
+        preencheTabela(txtFiltro.getText());
     }
-    
-    public class tabel extends javax.swing.JFrame{
-        public tabel (){
+
+    public void preencheTabela(String filtroProc) {
+        List<Cliente> clientes = ClienteController.pesquisar(filtroProc);
+        SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/YYYY");
+        DefaultTableModel modelo = (DefaultTableModel) tabelaClientes.getModel();
+        modelo.setRowCount(0);
+        for (Cliente cliente : clientes) {
+            modelo.addRow(new Object[]{
+                cliente.getCodigo(),
+                cliente.getNome(),
+                cliente.getSobreNome(),
+                cliente.getCpf(),
+                cliente.getEmail(),
+                cliente.getTelefone(),
+                formatoData.format(cliente.getDataNasc()),
+                cliente.getSexo(),
+                cliente.getEstadoCivil(),
+                cliente.getCep(),
+                cliente.getLogradouro(),
+                cliente.getNumero(),
+                cliente.getComplemento(),
+                cliente.getBairro(),
+                cliente.getCidade(),
+                cliente.getEstado()
+            }
+            );
+        }
+    }
+
+    public class tabel extends javax.swing.JFrame {
+
+        public tabel() {
             initComponents();
-            setBackground(new Color(0,0,0,0));
-        
-            jTable1.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD,12));
-            jTable1.getTableHeader().setOpaque(false);
-            jTable1.getTableHeader().setBackground(new Color(32,136,203));
-            jTable1.getTableHeader().setForeground(new Color(255,255,255));
-            jTable1.setRowHeight(25);
+            setBackground(new Color(0, 0, 0, 0));
+
+            tabelaClientes.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
+            tabelaClientes.getTableHeader().setOpaque(false);
+            tabelaClientes.getTableHeader().setBackground(new Color(32, 136, 203));
+            tabelaClientes.getTableHeader().setForeground(new Color(255, 255, 255));
+            tabelaClientes.setRowHeight(25);
         }
     }
 
@@ -47,8 +81,8 @@ public class VisualizarClientes extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jTextField1 = new javax.swing.JTextField();
+        tabelaClientes = new javax.swing.JTable();
+        txtFiltro = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
@@ -59,62 +93,56 @@ public class VisualizarClientes extends javax.swing.JPanel {
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
 
-        jTable1.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaClientes.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        tabelaClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Paulo Fernando Sérgio Santos", "paulo-santos89@fibran.com.br", "M", "(48) 2768-9361", "Casado", "331.460.230-83", "18/03/1977", "Rua Capitão Adelino Platt", "603", "88101-080", "SC", "Kobrasol"},
-                {"Giovanna Sara Gomes", "giovanna-gomes89@boldcron.com.br", "F", "(27) 3523-2208", "Casada", "075.938.770-27", "10/02/1980", "Rua Manoel Gomes Brandão", "547", "29075-525", "ES", "Boa Vista"},
-                {"Helena Olivia Gonçalves", "helena.olivia.goncalves@ppe.ufrj.br", "F", "(51) 3834-6974", "Casada", "075.938.770-27", "22/03/2000", "Rua Vigia", "932", "93330-060", "RS", "Liberdade"},
-                {"Clara Emanuelly Fátima da Silva", "clara_dasilva@kmspublicidade.com.br", "F", "(91) 3803-8351", "Solteiro", "505.431.490-30", "13/02/1957", "Passagem Nossa Senhora da Conceição", "441", "66630-380", "PA", "Bengui"},
-                {"Edson Yuri Victor Fernandes", "edson_fernandes@sobraer.com.br", "M", "(98) 2873-7731", "Casado", "562.059.660-50", "05/02/1962", "Travessa Jerusalém", "517", "65068-092", "MA", "Divinéia"},
-                {"Martin Bento Erick Baptista", "martin_baptista@valeguinchos.com.br", "M", "(11) 2615-3384", "Solteiro", "562.059.660-50", "01/02/1988", "Rua Maranhão", "888", "07144-750", "SP", "Recreio São Jorge"},
-                {"Fernanda Sueli Nunes", "fernanda_sueli_nunes@azevedoalves.com.br", "F", "(61) 3899-1382", "Solteiro", "562.059.660-50", "24/03/1998", "Rua Rua 3B Chácara 38", "474", "72005-585", "DF", "Setor Habitacional Vicente Pires"},
-                {"Bento Diego Bruno Pires", "bentodiegopires@daou.com.br", "M", "(47) 3511-1557", "Casado", "998.038.760-23", "18/01/1981", "Rua Augusto Schlegel", "619", "89203-260", "SC", "Atiradores"},
-                {"João Raul Alves", "joao-alves92@santacasasjc.com.br", "M", "(86) 2660-6942", "Casado", "580.988.410-57", "23/01/1969", "Travessa Vila Nova", "684", "64216-830", "PI", "Igaraçu"},
-                {"Helena Emanuelly dos Santos", "helena_dossantos@yazigi.com", "F", "(84) 3535-4833", "Casado", "930.996.630-00", "24/03/1960", "Rua Vereador José Leite", "387", "59625-031", "RN", "Ilha de Santa Luzia"},
-                {"Luna Bianca Lima", "luna-lima99@djapan.com.br", "F", "(47) 2550-7194", "Casado", "413.889.590-62", "06/03/1979", "Servidão 334", "655", "89255-672", "SC", "Amizade"},
-                {"Stella Bruna Sarah Galvão", "stella_galvao@sygma.com.br", "F", "(85) 2901-8795", "Solteiro", "274.658.650-93", "11/02/2000", "Vila Humberto", "151", "60762-081", "CE", "Mondubim"},
-                {"Manuela Carolina Nicole Pinto", "manuela_carolina_pinto@imoveisvillani.com.br", "F", "(83) 2798-5253", "Solteiro", "806.406.380-90", "13/03/2002", "Rua da Linha", "911", "58306-140", "PB", "Sesi"},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Nome Completo", "E-mail", "Sexo", "Telefone", "Estado Civil", "CPF", "Data de Nascimento", "Logradouro", "Número", "CEP", "Estado", "Bairro"
+                "Id", "Nome", "Sobrenome", "CPF", "Sexo", "E-mail", "Data de Nascimento", "Estado Civil", "Telefone", "CEP", "Logradouro", "Número", "Complemento", "Bairro", "Cidade", "Estado"
             }
         ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
             };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setFocusable(false);
-        jTable1.setRowHeight(25);
-        jTable1.setSelectionBackground(new java.awt.Color(205, 203, 203));
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
+        tabelaClientes.setFocusable(false);
+        tabelaClientes.setRowHeight(25);
+        tabelaClientes.setSelectionBackground(new java.awt.Color(205, 203, 203));
+        tabelaClientes.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tabelaClientes);
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtFiltro.setDragEnabled(true);
+        txtFiltro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtFiltroActionPerformed(evt);
             }
         });
-        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtFiltro.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTextField1KeyReleased(evt);
+                txtFiltroKeyReleased(evt);
             }
         });
 
@@ -157,7 +185,7 @@ public class VisualizarClientes extends javax.swing.JPanel {
                 .addGap(233, 233, 233)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -170,7 +198,7 @@ public class VisualizarClientes extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -182,21 +210,17 @@ public class VisualizarClientes extends javax.swing.JPanel {
         add(jPanel1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFiltroActionPerformed
         // TODO add your handling code here:
-     
-        
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
+
+    }//GEN-LAST:event_txtFiltroActionPerformed
+
+    private void txtFiltroKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFiltroKeyReleased
         // TODO add your handling code here:
-        DefaultTableModel table = (DefaultTableModel)jTable1.getModel();
-        String search = jTextField1.getText();
-        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(table);
-        jTable1.setRowSorter(tr);
-        tr.setRowFilter(RowFilter.regexFilter(search));
-    }//GEN-LAST:event_jTextField1KeyReleased
- 
+        preencheTabela(txtFiltro.getText());
+    }//GEN-LAST:event_txtFiltroKeyReleased
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -204,7 +228,7 @@ public class VisualizarClientes extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable tabelaClientes;
+    private javax.swing.JTextField txtFiltro;
     // End of variables declaration//GEN-END:variables
 }

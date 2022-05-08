@@ -7,6 +7,7 @@ package Projeto.IntegradorII.Controller;
 import Projeto.IntegradorII.DAO.ClienteDAO;
 import Projeto.IntegradorII.Model.Cliente;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -90,7 +91,6 @@ public class ClienteController {
          cliente.setEstado(Estado);
          
          
-         
     
       //return true ;
       return ClienteDAO.alterar(cliente); 
@@ -107,5 +107,13 @@ public class ClienteController {
         return ClienteDAO.delete(cliente);
         
     }
+     
+     public static List<Cliente> pesquisar(String filtroproc) {
+
+        return ClienteDAO.pesquisar(filtroproc);
+        
+    }
+     
+     
 
 }
