@@ -56,6 +56,11 @@ public class NovaVenda extends javax.swing.JPanel {
         }
     }
 
+    private int verificaExistente(DefaultTableModel modelo, int id) {
+
+        return -1;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -229,7 +234,7 @@ public class NovaVenda extends javax.swing.JPanel {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Double.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false
@@ -466,37 +471,57 @@ public class NovaVenda extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(this, "Compra finalizada com suceseso!", "Compra finalizada", 1);
     }//GEN-LAST:event_bntFinalizarActionPerformed
 
+
     private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
         // TODO add your handling code here:
 
-            DefaultTableModel modelo = (DefaultTableModel) tabelaCarrinho.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) tabelaCarrinho.getModel();
 
-            int codProduto = (int) tabelaProdutos.getModel().getValueAt(tabelaProdutos.getSelectedRow(), 0);
-            List<Produto> produtos = ProdutoController.pesquisaPorId(codProduto);
-            
-           
+        int codSelecionado = (int) tabelaProdutos.getModel().getValueAt(tabelaProdutos.getSelectedRow(), 0);
 
-            for (Produto produto : produtos) {
-                String nome = produto.getNome();
-                int Quantidade = Integer.parseInt(txtQtd.getText());
+        List<Produto> produtos = ProdutoController.pesquisaPorId(codSelecionado);
 
-                double valor = produto.getPreco();
+        for (Produto produto : produtos) {
+            String nome = produto.getNome();
+            int Quantidade = Integer.parseInt(txtQtd.getText());
 
-                valor = valor * Quantidade;
+            double valor = produto.getPreco();
 
-                Object objeto[] = {codProduto, nome, Quantidade, valor};
-                modelo.addRow(objeto);
+            valor = valor * Quantidade;
+
+            boolean jaExiste = false;
+
+            // Executa este for para verificar se ja existem produtos no carrinho com o Código selecionado
+            for (int i = 0; i < modelo.getRowCount(); i++) {
+                int codExistente = (int) modelo.getValueAt(i, 0);
+                if (codSelecionado == codExistente) {
+                    modelo.setValueAt(codSelecionado, i, 0);
+                    modelo.setValueAt(nome, i, 1);
+                    int quantidadeExistente = (int) tabelaCarrinho.getValueAt(i, 2);
+                    modelo.setValueAt((Quantidade + quantidadeExistente), i, 2);
+                    double valorExistente = (double) modelo.getValueAt(i, 3);
+                    modelo.setValueAt((valor + valorExistente), i, 3);
+                    jaExiste = true;
+                    break;
+                }
+
             }
 
-            double valortotal = 0;
-            for (int i = 0; i < tabelaCarrinho.getRowCount(); i++) {
-                valortotal = valortotal + (double) tabelaCarrinho.getValueAt(i, 3);
+            if (!jaExiste) {
+                modelo.addRow(new Object[]{codSelecionado, nome, Quantidade, valor});
             }
 
-            txtCompra.setText("" + valortotal);
+        }
 
-            bntFinalizar.setEnabled(true);
-       
+        double valortotal = 0;
+
+        for (int i = 0; i < tabelaCarrinho.getRowCount(); i++) {
+            valortotal = valortotal + (double) tabelaCarrinho.getValueAt(i, 3);
+        }
+        txtCompra.setText("" + valortotal);
+
+        bntFinalizar.setEnabled(true);
+
 
     }//GEN-LAST:event_btnAdicionarActionPerformed
 
