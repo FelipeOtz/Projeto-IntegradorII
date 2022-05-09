@@ -4,10 +4,13 @@
  */
 package Projeto.IntegradorII.View;
 
+import Projeto.IntegradorII.Controller.ProdutoController;
+import Projeto.IntegradorII.Model.Produto;
 import Projeto.IntegradorII.Model.Venda;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
@@ -24,11 +27,33 @@ public class NovaVenda extends javax.swing.JPanel {
      */
     public NovaVenda() {
         initComponents();
+        preencheTabela(txtFiltro.getText());
 
         SimpleDateFormat dt = new SimpleDateFormat("dd/MM/yyyy");
         Date data = new Date();
         String data1 = dt.format(data);
         txtData.setText(data1);
+    }
+
+    public void preencheTabela(String filtroProc) {
+        List<Produto> produtos = ProdutoController.pesquisar(filtroProc);
+        SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/YYYY");
+        DefaultTableModel modelo = (DefaultTableModel) tabelaProdutos.getModel();
+        modelo.setRowCount(0);
+        for (Produto produto : produtos) {
+            modelo.addRow(new Object[]{
+                produto.getCodigo(),
+                produto.getNome(),
+                produto.getTipo(),
+                produto.getMarca(),
+                produto.getPreco(),
+                produto.getEstoque(),
+                produto.getTamanho(),
+                produto.getUnidade(),
+                formatoData.format(produto.getValidade())
+            }
+            );
+        }
     }
 
     /**
@@ -46,16 +71,15 @@ public class NovaVenda extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabelaProdutos = new javax.swing.JTable();
         txtData = new javax.swing.JFormattedTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         txtOperador = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tabelaCarrinho = new javax.swing.JTable();
         jLabel9 = new javax.swing.JLabel();
         bntFinalizar = new javax.swing.JButton();
         btnAdicionar = new javax.swing.JButton();
@@ -65,6 +89,7 @@ public class NovaVenda extends javax.swing.JPanel {
         btnMenos = new javax.swing.JButton();
         txtQtd = new javax.swing.JTextField();
         btnMais = new javax.swing.JButton();
+        txtFiltro = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setToolTipText("");
@@ -107,27 +132,27 @@ public class NovaVenda extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         jLabel4.setText("Data-venda");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaProdutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", "Perfume ", "Burberry Her", "Burberry",  new Integer(23), "342", "30", "ml"},
-                {"2", "Perfume ", "Burberry Her", "Burberry",  new Integer(23), "324", "50", "ml"},
-                {"344", "Perfume ", "Bad Boy Carolina Herrera Eau de Toilette", "Carolina Herrera",  new Integer(424), "2342", "150", "g"},
-                {"555", "Perfume ", "Bad Boy Carolina Herrera Eau de Toilette", "Carolina Herrera",  new Integer(12), "234235436", "100", "ml"},
-                {null, "Perfume ", "Idôle Lancôme Eau de Parfum", "Lancôme", null, null, "399", "ml"},
-                {"667", "Esmalte", "o Boticário Intense by Manu Gavassi Azul Claro Cute - Esmalte 7ml", "O Boticário", null, null, "7", "ml"},
-                {null, "Esmalte", "Esmalte Impala Cremoso Preto", "Impala", null, null, "7,5", "ml"},
-                {null, "Esmalte", "Esmalte Natural Colorama ", "Colorama", null, null, "8", "ml"},
-                {null, "Esmalte", "Granado Pink SOS 7 em 1 - Base Fortalecedora para Unhas", "Granda", null, null, "10", "ml"},
-                {null, "Esmalte", "Esmalte Risqué Cremoso - Lavanda Alma", "Risqué", null, null, "8", "ml"},
-                {null, "Sabonete", "Sephora Collection Bath Bar Soap", "Sephora", null, null, "150", "g"},
-                {null, "Sabonete", "Sabonete Líquido Korres Jasmim", "Korres", null, null, "250", "ml"},
-                {null, "Sabonete", "Sabonete Líquido Essências do Brasil Vitória Régia", "Lux", null, null, "300", "ml"},
-                {null, "Sabonete", "Sabonete Líquido Nutrição Profunda", "Dove", null, null, "250", "ml"},
-                {null, "Sabonete", "Sabonete Mandarina Asiática", "Phebo", null, null, "100", "g"},
-                {null, "Sabonete ", "Sabonete Líquido Fisher-Price Bebê", "Biotropic", null, null, "400", "ml"},
-                {null, "Sabonete ", "Sabonete Barra Lavanda", "Vyedas", null, null, "120", "g"},
-                {null, "", null, null, null, null, null, null},
-                {null, "", null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -152,31 +177,24 @@ public class NovaVenda extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Cód. Produto", "Tipo de Produto", "Nome", "Marca", "Preço", "Qtd. em estoque", "Tamanho", "Unidade"
+                "Cód. Produto", "Nome", "Tipo de Produto", "Marca", "Preço", "Qtd. em estoque", "Tamanho", "Unidade"
             }
         ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
-            };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false, false, false
             };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setFocusable(false);
-        jTable1.setRowHeight(25);
-        jTable1.setSelectionBackground(new java.awt.Color(205, 203, 203));
-        jTable1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
-        jTable1.getAccessibleContext().setAccessibleName("");
+        tabelaProdutos.setFocusable(false);
+        tabelaProdutos.setRowHeight(25);
+        tabelaProdutos.setSelectionBackground(new java.awt.Color(205, 203, 203));
+        tabelaProdutos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tabelaProdutos.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tabelaProdutos);
+        tabelaProdutos.getAccessibleContext().setAccessibleName("");
 
         try {
             txtData.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
@@ -196,24 +214,13 @@ public class NovaVenda extends javax.swing.JPanel {
         jLabel7.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         jLabel7.setText("Código do operador");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextField1KeyTyped(evt);
-            }
-        });
-
         jLabel6.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
-        jLabel6.setText("Busca de Produtos");
+        jLabel6.setText("Buscar Produtos");
 
         jLabel8.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         jLabel8.setText("Quantidade");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaCarrinho.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -236,8 +243,8 @@ public class NovaVenda extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jTable2.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane2.setViewportView(jTable2);
+        tabelaCarrinho.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane2.setViewportView(tabelaCarrinho);
 
         jLabel9.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         jLabel9.setText("Carrinho");
@@ -344,6 +351,18 @@ public class NovaVenda extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+        txtFiltro.setDragEnabled(true);
+        txtFiltro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFiltroActionPerformed(evt);
+            }
+        });
+        txtFiltro.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtFiltroKeyReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -372,7 +391,7 @@ public class NovaVenda extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -380,17 +399,16 @@ public class NovaVenda extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtOperador, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(56, 56, 56))
+                        .addComponent(txtOperador, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(txtFiltro)))
+                .addGap(44, 44, 44)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
@@ -420,13 +438,13 @@ public class NovaVenda extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGap(52, 52, 52)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel5)
@@ -444,56 +462,41 @@ public class NovaVenda extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDataActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
-        // TODO add your handling code here:
-        DefaultTableModel table = (DefaultTableModel) jTable1.getModel();
-        String search = jTextField1.getText();
-        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(table);
-        jTable1.setRowSorter(tr);
-        tr.setRowFilter(RowFilter.regexFilter(search));
-    }//GEN-LAST:event_jTextField1KeyTyped
-
     private void bntFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntFinalizarActionPerformed
-        JOptionPane.showMessageDialog(this, "Compra finalizada com suceseso!", "Compra finalizada",1);
+        JOptionPane.showMessageDialog(this, "Compra finalizada com suceseso!", "Compra finalizada", 1);
     }//GEN-LAST:event_bntFinalizarActionPerformed
 
     private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
         // TODO add your handling code here:
 
-        try {
-            DefaultTableModel table2 = (DefaultTableModel) jTable2.getModel();
+            DefaultTableModel modelo = (DefaultTableModel) tabelaCarrinho.getModel();
 
-            String codProduto = (String) jTable1.getModel().getValueAt(jTable1.getSelectedRow(), 0);
-            String nome = (String) jTable1.getModel().getValueAt(jTable1.getSelectedRow(), 2);
-            String Quantidade = txtQtd.getText();
+            int codProduto = (int) tabelaProdutos.getModel().getValueAt(tabelaProdutos.getSelectedRow(), 0);
+            List<Produto> produtos = ProdutoController.pesquisaPorId(codProduto);
+            
+           
 
-            int valor = ((int) jTable1.getModel().getValueAt(jTable1.getSelectedRow(), 4));
+            for (Produto produto : produtos) {
+                String nome = produto.getNome();
+                int Quantidade = Integer.parseInt(txtQtd.getText());
 
-            valor = valor * Integer.parseInt(Quantidade);
+                double valor = produto.getPreco();
 
-            jTable2.setModel(table2);
+                valor = valor * Quantidade;
 
-            Object objeto[] = {codProduto, nome, Quantidade, valor};
-            Venda venda = new Venda();
-            table2.addRow(objeto);
-            String produtos = Arrays.toString(objeto);
-            int valortotal = 0;
-            for (int i = 0; i < jTable2.getRowCount(); i++) {
-                valortotal += (int) jTable2.getValueAt(i, 3);
+                Object objeto[] = {codProduto, nome, Quantidade, valor};
+                modelo.addRow(objeto);
             }
-            String texto = "" + valortotal;
-            txtCompra.setText(texto);
 
+            double valortotal = 0;
+            for (int i = 0; i < tabelaCarrinho.getRowCount(); i++) {
+                valortotal = valortotal + (double) tabelaCarrinho.getValueAt(i, 3);
+            }
+
+            txtCompra.setText("" + valortotal);
 
             bntFinalizar.setEnabled(true);
-        } catch (Exception e) {
-             JOptionPane.showMessageDialog(this, "Selecione um produto para adicionar ao carrinho");
-        }
+       
 
     }//GEN-LAST:event_btnAdicionarActionPerformed
 
@@ -501,14 +504,14 @@ public class NovaVenda extends javax.swing.JPanel {
         // TODO add your handling code here:
 
         try {
-            DefaultTableModel table2 = (DefaultTableModel) jTable2.getModel();
+            DefaultTableModel table2 = (DefaultTableModel) tabelaCarrinho.getModel();
 
-            table2.removeRow(jTable2.getSelectedRow());
-            jTable2.setModel(table2);
+            table2.removeRow(tabelaCarrinho.getSelectedRow());
+            tabelaCarrinho.setModel(table2);
 
             int valortotal = 0;
-            for (int i = 0; i < jTable2.getRowCount(); i++) {
-                valortotal += (int) jTable2.getValueAt(i, 3);
+            for (int i = 0; i < tabelaCarrinho.getRowCount(); i++) {
+                valortotal += (int) tabelaCarrinho.getValueAt(i, 3);
             }
             String texto = "" + valortotal;
             txtCompra.setText(texto);
@@ -542,6 +545,15 @@ public class NovaVenda extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCompraActionPerformed
 
+    private void txtFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFiltroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFiltroActionPerformed
+
+    private void txtFiltroKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFiltroKeyReleased
+        // TODO add your handling code here:
+        preencheTabela(txtFiltro.getText());
+    }//GEN-LAST:event_txtFiltroKeyReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bntFinalizar;
@@ -561,12 +573,12 @@ public class NovaVenda extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable tabelaCarrinho;
+    private javax.swing.JTable tabelaProdutos;
     private javax.swing.JTextField txtCompra;
     private javax.swing.JFormattedTextField txtCpf;
     private javax.swing.JFormattedTextField txtData;
+    private javax.swing.JTextField txtFiltro;
     private javax.swing.JTextField txtOperador;
     private javax.swing.JTextField txtQtd;
     // End of variables declaration//GEN-END:variables

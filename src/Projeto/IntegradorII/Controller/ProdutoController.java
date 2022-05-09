@@ -7,6 +7,7 @@ package Projeto.IntegradorII.Controller;
 import Projeto.IntegradorII.DAO.ProdutoDAO;
 import Projeto.IntegradorII.Model.Produto;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -87,4 +88,17 @@ public class ProdutoController {
 
         return ProdutoDAO.delete(produto);
     }
+    
+    public static List<Produto> pesquisar(String filtroproc) {
+
+        return ProdutoDAO.pesquisar(filtroproc);
+        
+    }
+    public static List<Produto> pesquisaPorId(int id) {
+
+        return ProdutoDAO.pesquisarPorId(id);
+        
+    }
+    
+    
 }

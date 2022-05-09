@@ -4,8 +4,12 @@
  */
 package Projeto.IntegradorII.View;
 
+import Projeto.IntegradorII.Controller.ProdutoController;
+import Projeto.IntegradorII.Model.Produto;
 import java.awt.Color;
 import java.awt.Font;
+import java.text.SimpleDateFormat;
+import java.util.List;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
@@ -21,18 +25,44 @@ public class VisualizarProdutos extends javax.swing.JPanel {
      */
     public VisualizarProdutos() {
         initComponents();
+        preencheTabela(txtFiltro.getText());
     }
-    
-    public class tabel extends javax.swing.JFrame{
-        public tabel (){
+
+    public void preencheTabela(String filtroProc) {
+        List<Produto> produtos = ProdutoController.pesquisar(filtroProc);
+        SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/YYYY");
+        DefaultTableModel modelo = (DefaultTableModel) tabelaProdutos.getModel();
+        modelo.setRowCount(0);
+        for (Produto produto : produtos) {
+            modelo.addRow(new Object[]{
+                produto.getCodigo(),
+                produto.getNome(),
+                produto.getMarca(),
+                produto.getSetor(),
+                produto.getTipo(),
+                produto.getCor(),
+                produto.getEstoque(),
+                produto.getPreco(),
+                produto.getTamanho(),
+                produto.getUnidade(),
+                formatoData.format(produto.getValidade()),
+                produto.getDescricao()
+            }
+            );
+        }
+    }
+
+    public class tabel extends javax.swing.JFrame {
+
+        public tabel() {
             initComponents();
-            setBackground(new Color(0,0,0,0));
-        
-            jTable1.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD,12));
-            jTable1.getTableHeader().setOpaque(false);
-            jTable1.getTableHeader().setBackground(new Color(0,0,0,60));
-            jTable1.getTableHeader().setForeground(new Color(0,0,0,60));
-            jTable1.setRowHeight(25);
+            setBackground(new Color(0, 0, 0, 0));
+
+            tabelaProdutos.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
+            tabelaProdutos.getTableHeader().setOpaque(false);
+            tabelaProdutos.getTableHeader().setBackground(new Color(0, 0, 0, 60));
+            tabelaProdutos.getTableHeader().setForeground(new Color(0, 0, 0, 60));
+            tabelaProdutos.setRowHeight(25);
         }
     }
 
@@ -48,96 +78,78 @@ public class VisualizarProdutos extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jTextField1 = new javax.swing.JTextField();
+        tabelaProdutos = new javax.swing.JTable();
         jPanel5 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        txtFiltro = new javax.swing.JTextField();
 
         setLayout(new java.awt.BorderLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("Pesquisar Produtos:");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaProdutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Perfume ", "Burberry Her", "Burberry", "Perfume", "R$ 269", "89327", "Nda", "30", "ml", "24/12/2040", null},
-                {"Perfume ", "Burberry Her", "Burberry", "Perfume", "R$ 300", "30485", "Nda", "50", "ml", "21/11/2067", null},
-                {"Perfume ", "Bad Boy Carolina Herrera Eau de Toilette", "Carolina Herrera", "Perfume", "R$ 738.90", "49202", "Nda", "150", "g", "12/02/2032", null},
-                {"Perfume ", "Bad Boy Carolina Herrera Eau de Toilette", "Carolina Herrera", "Perfume", "R$ 598.90", "3947", "Nda", "100", "ml", "10/01/2025", null},
-                {"Perfume ", "Idôle Lancôme Eau de Parfum", "Lancôme", "Perfume", "R$ 720", "1045", "Nda", "399", "ml", "01/01/2054", null},
-                {"Esmalte", "o Boticário Intense by Manu Gavassi Azul Claro Cute - Esmalte 7ml", "O Boticário", "Esmalte", "R$ 7,99", "1245", "Azul claro Cute", "7", "ml", "12/12/2025", null},
-                {"Esmalte", "Esmalte Impala Cremoso Preto", "Impala", "Esmalte", "R$ 2,59", "2918", "Preto", "7,5", "ml", "23/11/2025", null},
-                {"Esmalte", "Esmalte Natural Colorama ", "Colorama", "Esmalte", "R$ 4,75", "281", "Petala", "8", "ml", "05/04/2024", null},
-                {"Esmalte", "Granado Pink SOS 7 em 1 - Base Fortalecedora para Unhas", "Granda", "Esmalte", "R$ 29,99", "4967", "Incolor", "10", "ml", "24/06/2026", null},
-                {"Esmalte", "Esmalte Risqué Cremoso - Lavanda Alma", "Risqué", "Esmalte", "R$ 3,99", "19183", "Lavanda Alma", "8", "ml", "09/01/2027", null},
-                {"Sabonete", "Sephora Collection Bath Bar Soap", "Sephora", "Higiene", "R$ 39,00", "24", "Nda", "150", "g", "29/04/2027", null},
-                {"Sabonete", "Sabonete Líquido Korres Jasmim", "Korres", "Higiene", "R$ 28,99", "623", "Nda", "250", "ml", "12/01/2024", null},
-                {"Sabonete", "Sabonete Líquido Essências do Brasil Vitória Régia", "Lux", "Higiene", "R$ 11,49", "2873", "Nda", "300", "ml", "08/07/2029", null},
-                {"Sabonete", "Sabonete Líquido Nutrição Profunda", "Dove", "Higiene", "R$ 10,39", "29485", "Nda", "250", "ml", "10/02/2040", null},
-                {"Sabonete", "Sabonete Mandarina Asiática", "Phebo", "Higiene", "R$ 6,49", "0", "Nda", "100", "g", "20/12/2044", null},
-                {"Sabonete ", "Sabonete Líquido Fisher-Price Bebê", "Biotropic", "Higiene", "R$ 14,49", "20439", "Nda", "400", "ml", "06/08/2028", null},
-                {"Sabonete ", "Sabonete Barra Lavanda", "Vyedas", "Higiene", "R$ 17.80", "23495", "Nda", "120", "g", null, null},
-                {"", null, null, null, null, null, null, null, null, null, null},
-                {"", null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Tipo de Produto", "Nome", "Marca", "Setor", "Preço", "Qtd. em estoque", "Cor", "Tamanho", "Unidade", "Validade", "Descrição"
+                "Código", "Nome", "Marca", "Setor", "Tipo de Produto", "Cor", "Qtd. em estoque", "Preço", "Tamanho", "Unidade", "Validade", "Descrição"
             }
         ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
-            };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false
             };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setFocusable(false);
-        jTable1.setRowHeight(25);
-        jTable1.setSelectionBackground(new java.awt.Color(205, 203, 203));
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTextField1KeyReleased(evt);
-            }
-        });
+        tabelaProdutos.setFocusable(false);
+        tabelaProdutos.setRowHeight(25);
+        tabelaProdutos.setSelectionBackground(new java.awt.Color(205, 203, 203));
+        tabelaProdutos.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tabelaProdutos);
 
         jPanel5.setBackground(new java.awt.Color(9, 158, 199));
         jPanel5.setAutoscrolls(true);
@@ -165,15 +177,27 @@ public class VisualizarProdutos extends javax.swing.JPanel {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/icons8_box_24px.png"))); // NOI18N
 
+        txtFiltro.setDragEnabled(true);
+        txtFiltro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFiltroActionPerformed(evt);
+            }
+        });
+        txtFiltro.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtFiltroKeyReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(293, Short.MAX_VALUE)
+                .addContainerGap(234, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addGap(380, 380, 380))
@@ -188,27 +212,24 @@ public class VisualizarProdutos extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel1)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
+    private void txtFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFiltroActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel table = (DefaultTableModel)jTable1.getModel();
-        String search = jTextField1.getText();
-        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(table);
-        jTable1.setRowSorter(tr);
-        tr.setRowFilter(RowFilter.regexFilter(search));
-    }//GEN-LAST:event_jTextField1KeyReleased
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtFiltroActionPerformed
+
+    private void txtFiltroKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFiltroKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+        preencheTabela(txtFiltro.getText());
+    }//GEN-LAST:event_txtFiltroKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -218,7 +239,7 @@ public class VisualizarProdutos extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable tabelaProdutos;
+    private javax.swing.JTextField txtFiltro;
     // End of variables declaration//GEN-END:variables
 }

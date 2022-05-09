@@ -13,90 +13,87 @@ import java.util.List;
  *
  * @author felip
  */
-public class ClienteController {        
-     public static boolean inserir(
-        String nome,
-        String sobreNome,
-        String cpf,
-        String email,
-        String telefone,
-        Date dataNasc,
-        String sexo,
-        String estadoCivil,
-        String cep,
-        String logradouro,
-        String numero,
-        String complemento,
-        String bairro,
-        String cidade,
-        String Estado){
- 
-        
+public class ClienteController {
+
+    public static boolean inserir(
+            String nome,
+            String sobreNome,
+            String cpf,
+            String email,
+            String telefone,
+            Date dataNasc,
+            String sexo,
+            String estadoCivil,
+            String cep,
+            String logradouro,
+            String numero,
+            String complemento,
+            String bairro,
+            String cidade,
+            String Estado) {
+
         Cliente cliente = new Cliente();
-        
-         cliente.setNome(nome);
-         cliente.setSobreNome(sobreNome);
-         cliente.setCpf(cpf);
-         cliente.setEmail(email);
-         cliente.setTelefone(telefone);
-         cliente.setDataNasc(dataNasc);
-         cliente.setSexo(sexo);
-         cliente.setEstadoCivil(estadoCivil);
-         cliente.setCep(cep);
-         cliente.setLogradouro(logradouro);
-         cliente.setNumero(numero);
-         cliente.setComplemento(complemento);
-         cliente.setBairro(bairro);
-         cliente.setCidade(cidade);
-         cliente.setEstado(Estado);
-      //return true ;
-      return ClienteDAO.inserir(cliente);
+
+        cliente.setNome(nome);
+        cliente.setSobreNome(sobreNome);
+        cliente.setCpf(cpf);
+        cliente.setEmail(email);
+        cliente.setTelefone(telefone);
+        cliente.setDataNasc(dataNasc);
+        cliente.setSexo(sexo);
+        cliente.setEstadoCivil(estadoCivil);
+        cliente.setCep(cep);
+        cliente.setLogradouro(logradouro);
+        cliente.setNumero(numero);
+        cliente.setComplemento(complemento);
+        cliente.setBairro(bairro);
+        cliente.setCidade(cidade);
+        cliente.setEstado(Estado);
+        //return true ;
+        return ClienteDAO.inserir(cliente);
     }
-     public static boolean alterar(
-        
-        int id,
-        String nome,
-        String sobreNome,
-        String cpf,
-        String email,
-        String telefone,
-        Date dataNasc,
-        String sexo,
-        String estadoCivil,
-        String cep,
-        String logradouro,
-        String numero,
-        String complemento,
-        String bairro,
-        String cidade,
-        String Estado)
-     {
-         Cliente cliente = new Cliente();
-         
-         cliente.setCodigo(id);
-         cliente.setNome(nome);
-         cliente.setSobreNome(sobreNome);
-         cliente.setCpf(cpf);
-         cliente.setEmail(email);
-         cliente.setTelefone(telefone);
-         cliente.setDataNasc(dataNasc);
-         cliente.setSexo(sexo);
-         cliente.setEstadoCivil(estadoCivil);
-         cliente.setCep(cep);
-         cliente.setLogradouro(logradouro);
-         cliente.setNumero(numero);
-         cliente.setComplemento(complemento);
-         cliente.setBairro(bairro);
-         cliente.setCidade(cidade);
-         cliente.setEstado(Estado);
-         
-         
-    
-      //return true ;
-      return ClienteDAO.alterar(cliente); 
-     }
-     
-     public static boolean delete(
+
+    public static boolean alterar(
+            int id,
+            String nome,
+            String sobreNome,
+            String cpf,
+            String email,
+            String telefone,
+            Date dataNasc,
+            String sexo,
+            String estadoCivil,
+            String cep,
+            String logradouro,
+            String numero,
+            String complemento,
+            String bairro,
+            String cidade,
+            String Estado) {
+        Cliente cliente = new Cliente();
+
+        cliente.setCodigo(id);
+        cliente.setNome(nome);
+        cliente.setSobreNome(sobreNome);
+        cliente.setCpf(cpf);
+        cliente.setEmail(email);
+        cliente.setTelefone(telefone);
+        cliente.setDataNasc(dataNasc);
+        cliente.setSexo(sexo);
+        cliente.setEstadoCivil(estadoCivil);
+        cliente.setCep(cep);
+        cliente.setLogradouro(logradouro);
+        cliente.setNumero(numero);
+        cliente.setComplemento(complemento);
+        cliente.setBairro(bairro);
+        cliente.setCidade(cidade);
+        cliente.setEstado(Estado);
+
+        //return true ;
+        return ClienteDAO.alterar(cliente);
+    }
+
+    public static boolean delete(
             int id
     ) {
 
@@ -105,15 +102,25 @@ public class ClienteController {
         cliente.setCodigo(id);
 
         return ClienteDAO.delete(cliente);
-        
+
     }
-     
-     public static List<Cliente> pesquisar(String filtroproc) {
+
+    public static List<Cliente> pesquisar(String filtroproc) {
 
         return ClienteDAO.pesquisar(filtroproc);
-        
+
     }
-     
-     
+
+    public static List<Cliente> pesquisarPorId(int id) {
+
+        return ClienteDAO.pesquisarPorId(id);
+
+    }
+
+    public static List<Cliente> pesquisaPorCPF(String cpf) {
+
+        return ClienteDAO.pesquisarPorCPF(cpf);
+
+    }
 
 }

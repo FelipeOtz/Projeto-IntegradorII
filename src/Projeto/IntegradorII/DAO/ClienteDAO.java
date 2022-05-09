@@ -144,7 +144,7 @@ public class ClienteDAO {
 
     }
 
-    public static List <Cliente> pesquisar(String filtroProc) {
+    public static List<Cliente> pesquisar(String filtroProc) {
 
         Connection conexao = Conexao.abreConexao();
         PreparedStatement comando;
@@ -164,8 +164,8 @@ public class ClienteDAO {
 
             while (rs.next()) {
 
-                Cliente cliente = new Cliente();    
-                
+                Cliente cliente = new Cliente();
+
                 cliente.setCodigo(rs.getInt(1));
                 cliente.setNome(rs.getString(2));
                 cliente.setSobreNome(rs.getString(3));
@@ -182,7 +182,119 @@ public class ClienteDAO {
                 cliente.setBairro(rs.getString(14));
                 cliente.setCidade(rs.getString(15));
                 cliente.setEstado(rs.getString(16));
-                
+
+                clientes.add(cliente);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            if (rs != null)
+                try {
+                rs.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+        return clientes;
+
+    }
+
+    public static List<Cliente> pesquisarPorId(int id) {
+
+        Connection conexao = Conexao.abreConexao();
+        PreparedStatement comando;
+        ResultSet rs = null;
+
+        List<Cliente> clientes = new ArrayList();
+        SimpleDateFormat formatoData = new SimpleDateFormat("YYYY-MM-dd");
+
+        try {
+
+            comando = conexao.prepareStatement("SELECT * FROM clientes WHERE id_cliente = ?;");
+            
+            comando.setInt(1, id);
+
+            rs = comando.executeQuery();
+
+            while (rs.next()) {
+
+                Cliente cliente = new Cliente();
+
+                cliente.setCodigo(rs.getInt(1));
+                cliente.setNome(rs.getString(2));
+                cliente.setSobreNome(rs.getString(3));
+                cliente.setCpf(rs.getString(4));
+                cliente.setEmail(rs.getString(5));
+                cliente.setTelefone(rs.getString(6));
+                cliente.setDataNasc(rs.getDate(7));
+                cliente.setSexo(rs.getString(8));
+                cliente.setEstadoCivil(rs.getString(9));
+                cliente.setCep(rs.getString(10));
+                cliente.setLogradouro(rs.getString(11));
+                cliente.setNumero(rs.getString(12));
+                cliente.setComplemento(rs.getString(13));
+                cliente.setBairro(rs.getString(14));
+                cliente.setCidade(rs.getString(15));
+                cliente.setEstado(rs.getString(16));
+
+                clientes.add(cliente);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            if (rs != null)
+                try {
+                rs.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+        return clientes;
+
+    }
+    
+    public static List<Cliente> pesquisarPorCPF(String cpf) {
+
+        Connection conexao = Conexao.abreConexao();
+        PreparedStatement comando;
+        ResultSet rs = null;
+
+        List<Cliente> clientes = new ArrayList();
+        SimpleDateFormat formatoData = new SimpleDateFormat("YYYY-MM-dd");
+
+        try {
+
+            comando = conexao.prepareStatement("SELECT * FROM clientes WHERE cpf = ?;");
+            
+            comando.setString(1, cpf);
+
+            rs = comando.executeQuery();
+
+            while (rs.next()) {
+
+                Cliente cliente = new Cliente();
+
+                cliente.setCodigo(rs.getInt(1));
+                cliente.setNome(rs.getString(2));
+                cliente.setSobreNome(rs.getString(3));
+                cliente.setCpf(rs.getString(4));
+                cliente.setEmail(rs.getString(5));
+                cliente.setTelefone(rs.getString(6));
+                cliente.setDataNasc(rs.getDate(7));
+                cliente.setSexo(rs.getString(8));
+                cliente.setEstadoCivil(rs.getString(9));
+                cliente.setCep(rs.getString(10));
+                cliente.setLogradouro(rs.getString(11));
+                cliente.setNumero(rs.getString(12));
+                cliente.setComplemento(rs.getString(13));
+                cliente.setBairro(rs.getString(14));
+                cliente.setCidade(rs.getString(15));
+                cliente.setEstado(rs.getString(16));
+
                 clientes.add(cliente);
             }
 
