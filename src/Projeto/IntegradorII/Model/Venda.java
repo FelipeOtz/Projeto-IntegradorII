@@ -5,17 +5,63 @@
 package Projeto.IntegradorII.Model;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
  * @author Lenovo
  */
 public class Venda {
-    
-    private int codigoVenda;
-    private String cpfCliente;
-    private int codigoOperador;
+    private int idVenda;
+    private int idCliente;
+    private int idOperador;
     private ArrayList<ItemVenda> itensVenda;
+    private double totalVenda;
+    private Date dataVenda;
+
+
+    public int getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
+    }
+    
+    public double getTotalVenda() {
+        return totalVenda;
+    }
+
+    public void setTotalVenda(double totalVenda) {
+        this.totalVenda = totalVenda;
+    }
+
+    public Date getDataVenda() {
+        return dataVenda;
+    }
+
+    public void setDataVenda(Date dataVenda) {
+        this.dataVenda = dataVenda;
+    }
+  
+
+    public int getIdVenda() {
+        return idVenda;
+    }
+
+    public void setIdVenda(int idVenda) {
+        this.idVenda = idVenda;
+    }
+
+    public int getIdOperador() {
+        return idOperador;
+    }
+
+    public void setIdOperador(int idOperador) {
+        this.idOperador = idOperador;
+    }
+    
+    
 
     public ArrayList<ItemVenda> getItensVenda() {
         return itensVenda;
@@ -34,31 +80,5 @@ public class Venda {
     public void setValorTotal(double valorTotal) {
         this.valorTotal = valorTotal;
     }
-    
-
-    public int getCodigoVenda() {
-        return codigoVenda;
-    }
-
-    public void setCodigoVenda(int codigoVenda) {
-        this.codigoVenda = codigoVenda;
-    }
-
-    public String getCpfCliente() {
-        return cpfCliente;
-    }
-
-    public void setCpfCliente(String cpfCliente) {
-        this.cpfCliente = cpfCliente;
-    }
-
-    public int getCodigoOperador() {
-        return codigoOperador;
-    }
-
-    public void setCodigoOperador(int codigoOperador) {
-        this.codigoOperador = codigoOperador;
-    }
-
-    
+     
 }

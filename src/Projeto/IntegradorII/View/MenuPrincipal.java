@@ -20,12 +20,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public MenuPrincipal() {
         initComponents();
         showForm(new TelaInicial());
+        
         pnlCima = pnlClientes;
+        
         pnlBaixo = pnlBaixoclientes;
 
     }
     
-    //Variaveis de animação
+    //Variaveis de animaçãos
     private boolean menuAberto = true;
     private javax.swing.JPanel pnlCima, pnlBaixo;
     private int tempo = 10;
