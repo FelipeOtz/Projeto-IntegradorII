@@ -9,6 +9,7 @@ import Projeto.IntegradorII.Model.ItemVenda;
 import Projeto.IntegradorII.Model.Venda;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -16,7 +17,8 @@ import java.util.Date;
  */
 public class VendaController {
 
-    public static boolean inserir(int idCliente,
+    public static boolean inserir(
+            int idCliente,
             int idOperador,
             double totalVenda,
             Date dataVenda
@@ -30,6 +32,10 @@ public class VendaController {
         //return true ;
         return VendaDAO.inserir(venda);
         
+    }
+    
+    public static List<Venda> pesquisar(String filtroProc){
+        return VendaDAO.pesquisar(filtroProc);
     }
 
 }

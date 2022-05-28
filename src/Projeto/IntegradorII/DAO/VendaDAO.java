@@ -9,10 +9,14 @@ import Projeto.IntegradorII.Model.Produto;
 import Projeto.IntegradorII.Model.Venda;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.UIManager;
 
 /**
  *
@@ -30,14 +34,12 @@ public class VendaDAO {
         try {
             comando = conexao.prepareStatement("insert into vendas (id_cliente, id_operador, data_venda, total_venda) "
                     + "values (?, ?, ?, ?)");
-            
+
             comando.setInt(1, venda.getIdCliente());
             comando.setInt(2, venda.getIdOperador());
             comando.setString(3, formatoData.format(venda.getDataVenda()));
-            comando.setDouble(4, venda.getValorTotal());
-  
-            comando.setInt(linhas, linhas);
-            
+            comando.setDouble(4, venda.getTotalVenda());
+
             linhas = comando.executeUpdate();
 
         } catch (SQLException ex) {
@@ -53,5 +55,48 @@ public class VendaDAO {
         }
 
         return retorno;
+    }
+
+    public static List<Venda> pesquisar(String filtroProc) {
+
+        Connection conexao = Conexao.abreConexao();
+        PreparedStatement comando;
+        ResultSet rs = null;
+
+        List<Venda> vendas = new ArrayList();
+
+        try {
+             if (filtroProc.equals("")) {
+                comando = conexao.prepareStatement("SELECT * FROM vendas");
+            } else {
+                comando = conexao.prepareStatement("SELECT * FROM vendas WHERE nome LIKE '%" + filtroProc + "%';");
+            }
+
+            rs = comando.executeQuery();
+
+            while (rs.next()) {
+
+                Venda venda = new Venda();
+                venda.setIdVenda(rs.getInt("id_venda"));
+                venda.setIdCliente(rs.getInt("id_cliente"));
+                venda.setIdOperador(rs.getInt("id_operador"));
+                venda.setDataVenda(rs.getDate("id_operador"));
+                venda.setValorTotal(rs.getDouble("total_venda"));
+                vendas.add(venda);
+
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(VendaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            if (rs != null)
+                try {
+                rs.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(VendaDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+        return vendas;
     }
 }

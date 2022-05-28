@@ -5,12 +5,16 @@
 package Projeto.IntegradorII.View;
 
 import Projeto.IntegradorII.Controller.ProdutoController;
+import Projeto.IntegradorII.Controller.VendaController;
 import Projeto.IntegradorII.Model.Produto;
 import Projeto.IntegradorII.Model.Venda;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
@@ -72,8 +76,6 @@ public class NovaVenda extends javax.swing.JPanel {
 
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        txtCpf = new javax.swing.JFormattedTextField();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaProdutos = new javax.swing.JTable();
@@ -95,6 +97,8 @@ public class NovaVenda extends javax.swing.JPanel {
         txtQtd = new javax.swing.JTextField();
         btnMais = new javax.swing.JButton();
         txtFiltro = new javax.swing.JTextField();
+        txtCliente = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setToolTipText("");
@@ -122,17 +126,6 @@ public class NovaVenda extends javax.swing.JPanel {
                 .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        txtCpf.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        try {
-            txtCpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtCpf.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-        jLabel3.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
-        jLabel3.setText("CPF do Cliente");
 
         jLabel4.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         jLabel4.setText("Data-venda");
@@ -218,6 +211,12 @@ public class NovaVenda extends javax.swing.JPanel {
 
         jLabel7.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         jLabel7.setText("Código do operador");
+
+        txtOperador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtOperadorActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         jLabel6.setText("Buscar Produtos");
@@ -368,6 +367,15 @@ public class NovaVenda extends javax.swing.JPanel {
             }
         });
 
+        txtCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtClienteActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
+        jLabel10.setText("Código do clientes");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -416,26 +424,27 @@ public class NovaVenda extends javax.swing.JPanel {
                 .addGap(56, 56, 56)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
+                        .addComponent(jLabel9)
+                        .addGap(214, 214, 214))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel10)
                         .addGap(18, 18, 18)
-                        .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel9))
-                .addGap(70, 70, 70))
+                        .addComponent(txtCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel4)
-                        .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel7)
-                        .addComponent(txtOperador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7)
+                    .addComponent(txtOperador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -468,7 +477,23 @@ public class NovaVenda extends javax.swing.JPanel {
     }//GEN-LAST:event_txtDataActionPerformed
 
     private void bntFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntFinalizarActionPerformed
+        SimpleDateFormat dt = new SimpleDateFormat("dd/MM/yyyy");
+        
+        int idCliente = Integer.parseInt(txtCliente.getText());
+        int idOperador = Integer.parseInt(txtOperador.getText());
+        double totalCompra = Double.parseDouble(txtCompra.getText());
+        Date dataVenda = null;
+ 
+        try {
+            dataVenda = dt.parse(txtData.getText());
+        } catch (ParseException ex) {
+            Logger.getLogger(NovaVenda.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
+        VendaController.inserir(idCliente, idOperador, totalCompra, dataVenda);
         JOptionPane.showMessageDialog(this, "Compra finalizada com suceseso!", "Compra finalizada", 1);
+
+
     }//GEN-LAST:event_bntFinalizarActionPerformed
 
 
@@ -528,21 +553,25 @@ public class NovaVenda extends javax.swing.JPanel {
     private void btnRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverActionPerformed
         // TODO add your handling code here:
 
+        DefaultTableModel modelo = (DefaultTableModel) tabelaCarrinho.getModel();
+
         try {
-            DefaultTableModel table2 = (DefaultTableModel) tabelaCarrinho.getModel();
-
-            table2.removeRow(tabelaCarrinho.getSelectedRow());
-            tabelaCarrinho.setModel(table2);
-
-            int valortotal = 0;
-            for (int i = 0; i < tabelaCarrinho.getRowCount(); i++) {
-                valortotal += (int) tabelaCarrinho.getValueAt(i, 3);
-            }
-            String texto = "" + valortotal;
-            txtCompra.setText(texto);
+            modelo.removeRow(tabelaCarrinho.getSelectedRow());
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Selecione um item do carrinho para remover");
+            JOptionPane.showMessageDialog(this, "Selecione um produto para remover do carrinho");
         }
+
+        double valortotal = 0;
+        for (int i = 0; i < modelo.getRowCount(); i++) {
+
+            double valor = (double) modelo.getValueAt(i, 3);
+
+            valortotal += valor;
+        }
+        String texto = "" + valortotal;
+        txtCompra.setText(texto);
+
+
     }//GEN-LAST:event_btnRemoverActionPerformed
 
     private void btnMaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaisActionPerformed
@@ -579,6 +608,14 @@ public class NovaVenda extends javax.swing.JPanel {
         preencheTabela(txtFiltro.getText());
     }//GEN-LAST:event_txtFiltroKeyReleased
 
+    private void txtOperadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOperadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtOperadorActionPerformed
+
+    private void txtClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtClienteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bntFinalizar;
@@ -586,8 +623,8 @@ public class NovaVenda extends javax.swing.JPanel {
     private javax.swing.JButton btnMais;
     private javax.swing.JButton btnMenos;
     private javax.swing.JButton btnRemover;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -600,8 +637,8 @@ public class NovaVenda extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tabelaCarrinho;
     private javax.swing.JTable tabelaProdutos;
+    private javax.swing.JTextField txtCliente;
     private javax.swing.JTextField txtCompra;
-    private javax.swing.JFormattedTextField txtCpf;
     private javax.swing.JFormattedTextField txtData;
     private javax.swing.JTextField txtFiltro;
     private javax.swing.JTextField txtOperador;
