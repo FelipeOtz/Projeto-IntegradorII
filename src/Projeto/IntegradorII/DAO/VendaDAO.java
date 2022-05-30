@@ -7,6 +7,7 @@ package Projeto.IntegradorII.DAO;
 import Projeto.IntegradorII.Connection.Conexao;
 import Projeto.IntegradorII.Model.ItemVenda;
 import Projeto.IntegradorII.Model.Produto;
+import Projeto.IntegradorII.Model.RelatorioSintetico;
 import Projeto.IntegradorII.Model.Venda;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,6 +15,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -131,5 +133,54 @@ public class VendaDAO {
         }
 
         return vendas;
+    }
+    
+    public static List<RelatorioSintetico> buscaRelatorioSintetico(String periodoInicial, String periodoFim) {
+
+        Connection conexao = Conexao.abreConexao();
+        PreparedStatement comando;
+        ResultSet rs = null;
+        SimpleDateFormat formatoData = new SimpleDateFormat("YYYY-MM-dd");
+
+        List<RelatorioSintetico> relatoriosSinteticos = new ArrayList();
+
+        try {
+             if (periodoInicial.equals("") || periodoFim.equals("")) {
+                comando = conexao.prepareStatement("select vendas.id_venda, concat(clientes.nome, ' ' , clientes.sobrenome) as 'cliente', clientes.cpf as 'cpf_cliente', vendas.data_venda, vendas.total_venda, operadores.nome as 'operador' "
+                        + "from vendas inner join clientes on vendas.id_cliente = clientes.id_cliente inner join operadores on vendas.id_operador = operadores.id_operador;");
+            } else {
+                comando = conexao.prepareStatement("select vendas.id_venda, concat(clientes.nome, ' ' , clientes.sobrenome) as 'cliente', clientes.cpf as 'cpf_cliente', vendas.data_venda, vendas.total_venda, operadores.nome as 'operador' "
+                        + "from vendas inner join clientes on vendas.id_cliente = clientes.id_cliente inner join operadores on vendas.id_operador = operadores.id_operador "
+                        + "where vendas.data_venda between '" + periodoInicial + "' and '"+ periodoFim + "';");
+            }
+
+            rs = comando.executeQuery();
+
+            while (rs.next()) {
+
+                RelatorioSintetico relatorioSintetico = new RelatorioSintetico(
+                        rs.getInt("id_venda"),
+                        rs.getString("cliente"),
+                        rs.getString("cpf_cliente"),
+                        rs.getDate("data_venda"),
+                        rs.getDouble("total_venda"),
+                        rs.getString("operador"));
+                
+                relatoriosSinteticos.add(relatorioSintetico);
+
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(VendaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            if (rs != null)
+                try {
+                rs.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(VendaDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+        return relatoriosSinteticos;
     }
 }

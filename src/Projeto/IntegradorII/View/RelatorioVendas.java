@@ -4,6 +4,14 @@
  */
 package Projeto.IntegradorII.View;
 
+import Projeto.IntegradorII.Controller.ProdutoController;
+import Projeto.IntegradorII.Controller.VendaController;
+import Projeto.IntegradorII.Model.Produto;
+import Projeto.IntegradorII.Model.RelatorioSintetico;
+import java.text.SimpleDateFormat;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author felip
@@ -15,6 +23,29 @@ public class RelatorioVendas extends javax.swing.JPanel {
      */
     public RelatorioVendas() {
         initComponents();
+        
+        String b = "";
+        String a = "";
+        
+        
+        preencheTabela(a, b);
+    }
+
+    public void preencheTabela(String periodoInicial, String periodoFim) {
+        List<RelatorioSintetico> relatoriosSinteticos = VendaController.buscaRelatorioSintetico(periodoInicial, periodoFim);
+        SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/YYYY");
+        DefaultTableModel modelo = (DefaultTableModel) tblSintetico.getModel();
+        modelo.setRowCount(0);
+        for (RelatorioSintetico relatorioSintetico : relatoriosSinteticos) {
+            modelo.addRow(new Object[]{
+                relatorioSintetico.getIdVenda(),
+                relatorioSintetico.getCliente(),
+                relatorioSintetico.getCpf(),
+                formatoData.format(relatorioSintetico.getDataVenda()),
+                relatorioSintetico.getTotalVenda(),
+                relatorioSintetico.getOperador()    
+            });
+        }
     }
 
     /**
@@ -30,7 +61,7 @@ public class RelatorioVendas extends javax.swing.JPanel {
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblSintetico = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -46,7 +77,7 @@ public class RelatorioVendas extends javax.swing.JPanel {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tblAnalitico = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(204, 204, 255));
         setLayout(new java.awt.BorderLayout());
@@ -76,7 +107,7 @@ public class RelatorioVendas extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblSintetico.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -92,8 +123,8 @@ public class RelatorioVendas extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane1.setViewportView(jTable1);
+        tblSintetico.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane1.setViewportView(tblSintetico);
 
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         jLabel1.setText("Relatório Sintético");
@@ -201,7 +232,7 @@ public class RelatorioVendas extends javax.swing.JPanel {
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tblAnalitico.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -217,8 +248,8 @@ public class RelatorioVendas extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jTable2.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane3.setViewportView(jTable2);
+        tblAnalitico.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane3.setViewportView(tblAnalitico);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -318,10 +349,10 @@ public class RelatorioVendas extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private com.k33ptoo.components.KGradientPanel kGradientPanel1;
     private com.k33ptoo.components.KGradientPanel kGradientPanel2;
+    private javax.swing.JTable tblAnalitico;
+    private javax.swing.JTable tblSintetico;
     private javax.swing.JFormattedTextField txtData;
     private javax.swing.JFormattedTextField txtData1;
     // End of variables declaration//GEN-END:variables

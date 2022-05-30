@@ -6,6 +6,7 @@ package Projeto.IntegradorII.Controller;
 
 import Projeto.IntegradorII.DAO.VendaDAO;
 import Projeto.IntegradorII.Model.ItemVenda;
+import Projeto.IntegradorII.Model.RelatorioSintetico;
 import Projeto.IntegradorII.Model.Venda;
 import java.util.ArrayList;
 import java.util.Date;
@@ -38,6 +39,10 @@ public class VendaController {
     
     public static List<Venda> pesquisar(String filtroProc){
         return VendaDAO.pesquisar(filtroProc);
+    }
+    
+    public static List<RelatorioSintetico> buscaRelatorioSintetico(String periodoInicial, String periodoFim){
+        return VendaDAO.buscaRelatorioSintetico(periodoInicial, periodoFim);
     }
 
 }
