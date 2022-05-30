@@ -6,13 +6,19 @@ package Projeto.IntegradorII.View;
 
 import Projeto.IntegradorII.Controller.ProdutoController;
 import Projeto.IntegradorII.Controller.VendaController;
+import Projeto.IntegradorII.Model.ItemVenda;
 import Projeto.IntegradorII.Model.Produto;
 import Projeto.IntegradorII.Model.Venda;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -291,6 +297,7 @@ public class NovaVenda extends javax.swing.JPanel {
 
         txtCompra.setEditable(false);
         txtCompra.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 14)); // NOI18N
+        txtCompra.setDoubleBuffered(true);
         txtCompra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCompraActionPerformed(evt);
@@ -482,6 +489,29 @@ public class NovaVenda extends javax.swing.JPanel {
         int idCliente = Integer.parseInt(txtCliente.getText());
         int idOperador = Integer.parseInt(txtOperador.getText());
         double totalCompra = Double.parseDouble(txtCompra.getText());
+        
+        System.out.println(totalCompra);
+        
+        ArrayList <ItemVenda> itensVenda = new ArrayList<>();
+        DefaultTableModel modelo = (DefaultTableModel) tabelaCarrinho.getModel();
+        
+        for (int i = 0; i < modelo.getRowCount(); i++) {
+            ItemVenda itemVenda = new ItemVenda();
+            
+            itemVenda.setId_produto((int) modelo.getValueAt(i, 0));
+            itemVenda.setQuantidade((int) modelo.getValueAt(i, 2));
+            itemVenda.setTotal_produto((double) modelo.getValueAt(i, 3));
+            
+            itensVenda.add(itemVenda);
+            
+            System.out.println(itensVenda.toString());
+            
+        }
+        
+        
+        
+        
+        
         Date dataVenda = null;
  
         try {
@@ -490,7 +520,7 @@ public class NovaVenda extends javax.swing.JPanel {
             Logger.getLogger(NovaVenda.class.getName()).log(Level.SEVERE, null, ex);
         }
     
-        VendaController.inserir(idCliente, idOperador, totalCompra, dataVenda);
+        VendaController.inserir(idCliente, idOperador,itensVenda, totalCompra, dataVenda);
         JOptionPane.showMessageDialog(this, "Compra finalizada com suceseso!", "Compra finalizada", 1);
 
 
@@ -517,6 +547,8 @@ public class NovaVenda extends javax.swing.JPanel {
             boolean jaExiste = false;
 
             // Executa este for para verificar se ja existem produtos no carrinho com o Código selecionado
+            // Se sim, acumula os item na mesma linha
+            
             for (int i = 0; i < modelo.getRowCount(); i++) {
                 int codExistente = (int) modelo.getValueAt(i, 0);
                 if (codSelecionado == codExistente) {
@@ -543,7 +575,8 @@ public class NovaVenda extends javax.swing.JPanel {
         for (int i = 0; i < tabelaCarrinho.getRowCount(); i++) {
             valortotal = valortotal + (double) tabelaCarrinho.getValueAt(i, 3);
         }
-        txtCompra.setText("" + valortotal);
+        
+        txtCompra.setText(arredondaDecimal(valortotal, 2));
 
         bntFinalizar.setEnabled(true);
 
@@ -568,8 +601,10 @@ public class NovaVenda extends javax.swing.JPanel {
 
             valortotal += valor;
         }
-        String texto = "" + valortotal;
-        txtCompra.setText(texto);
+
+        String virgula = NumberFormat.getInstance(Locale.getDefault()).format(valortotal);;
+        
+        txtCompra.setText(virgula);
 
 
     }//GEN-LAST:event_btnRemoverActionPerformed
@@ -587,6 +622,18 @@ public class NovaVenda extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnMenosActionPerformed
 
+    
+    public static String arredondaDecimal(double valor, int depoisVirgula) {
+    if (depoisVirgula < 0) throw new IllegalArgumentException();
+
+    BigDecimal bd = BigDecimal.valueOf(valor);
+    bd = bd.setScale(depoisVirgula, RoundingMode.HALF_UP);
+
+    String totalComVirgula = Double.toString(bd.doubleValue());
+    
+    return totalComVirgula.replace(",", ".");
+}
+    
     private void txtQtdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQtdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtQtdActionPerformed
@@ -594,10 +641,6 @@ public class NovaVenda extends javax.swing.JPanel {
     private void txtQtdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtQtdKeyTyped
 
     }//GEN-LAST:event_txtQtdKeyTyped
-
-    private void txtCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCompraActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCompraActionPerformed
 
     private void txtFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFiltroActionPerformed
         // TODO add your handling code here:
@@ -615,6 +658,10 @@ public class NovaVenda extends javax.swing.JPanel {
     private void txtClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtClienteActionPerformed
+
+    private void txtCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCompraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCompraActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

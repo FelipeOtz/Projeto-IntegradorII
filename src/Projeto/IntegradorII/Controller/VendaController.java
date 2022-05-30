@@ -20,6 +20,7 @@ public class VendaController {
     public static boolean inserir(
             int idCliente,
             int idOperador,
+            ArrayList<ItemVenda> itensVenda,
             double totalVenda,
             Date dataVenda
             ) {
@@ -27,6 +28,7 @@ public class VendaController {
         Venda venda = new Venda();
         venda.setIdCliente(idCliente);
         venda.setIdOperador(idOperador);
+        venda.setItensVenda(itensVenda);
         venda.setTotalVenda(totalVenda);
         venda.setDataVenda(dataVenda);
         //return true ;

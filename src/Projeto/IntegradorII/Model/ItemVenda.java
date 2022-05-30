@@ -9,6 +9,11 @@ package Projeto.IntegradorII.Model;
  * @author felip
  */
 public class ItemVenda {
+
+    @Override
+    public String toString() {
+        return "ItemVenda{" + "id_produto=" + id_produto + ", quantidade=" + quantidade + ", total_produto=" + total_produto + '}';
+    }
     private int id_item_venda;
     private int id_venda;
     private int id_produto;

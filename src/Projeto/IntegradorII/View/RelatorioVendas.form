@@ -43,15 +43,15 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jScrollPane1" min="-2" pref="443" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jScrollPane2" min="-2" pref="428" max="-2" attributes="0"/>
-                          <EmptySpace min="23" pref="23" max="-2" attributes="0"/>
+                          <Component id="jScrollPane3" min="-2" pref="443" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="178" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -110,9 +110,9 @@
                       <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jScrollPane2" pref="237" max="32767" attributes="0"/>
-                      <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jScrollPane1" min="-2" pref="237" max="-2" attributes="0"/>
+                      <Component id="jScrollPane3" min="-2" pref="237" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="83" max="32767" attributes="0"/>
               </Group>
@@ -171,67 +171,13 @@
             <Component class="javax.swing.JTable" name="jTable1">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="5" rowCount="10">
-                    <Column editable="false" title="C&#xf3;d. do Pedido" type="java.lang.Object">
-                      <Data value="322"/>
-                      <Data value="65"/>
-                      <Data value="324"/>
-                      <Data value="324"/>
-                      <Data value="7"/>
-                      <Data value="87"/>
-                      <Data value="6"/>
-                      <Data value="657"/>
-                      <Data value="87"/>
-                      <Data value="45"/>
-                    </Column>
-                    <Column editable="false" title="Data da Venda" type="java.lang.String">
-                      <Data value="15/04/2022"/>
-                      <Data value="15/04/2022"/>
-                      <Data value="28/02/2022"/>
-                      <Data value="15/03/2022"/>
-                      <Data value="02/04/2022"/>
-                      <Data value="19/03/2022"/>
-                      <Data value="24/01/2022"/>
-                      <Data value="30/03/2022"/>
-                      <Data value="01/04/2022"/>
-                      <Data value="07/04/2022"/>
-                    </Column>
-                    <Column editable="false" title="CPF Cliente" type="java.lang.Object">
-                      <Data value="78005495005"/>
-                      <Data value="11119985058"/>
-                      <Data value="44575675075"/>
-                      <Data value="50641412037"/>
-                      <Data value="92786084083"/>
-                      <Data value="39262707053"/>
-                      <Data value="93004658054"/>
-                      <Data value="53694745084"/>
-                      <Data value="56050422036"/>
-                      <Data value="89014465025"/>
-                    </Column>
-                    <Column editable="false" title="Valor Total" type="java.lang.String">
-                      <Data value=" R$ 269,00 "/>
-                      <Data value=" R$ 39,00 "/>
-                      <Data value=" R$ 39,99 "/>
-                      <Data value=" R$ 9,99 "/>
-                      <Data value=" R$ 239,80 "/>
-                      <Data value=" R$ 4,79 "/>
-                      <Data value=" R$ 3,90 "/>
-                      <Data value=" R$ 10,39 "/>
-                      <Data value=" R$ 720,00 "/>
-                      <Data value=" R$ 11,99 "/>
-                    </Column>
-                    <Column editable="false" title="C&#xf3;d. Vendedor" type="java.lang.Integer">
-                      <Data value="54"/>
-                      <Data value="54"/>
-                      <Data value="54"/>
-                      <Data value="54"/>
-                      <Data value="31"/>
-                      <Data value="75"/>
-                      <Data value="2"/>
-                      <Data value="54"/>
-                      <Data value="23"/>
-                      <Data value="86"/>
-                    </Column>
+                  <Table columnCount="6" rowCount="0">
+                    <Column editable="false" title="C&#xf3;d. Venda" type="java.lang.Object"/>
+                    <Column editable="false" title="Nome do cliente" type="java.lang.Object"/>
+                    <Column editable="false" title="CPF Cliente" type="java.lang.Object"/>
+                    <Column editable="false" title="Data da Venda" type="java.lang.Object"/>
+                    <Column editable="false" title="Valor Total" type="java.lang.Object"/>
+                    <Column editable="false" title="Operador" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -268,31 +214,6 @@
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
-            </Component>
-          </SubComponents>
-        </Container>
-        <Container class="javax.swing.JScrollPane" name="jScrollPane2">
-          <AuxValues>
-            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-          </AuxValues>
-
-          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-          <SubComponents>
-            <Component class="javax.swing.JList" name="jList1">
-              <Properties>
-                <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                  <StringArray count="5">
-                    <StringItem index="0" value="item 1"/>
-                    <StringItem index="1" value="item 2"/>
-                    <StringItem index="2" value="item 3"/>
-                    <StringItem index="3" value="item 4"/>
-                    <StringItem index="4" value=" "/>
-                  </StringArray>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
@@ -476,6 +397,62 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="239"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTable" name="jTable2">
+              <Properties>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                  <Table columnCount="6" rowCount="0">
+                    <Column editable="false" title="C&#xf3;d. do Produto" type="java.lang.Object"/>
+                    <Column editable="false" title="Nome do produto" type="java.lang.Object"/>
+                    <Column editable="false" title="Marca" type="java.lang.Object"/>
+                    <Column editable="false" title="Quantidade" type="java.lang.Object"/>
+                    <Column editable="false" title="Pre&#xe7;o Unit&#xe1;rio" type="java.lang.Object"/>
+                    <Column editable="false" title="Total Produto" type="java.lang.Object"/>
+                  </Table>
+                </Property>
+                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                  <TableColumnModel selectionModel="0">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                  </TableColumnModel>
+                </Property>
+                <Property name="selectionMode" type="int" value="0"/>
+                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                  <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                </Property>
               </Properties>
             </Component>
           </SubComponents>

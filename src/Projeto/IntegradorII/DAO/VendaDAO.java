@@ -5,6 +5,7 @@
 package Projeto.IntegradorII.DAO;
 
 import Projeto.IntegradorII.Connection.Conexao;
+import Projeto.IntegradorII.Model.ItemVenda;
 import Projeto.IntegradorII.Model.Produto;
 import Projeto.IntegradorII.Model.Venda;
 import java.sql.Connection;
@@ -28,6 +29,7 @@ public class VendaDAO {
         SimpleDateFormat formatoData = new SimpleDateFormat("YYYY-MM-dd");
         boolean retorno = false;
         Connection conexao = Conexao.abreConexao();
+        ResultSet rs = null;
 
         PreparedStatement comando;
         int linhas = 0;
@@ -41,7 +43,38 @@ public class VendaDAO {
             comando.setDouble(4, venda.getTotalVenda());
 
             linhas = comando.executeUpdate();
-
+            
+            
+            
+            comando = conexao.prepareStatement("SELECT LAST_INSERT_ID();");
+            
+            rs = comando.executeQuery();
+            
+           int ultimoId = 0;
+            
+            while (rs.next()) {
+                 ultimoId = rs.getInt("LAST_INSERT_ID()");
+            }
+                    
+            
+            comando = conexao.prepareStatement("insert into itens_venda (fk_id_venda, fk_id_produto, quantidade, total_produto) "
+                    + "values (?, ?, ?, ?)");   
+            
+            System.out.println(ultimoId);
+            
+            ArrayList<ItemVenda> itensVenda = venda.getItensVenda();
+            
+            
+            for (ItemVenda itemVenda : itensVenda) {
+               comando.setInt(1, ultimoId);
+               comando.setInt(2, itemVenda.getId_produto());
+               comando.setInt(3, itemVenda.getQuantidade());
+               comando.setDouble(4, itemVenda.getTotal_produto());
+               linhas = comando.executeUpdate();
+            }
+            
+            
+            
         } catch (SQLException ex) {
             Logger.getLogger(VendaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
