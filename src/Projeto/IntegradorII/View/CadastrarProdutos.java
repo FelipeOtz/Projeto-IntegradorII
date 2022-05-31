@@ -20,6 +20,7 @@ import javax.swing.JOptionPane;
  * @author Lenovo
  */
 public class CadastrarProdutos extends javax.swing.JPanel {
+
     String car = "";
 
     /**
@@ -29,7 +30,7 @@ public class CadastrarProdutos extends javax.swing.JPanel {
         initComponents();
     }
 
-        public void limparCampos (){
+    public void limparCampos() {
         txtNome.setText("");
         txtMarca.setText("");
         txtCor.setText("");
@@ -43,8 +44,7 @@ public class CadastrarProdutos extends javax.swing.JPanel {
         jDateChooser1.setDate(null);
         txtDescricao.setText("");
     }
-    
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -151,6 +151,11 @@ public class CadastrarProdutos extends javax.swing.JPanel {
         txtNome.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtNomeFocusGained(evt);
+            }
+        });
+        txtNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeActionPerformed(evt);
             }
         });
         txtNome.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -399,7 +404,7 @@ public class CadastrarProdutos extends javax.swing.JPanel {
                                     .addComponent(txtQtdEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 869, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(465, Short.MAX_VALUE))
+                .addContainerGap(126, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -501,7 +506,7 @@ public class CadastrarProdutos extends javax.swing.JPanel {
     private void txtPrecoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecoKeyTyped
 
         //Permite a entrada somente de números
-       /* char c = evt.getKeyChar();
+        /* char c = evt.getKeyChar();
         if (((c < '0') || (c > '9')) && (c != KeyEvent.VK_BACK_SPACE)) {
             evt.consume();
         }*/
@@ -578,36 +583,40 @@ public class CadastrarProdutos extends javax.swing.JPanel {
     }//GEN-LAST:event_cbSetorFocusGained
 
     private void txtPrecoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecoKeyReleased
-        
+
     }//GEN-LAST:event_txtPrecoKeyReleased
 
     private void btnCadProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadProdActionPerformed
         ValidadorProduto v = new ValidadorProduto();
 
         if (v.validarProduto(txtCod, txtNome, txtMarca, jDateChooser1, txtCor, txtPreco, txtTamanho,
-            cbUnidade, txtDescricao, cbSetor, cbTipo, txtQtdEstoque)) {
-        //se não houver erros, insere no banco
-        String nome = txtNome.getText();
-        String marca = txtMarca.getText();
-        String tipo = cbTipo.getSelectedItem().toString();
-        String setor = cbSetor.getSelectedItem().toString();
-        String cor = txtCor.getText();
-        double preco = Double.parseDouble(txtPreco.getText());
-        int estoque = Integer.parseInt(txtQtdEstoque.getText());
-        double tamanho = Double.parseDouble(txtTamanho.getText());
-        String unidade = cbUnidade.getSelectedItem().toString();
-        Date validate = jDateChooser1.getDate();
-        String descricao = txtDescricao.getText();
+                cbUnidade, txtDescricao, cbSetor, cbTipo, txtQtdEstoque)) {
+            //se não houver erros, insere no banco
+            String nome = txtNome.getText();
+            String marca = txtMarca.getText();
+            String tipo = cbTipo.getSelectedItem().toString();
+            String setor = cbSetor.getSelectedItem().toString();
+            String cor = txtCor.getText();
+            double preco = Double.parseDouble(txtPreco.getText());
+            int estoque = Integer.parseInt(txtQtdEstoque.getText());
+            double tamanho = Double.parseDouble(txtTamanho.getText());
+            String unidade = cbUnidade.getSelectedItem().toString();
+            Date validate = jDateChooser1.getDate();
+            String descricao = txtDescricao.getText();
 
-        ProdutoController.inserir(nome, marca, tipo, setor, cor, preco, estoque, tamanho, unidade, validate, descricao);
+            ProdutoController.inserir(nome, marca, tipo, setor, cor, preco, estoque, tamanho, unidade, validate, descricao);
 
-        JOptionPane.showMessageDialog(this, "Informações Salvas");
-        limparCampos();
+            JOptionPane.showMessageDialog(this, "Informações Salvas");
+            limparCampos();
         } else {
             //Se houver erros
             v.exibirErros();
         }
     }//GEN-LAST:event_btnCadProdActionPerformed
+
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

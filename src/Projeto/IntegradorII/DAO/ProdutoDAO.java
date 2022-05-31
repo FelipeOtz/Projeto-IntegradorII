@@ -186,13 +186,13 @@ public class ProdutoDAO {
 
     }
 
-    public static List<Produto> pesquisarPorId(int Id) {
+    public static Produto pesquisarPorId(int Id) {
 
         Connection conexao = Conexao.abreConexao();
         PreparedStatement comando;
         ResultSet rs = null;
 
-        List< Produto> produtos = new ArrayList();
+        Produto produto = new Produto();
 
         try {
             comando = conexao.prepareStatement("SELECT * FROM produtos WHERE id_produto = ?");
@@ -202,7 +202,6 @@ public class ProdutoDAO {
             rs = comando.executeQuery();
 
             while (rs.next()) {
-                Produto produto = new Produto();
                 produto.setCodigo(rs.getInt("id_produto"));
                 produto.setNome(rs.getString("nome"));
                 produto.setMarca(rs.getString("marca"));
@@ -215,8 +214,6 @@ public class ProdutoDAO {
                 produto.setUnidade(rs.getString("unidade"));
                 produto.setValidade(rs.getDate("validade"));
                 produto.setDescricao(rs.getString("descricao"));
-
-                produtos.add(produto);
             }
 
         } catch (SQLException ex) {
@@ -230,7 +227,7 @@ public class ProdutoDAO {
             }
         }
 
-        return produtos;
+        return produto;
 
     }
 }

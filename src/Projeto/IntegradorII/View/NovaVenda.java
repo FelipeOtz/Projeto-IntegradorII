@@ -486,39 +486,34 @@ public class NovaVenda extends javax.swing.JPanel {
 
     private void bntFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntFinalizarActionPerformed
         SimpleDateFormat dt = new SimpleDateFormat("dd/MM/yyyy");
-        
+
         int idCliente = Integer.parseInt(txtCliente.getText());
         int idOperador = Integer.parseInt(txtOperador.getText());
         double totalCompra = Double.parseDouble(txtCompra.getText());
-        
-        ArrayList <ItemVenda> itensVenda = new ArrayList<>();
+
+        ArrayList<ItemVenda> itensVenda = new ArrayList<>();
         DefaultTableModel modelo = (DefaultTableModel) tabelaCarrinho.getModel();
-        
+
         for (int i = 0; i < modelo.getRowCount(); i++) {
             ItemVenda itemVenda = new ItemVenda();
-            
+
             itemVenda.setId_produto((int) modelo.getValueAt(i, 0));
             itemVenda.setQuantidade((int) modelo.getValueAt(i, 2));
             itemVenda.setTotal_produto((double) modelo.getValueAt(i, 3));
-            
+
             itensVenda.add(itemVenda);
-            
-            
+
         }
-        
-        
-        
-        
-        
+
         Date dataVenda = null;
- 
+
         try {
             dataVenda = dt.parse(txtData.getText());
         } catch (ParseException ex) {
             Logger.getLogger(NovaVenda.class.getName()).log(Level.SEVERE, null, ex);
         }
-    
-        VendaController.inserir(idCliente, idOperador,itensVenda, totalCompra, dataVenda);
+
+        VendaController.inserir(idCliente, idOperador, itensVenda, totalCompra, dataVenda);
         JOptionPane.showMessageDialog(this, "Compra finalizada com suceseso!", "Compra finalizada", 1);
 
 
@@ -532,40 +527,36 @@ public class NovaVenda extends javax.swing.JPanel {
 
         int codSelecionado = (int) tabelaProdutos.getModel().getValueAt(tabelaProdutos.getSelectedRow(), 0);
 
-        List<Produto> produtos = ProdutoController.pesquisaPorId(codSelecionado);
+        Produto produto = ProdutoController.pesquisaPorId(codSelecionado);
 
-        for (Produto produto : produtos) {
-            String nome = produto.getNome();
-            int Quantidade = Integer.parseInt(txtQtd.getText());
+        String nome = produto.getNome();
+        int Quantidade = Integer.parseInt(txtQtd.getText());
 
-            double valor = produto.getPreco();
+        double valor = produto.getPreco();
 
-            valor = valor * Quantidade;
+        valor = valor * Quantidade;
 
-            boolean jaExiste = false;
+        boolean jaExiste = false;
 
-            // Executa este for para verificar se ja existem produtos no carrinho com o Código selecionado
-            // Se sim, acumula os item na mesma linha
-            
-            for (int i = 0; i < modelo.getRowCount(); i++) {
-                int codExistente = (int) modelo.getValueAt(i, 0);
-                if (codSelecionado == codExistente) {
-                    modelo.setValueAt(codSelecionado, i, 0);
-                    modelo.setValueAt(nome, i, 1);
-                    int quantidadeExistente = (int) tabelaCarrinho.getValueAt(i, 2);
-                    modelo.setValueAt((Quantidade + quantidadeExistente), i, 2);
-                    double valorExistente = (double) modelo.getValueAt(i, 3);
-                    modelo.setValueAt((valor + valorExistente), i, 3);
-                    jaExiste = true;
-                    break;
-                }
-
+        // Executa este for para verificar se ja existem produtos no carrinho com o Código selecionado
+        // Se sim, acumula os item na mesma linha
+        for (int i = 0; i < modelo.getRowCount(); i++) {
+            int codExistente = (int) modelo.getValueAt(i, 0);
+            if (codSelecionado == codExistente) {
+                modelo.setValueAt(codSelecionado, i, 0);
+                modelo.setValueAt(nome, i, 1);
+                int quantidadeExistente = (int) tabelaCarrinho.getValueAt(i, 2);
+                modelo.setValueAt((Quantidade + quantidadeExistente), i, 2);
+                double valorExistente = (double) modelo.getValueAt(i, 3);
+                modelo.setValueAt((valor + valorExistente), i, 3);
+                jaExiste = true;
+                break;
             }
 
-            if (!jaExiste) {
-                modelo.addRow(new Object[]{codSelecionado, nome, Quantidade, valor});
-            }
+        }
 
+        if (!jaExiste) {
+            modelo.addRow(new Object[]{codSelecionado, nome, Quantidade, valor});
         }
 
         double valortotal = 0;
@@ -573,7 +564,7 @@ public class NovaVenda extends javax.swing.JPanel {
         for (int i = 0; i < tabelaCarrinho.getRowCount(); i++) {
             valortotal = valortotal + (double) tabelaCarrinho.getValueAt(i, 3);
         }
-        
+
         txtCompra.setText(arredondaDecimal(valortotal, 2));
 
         bntFinalizar.setEnabled(true);
@@ -601,7 +592,7 @@ public class NovaVenda extends javax.swing.JPanel {
         }
 
         String virgula = NumberFormat.getInstance(Locale.getDefault()).format(valortotal);;
-        
+
         txtCompra.setText(virgula);
 
 
@@ -620,18 +611,19 @@ public class NovaVenda extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnMenosActionPerformed
 
-    
     public static String arredondaDecimal(double valor, int depoisVirgula) {
-    if (depoisVirgula < 0) throw new IllegalArgumentException();
+        if (depoisVirgula < 0) {
+            throw new IllegalArgumentException();
+        }
 
-    BigDecimal bd = BigDecimal.valueOf(valor);
-    bd = bd.setScale(depoisVirgula, RoundingMode.HALF_UP);
+        BigDecimal bd = BigDecimal.valueOf(valor);
+        bd = bd.setScale(depoisVirgula, RoundingMode.HALF_UP);
 
-    String totalComVirgula = Double.toString(bd.doubleValue());
-    
-    return totalComVirgula.replace(",", ".");
-}
-    
+        String totalComVirgula = Double.toString(bd.doubleValue());
+
+        return totalComVirgula.replace(",", ".");
+    }
+
     private void txtQtdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQtdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtQtdActionPerformed

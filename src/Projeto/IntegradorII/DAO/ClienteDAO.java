@@ -222,22 +222,22 @@ public class ClienteDAO {
 
                 Cliente cliente = new Cliente();
 
-                cliente.setCodigo(rs.getInt(1));
-                cliente.setNome(rs.getString(2));
-                cliente.setSobreNome(rs.getString(3));
-                cliente.setCpf(rs.getString(4));
-                cliente.setEmail(rs.getString(5));
-                cliente.setTelefone(rs.getString(6));
-                cliente.setDataNasc(rs.getDate(7));
-                cliente.setSexo(rs.getString(8));
-                cliente.setEstadoCivil(rs.getString(9));
-                cliente.setCep(rs.getString(10));
-                cliente.setLogradouro(rs.getString(11));
-                cliente.setNumero(rs.getString(12));
-                cliente.setComplemento(rs.getString(13));
-                cliente.setBairro(rs.getString(14));
-                cliente.setCidade(rs.getString(15));
-                cliente.setEstado(rs.getString(16));
+                cliente.setCodigo(rs.getInt("id_cliente"));
+                cliente.setNome(rs.getString("nome"));
+                cliente.setSobreNome(rs.getString("sobrenome"));
+                cliente.setCpf(rs.getString("cpf"));
+                cliente.setEmail(rs.getString("email"));
+                cliente.setTelefone(rs.getString("telefone"));
+                cliente.setDataNasc(rs.getDate("datanascimento"));
+                cliente.setSexo(rs.getString("sexo"));
+                cliente.setEstadoCivil(rs.getString("estadocivil"));
+                cliente.setCep(rs.getString("cep"));
+                cliente.setLogradouro(rs.getString("logradouro"));
+                cliente.setNumero(rs.getString("numero"));
+                cliente.setComplemento(rs.getString("complemento"));
+                cliente.setBairro(rs.getString("bairro"));
+                cliente.setCidade(rs.getString("cidade"));
+                cliente.setEstado(rs.getString("estado"));
 
                 clientes.add(cliente);
             }

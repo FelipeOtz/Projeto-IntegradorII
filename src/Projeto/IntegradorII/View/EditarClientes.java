@@ -28,7 +28,7 @@ public class EditarClientes extends javax.swing.JPanel {
         initComponents();
     }
 
-    public void limparCampos (){
+    public void limparCampos() {
         txtNome.setText("");
         txtSobrenome.setText("");
         txtTelefone.setText("");
@@ -45,8 +45,7 @@ public class EditarClientes extends javax.swing.JPanel {
         txtCidade.setText("");
         txtEstado.setText("");
     }
-    
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -819,32 +818,32 @@ public class EditarClientes extends javax.swing.JPanel {
 
         //Retorna true se não houver erros na validação
         if (v.validarCliente(txtNome, txtSobrenome, txtCPF, txtEmail, txtTelefone, jDateChooser1,
-            cbSexo, cbEstadoCivil,txtCep, txtLogradouro, txtNum, txtComplemento, txtBairro, txtCidade, txtEstado)){
+                cbSexo, cbEstadoCivil, txtCep, txtLogradouro, txtNum, txtComplemento, txtBairro, txtCidade, txtEstado)) {
 
-                int id = Integer.parseInt(txtCod.getText());
-                String nome = txtNome.getText();
-                String sobrenome = txtSobrenome.getText();
-                String cpf = txtCPF.getText();
-                String email = txtEmail.getText().toLowerCase();
-                String telefone = txtTelefone.getText();
-                Date datanascimento = jDateChooser1.getDate();
-                String sexo = cbSexo.getSelectedItem().toString();
-                String estadocivil = cbEstadoCivil.getSelectedItem().toString();
-                String cep = txtCep.getText();
-                String logradouro = txtLogradouro.getText();
-                String num = txtNum.getText();
-                String complemento = txtComplemento.getText();
-                String bairro = txtBairro.getText();
-                String cidade = txtCidade.getText();
-                String estado = txtEstado.getText();
-                ClienteController.alterar(id, nome, sobrenome, cpf, email, telefone, datanascimento, sexo, estadocivil, cep, logradouro, num, complemento, bairro, cidade, estado);
-            
-        JOptionPane.showMessageDialog(this, "Cliente Cadastrado com Sucesso");
-        limparCampos();
-        }else{
+            int id = Integer.parseInt(txtCod.getText());
+            String nome = txtNome.getText();
+            String sobrenome = txtSobrenome.getText();
+            String cpf = txtCPF.getText();
+            String email = txtEmail.getText().toLowerCase();
+            String telefone = txtTelefone.getText();
+            Date datanascimento = jDateChooser1.getDate();
+            String sexo = cbSexo.getSelectedItem().toString();
+            String estadocivil = cbEstadoCivil.getSelectedItem().toString();
+            String cep = txtCep.getText();
+            String logradouro = txtLogradouro.getText();
+            String num = txtNum.getText();
+            String complemento = txtComplemento.getText();
+            String bairro = txtBairro.getText();
+            String cidade = txtCidade.getText();
+            String estado = txtEstado.getText();
+            ClienteController.alterar(id, nome, sobrenome, cpf, email, telefone, datanascimento, sexo, estadocivil, cep, logradouro, num, complemento, bairro, cidade, estado);
+
+            JOptionPane.showMessageDialog(this, "Cliente Cadastrado com Sucesso");
+            limparCampos();
+        } else {
             v.exibirErros();
         }
-        
+
     }//GEN-LAST:event_bntSalvarActionPerformed
 
     private void btnDesfazerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDesfazerActionPerformed
@@ -857,16 +856,29 @@ public class EditarClientes extends javax.swing.JPanel {
     }//GEN-LAST:event_btnSearchCEPActionPerformed
 
     private void btnBuscarCodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarCodActionPerformed
-       int id = Integer.parseInt(txtCod.getText());
-       
-       List<Cliente> clientes = ClienteController.pesquisarPorId(id);
-       
+        int id = Integer.parseInt(txtCod.getText());
+
+        List<Cliente> clientes = ClienteController.pesquisarPorId(id);
+
         for (Cliente cliente : clientes) {
-            
+            txtNome.setText(cliente.getNome());
+            txtSobrenome.setText(cliente.getSobreNome());
+            txtTelefone.setText(cliente.getTelefone());
+            txtCPF.setText(cliente.getCpf());
+            txtEmail.setText(cliente.getEmail());
+            jDateChooser1.setDate(cliente.getDataNasc());
+            cbEstadoCivil.setSelectedIndex(1);
+            cbSexo.setSelectedIndex(1);
+            txtCep.setText(cliente.getCep());
+            txtLogradouro.setText(cliente.getLogradouro());
+            txtNum.setText(cliente.getNumero());
+            txtComplemento.setText(cliente.getComplemento());
+            txtBairro.setText(cliente.getBairro());
+            txtCidade.setText(cliente.getCidade());
+            txtEstado.setText(cliente.getEstado());
         }
-       
-       
-        
+
+
     }//GEN-LAST:event_btnBuscarCodActionPerformed
 
     private void txtCodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodActionPerformed
@@ -883,33 +895,28 @@ public class EditarClientes extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_txtCodKeyTyped
 
-    
-        public void runViaCEP(){
+    public void runViaCEP() {
         ViaCEP cep = new ViaCEP();
         try {
             cep.buscar(txtCep.getText().replaceAll("\\D", ""));
-              String bairro = cep.getBairro();
-        txtBairro.setText(bairro);
-        
-        String logra = cep.getLogradouro();
-        txtLogradouro.setText(logra);
-        
-        String local = cep.getLocalidade();
-        txtCidade.setText(local);
-        
-        
-        String estado = cep.getLocalidade();
-        txtEstado.setText(estado);
+            String bairro = cep.getBairro();
+            txtBairro.setText(bairro);
+
+            String logra = cep.getLogradouro();
+            txtLogradouro.setText(logra);
+
+            String local = cep.getLocalidade();
+            txtCidade.setText(local);
+
+            String estado = cep.getLocalidade();
+            txtEstado.setText(estado);
         } catch (ViaCEPException ex) {
             JOptionPane.showMessageDialog(this, "CEP inválido");
+        }
+
     }
-    
-    }
-    
-    
-    
-    
-    
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bntSalvar;
     private javax.swing.JButton btnBuscarCod;

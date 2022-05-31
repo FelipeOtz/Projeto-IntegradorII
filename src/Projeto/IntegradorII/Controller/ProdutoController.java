@@ -94,7 +94,7 @@ public class ProdutoController {
         return ProdutoDAO.pesquisar(filtroproc);
         
     }
-    public static List<Produto> pesquisaPorId(int id) {
+    public static Produto pesquisaPorId(int id) {
 
         return ProdutoDAO.pesquisarPorId(id);
         

@@ -5,6 +5,7 @@
 package Projeto.IntegradorII.View;
 
 import Projeto.IntegradorII.Controller.ProdutoController;
+import Projeto.IntegradorII.Model.Produto;
 import Projeto.IntegradorII.Utils.ValidadorProduto;
 import java.awt.event.KeyEvent;
 import java.util.Date;
@@ -171,7 +172,7 @@ public class EditarProdutos extends javax.swing.JPanel {
         jLabel8.setText("Cor");
 
         jLabel9.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
-        jLabel9.setText("Quantidade");
+        jLabel9.setText("Tamanho");
 
         jLabel10.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         jLabel10.setText("Unid.");
@@ -452,12 +453,22 @@ public class EditarProdutos extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMarcaActionPerformed
 
-    private void cbUnidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbUnidadeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbUnidadeActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+    
+        Produto produto = ProdutoController.pesquisaPorId(Integer.parseInt(txtCod.getText()));
+        
+        txtNome.setText(produto.getNome());
+        txtMarca.setText(produto.getMarca());
+        txtCor.setText(produto.getCor());
+        txtTamanho.setText(""+produto.getTamanho());
+        cbUnidade.setSelectedItem(3);
+        cbSetor.setSelectedIndex(1);
+        cbTipo.setSelectedIndex(1);
+        txtQtdEstoque.setText(""+produto.getEstoque());
+        txtPreco.setText(""+produto.getPreco());
+        jDateChooser1.setDate(produto.getValidade());
+        txtDescricao.setText(produto.getDescricao());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtCodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodActionPerformed
@@ -477,6 +488,10 @@ public class EditarProdutos extends javax.swing.JPanel {
             evt.consume();
         }
     }//GEN-LAST:event_txtCodKeyTyped
+
+    private void cbUnidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbUnidadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbUnidadeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

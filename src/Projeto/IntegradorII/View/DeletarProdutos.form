@@ -78,22 +78,22 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="txtQtdProd" min="-2" pref="64" max="-2" attributes="0"/>
+                                              <Component id="txtTamanho" min="-2" pref="64" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Component id="jLabel17" min="-2" pref="20" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                                               <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="txtUnidProd" min="-2" pref="64" max="-2" attributes="0"/>
+                                              <Component id="txtUnidade" min="-2" pref="64" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="txtPreco" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="txtNomProd" alignment="0" min="-2" pref="284" max="-2" attributes="0"/>
-                                          <Component id="txtMarcaProd" alignment="0" min="-2" pref="284" max="-2" attributes="0"/>
-                                          <Component id="txtCorProd" alignment="0" min="-2" pref="284" max="-2" attributes="0"/>
+                                          <Component id="txtNome" alignment="0" min="-2" pref="284" max="-2" attributes="0"/>
+                                          <Component id="txtMarca" alignment="0" min="-2" pref="284" max="-2" attributes="0"/>
+                                          <Component id="txtCor" alignment="0" min="-2" pref="284" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -115,11 +115,11 @@
                               </Group>
                               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jComboBox2" alignment="0" min="-2" pref="107" max="-2" attributes="0"/>
-                                  <Component id="jComboBox1" alignment="0" min="-2" pref="107" max="-2" attributes="0"/>
-                                  <Component id="txtValidProd" alignment="0" min="-2" pref="72" max="-2" attributes="0"/>
+                                  <Component id="txtValidade" alignment="0" min="-2" pref="72" max="-2" attributes="0"/>
                                   <Component id="txtCodProd" alignment="0" min="-2" pref="84" max="-2" attributes="0"/>
-                                  <Component id="txtCorProd1" alignment="0" min="-2" pref="84" max="-2" attributes="0"/>
+                                  <Component id="txtQtdEstoque" alignment="0" min="-2" pref="84" max="-2" attributes="0"/>
+                                  <Component id="txtSetor" min="-2" pref="84" max="-2" attributes="0"/>
+                                  <Component id="txtTipo" min="-2" pref="84" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -154,22 +154,22 @@
                           <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtNomProd" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtNome" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtTipo" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jLabel24" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jLabel25" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtMarcaProd" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtMarca" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtSetor" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -183,8 +183,8 @@
                                   <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                       <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtCorProd" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtCorProd1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtCor" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtQtdEstoque" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace pref="42" max="32767" attributes="0"/>
@@ -203,7 +203,7 @@
                                           <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="txtCodProd" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtPreco" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jLabel21" alignment="1" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -218,9 +218,9 @@
                                       <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtQtdProd" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtUnidProd" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtValidProd" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtTamanho" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtUnidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtValidade" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel17" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel22" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -316,7 +316,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadProdActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtNomProd">
+            <Component class="javax.swing.JTextField" name="txtNome">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="actionCommand" type="java.lang.String" value="&lt;Not Set&gt;"/>
@@ -334,28 +334,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Tipo do Produto"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox1">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="11">
-                    <StringItem index="0" value="&lt;Selecione&gt;"/>
-                    <StringItem index="1" value="Perfume"/>
-                    <StringItem index="2" value="&#xd3;leo Corporal"/>
-                    <StringItem index="3" value="Batom"/>
-                    <StringItem index="4" value="Sabonete"/>
-                    <StringItem index="5" value="Esmalte"/>
-                    <StringItem index="6" value="Shampoo"/>
-                    <StringItem index="7" value="M&#xe1;scara Capilar"/>
-                    <StringItem index="8" value="M&#xe1;scara Facial"/>
-                    <StringItem index="9" value="Hidratante Corporal"/>
-                    <StringItem index="10" value="Protetor Solar"/>
-                  </StringArray>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
@@ -402,7 +380,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Microsoft YaHei" size="14" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Quantidade"/>
+                <Property name="text" type="java.lang.String" value="Tamanho"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel10">
@@ -438,7 +416,7 @@
                 <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o do Produto"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtMarcaProd">
+            <Component class="javax.swing.JTextField" name="txtMarca">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -448,23 +426,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox2">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="5">
-                    <StringItem index="0" value="&lt;Selecione&gt;"/>
-                    <StringItem index="1" value="Perfumaria"/>
-                    <StringItem index="2" value="Corpo&amp;Banho"/>
-                    <StringItem index="3" value="Maquiagem"/>
-                    <StringItem index="4" value="Unhas"/>
-                  </StringArray>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtCorProd">
+            <Component class="javax.swing.JTextField" name="txtCor">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -474,7 +436,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtCorProd1">
+            <Component class="javax.swing.JTextField" name="txtQtdEstoque">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -497,7 +459,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtQtdProd">
+            <Component class="javax.swing.JTextField" name="txtTamanho">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -507,7 +469,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtUnidProd">
+            <Component class="javax.swing.JTextField" name="txtUnidade">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -517,7 +479,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JFormattedTextField" name="txtValidProd">
+            <Component class="javax.swing.JFormattedTextField" name="txtValidade">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -535,7 +497,7 @@
                 <Property name="text" type="java.lang.String" value="R$"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField1">
+            <Component class="javax.swing.JTextField" name="txtPreco">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -629,7 +591,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextArea" name="jTextArea1">
+                <Component class="javax.swing.JTextArea" name="txtDescricao">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
                     <Property name="columns" type="int" value="20"/>
@@ -684,6 +646,26 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCodActionPerformed"/>
                 <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCodKeyTyped"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtSetor">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
+                    <MatteColorBorder bottom="1" left="0" right="0" top="0"/>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtTipo">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
+                    <MatteColorBorder bottom="1" left="0" right="0" top="0"/>
+                  </Border>
+                </Property>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
