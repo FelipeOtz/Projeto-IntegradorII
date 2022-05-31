@@ -12,8 +12,8 @@ import java.util.Date;
  */
 public class RelatorioAnalitico {
 
-    public RelatorioAnalitico(int codigo, String nome, String marca, int quantidade, double precoUnitario, double totalProduto) {
-        this.codigo = codigo;
+    public RelatorioAnalitico(int idProduto, String nome, String marca, int quantidade, double precoUnitario, double totalProduto) {
+        this.idProduto = idProduto;
         this.nome = nome;
         this.marca = marca;
         this.quantidade = quantidade;
@@ -21,19 +21,19 @@ public class RelatorioAnalitico {
         this.totalProduto = totalProduto;
     }
 
-    private int codigo;
+    private int idProduto;
     private String nome;
     private String marca;
     private int quantidade;
     private double precoUnitario;
     private double totalProduto;
 
-    public int getCodigo() {
-        return codigo;
+    public int getIdProduto() {
+        return idProduto;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setIdProduto(int idProduto) {
+        this.idProduto = idProduto;
     }
 
     public String getNome() {

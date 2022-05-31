@@ -7,6 +7,8 @@ package Projeto.IntegradorII.View;
 import Projeto.IntegradorII.Controller.ProdutoController;
 import Projeto.IntegradorII.Controller.VendaController;
 import Projeto.IntegradorII.Model.Produto;
+import Projeto.IntegradorII.Model.RelatorioAnalitico;
+import Projeto.IntegradorII.Model.RelatorioGeral;
 import Projeto.IntegradorII.Model.RelatorioSintetico;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -23,12 +25,20 @@ public class RelatorioVendas extends javax.swing.JPanel {
      */
     public RelatorioVendas() {
         initComponents();
-        
+
         String b = "";
         String a = "";
-        
-        
         preencheTabela(a, b);
+        
+        preencheRelatorioGeral();
+    }
+    
+    public void preencheRelatorioGeral (){
+        RelatorioGeral relatorioGeral = VendaController.buscaRelatoriosGeral();
+        
+        
+        lblTotal.setText(""+relatorioGeral.getTotalVendas());
+        lblFatura.setText("R$ "+relatorioGeral.getFoturamento());
     }
 
     public void preencheTabela(String periodoInicial, String periodoFim) {
@@ -43,7 +53,7 @@ public class RelatorioVendas extends javax.swing.JPanel {
                 relatorioSintetico.getCpf(),
                 formatoData.format(relatorioSintetico.getDataVenda()),
                 relatorioSintetico.getTotalVenda(),
-                relatorioSintetico.getOperador()    
+                relatorioSintetico.getOperador()
             });
         }
     }
@@ -65,19 +75,19 @@ public class RelatorioVendas extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        txtData = new javax.swing.JFormattedTextField();
-        txtData1 = new javax.swing.JFormattedTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         kGradientPanel1 = new com.k33ptoo.components.KGradientPanel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        lblFatura = new javax.swing.JLabel();
         kGradientPanel2 = new com.k33ptoo.components.KGradientPanel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        lblTotal = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tblAnalitico = new javax.swing.JTable();
+        dtInicial = new com.toedter.calendar.JDateChooser();
+        dtFim = new com.toedter.calendar.JDateChooser();
 
         setBackground(new java.awt.Color(204, 204, 255));
         setLayout(new java.awt.BorderLayout());
@@ -123,7 +133,13 @@ public class RelatorioVendas extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tblSintetico.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         tblSintetico.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tblSintetico.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblSinteticoMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblSintetico);
 
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
@@ -135,30 +151,6 @@ public class RelatorioVendas extends javax.swing.JPanel {
         jLabel8.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         jLabel8.setText("Relatório Analítico");
 
-        try {
-            txtData.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtData.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtData.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDataActionPerformed(evt);
-            }
-        });
-
-        try {
-            txtData1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtData1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtData1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtData1ActionPerformed(evt);
-            }
-        });
-
         jLabel9.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         jLabel9.setText("de");
 
@@ -166,6 +158,12 @@ public class RelatorioVendas extends javax.swing.JPanel {
         jLabel10.setText("até");
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Projeto/IntegradorII/Imagens/cep.png"))); // NOI18N
+        jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel11MouseClicked(evt);
+            }
+        });
 
         kGradientPanel1.setkEndColor(new java.awt.Color(255, 204, 51));
         kGradientPanel1.setkStartColor(new java.awt.Color(255, 255, 153));
@@ -173,8 +171,8 @@ public class RelatorioVendas extends javax.swing.JPanel {
         jLabel5.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         jLabel5.setText("Faturamento total no mês");
 
-        jLabel7.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 14)); // NOI18N
-        jLabel7.setText("R$ 3.395,40");
+        lblFatura.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 14)); // NOI18N
+        lblFatura.setText("R$ 3.395,40");
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
@@ -186,8 +184,8 @@ public class RelatorioVendas extends javax.swing.JPanel {
                 .addContainerGap(43, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel7)
-                .addGap(78, 78, 78))
+                .addComponent(lblFatura)
+                .addGap(83, 83, 83))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,7 +193,7 @@ public class RelatorioVendas extends javax.swing.JPanel {
                 .addGap(21, 21, 21)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel7)
+                .addComponent(lblFatura)
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
@@ -205,9 +203,9 @@ public class RelatorioVendas extends javax.swing.JPanel {
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Total de vendas no mês");
 
-        jLabel13.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("239");
+        lblTotal.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 14)); // NOI18N
+        lblTotal.setForeground(new java.awt.Color(255, 255, 255));
+        lblTotal.setText("239");
 
         javax.swing.GroupLayout kGradientPanel2Layout = new javax.swing.GroupLayout(kGradientPanel2);
         kGradientPanel2.setLayout(kGradientPanel2Layout);
@@ -215,7 +213,7 @@ public class RelatorioVendas extends javax.swing.JPanel {
             kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel2Layout.createSequentialGroup()
                 .addGap(110, 110, 110)
-                .addComponent(jLabel13)
+                .addComponent(lblTotal)
                 .addContainerGap(116, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -228,7 +226,7 @@ public class RelatorioVendas extends javax.swing.JPanel {
                 .addGap(21, 21, 21)
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel13)
+                .addComponent(lblTotal)
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
@@ -251,6 +249,14 @@ public class RelatorioVendas extends javax.swing.JPanel {
         tblAnalitico.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane3.setViewportView(tblAnalitico);
 
+        dtInicial.setDateFormatString("dd/MM/yyyy");
+        dtInicial.setMaxSelectableDate(new java.util.Date(2209003279000L));
+        dtInicial.setMinSelectableDate(new java.util.Date(-2208974321000L));
+
+        dtFim.setDateFormatString("dd/MM/yyyy");
+        dtFim.setMaxSelectableDate(new java.util.Date(2209003279000L));
+        dtFim.setMinSelectableDate(new java.util.Date(-2208974321000L));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -261,7 +267,7 @@ public class RelatorioVendas extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(23, 23, 23))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -279,15 +285,15 @@ public class RelatorioVendas extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jLabel9)
-                        .addGap(22, 22, 22)
-                        .addComponent(txtData1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel10)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(dtInicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel10)
+                        .addGap(17, 17, 17)
+                        .addComponent(dtFim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel11)
-                        .addContainerGap(251, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -304,12 +310,12 @@ public class RelatorioVendas extends javax.swing.JPanel {
                 .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11)
+                    .addComponent(jLabel10)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel2)
-                        .addComponent(txtData1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel9)
-                        .addComponent(jLabel10)))
+                        .addComponent(jLabel9))
+                    .addComponent(dtInicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dtFim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -324,25 +330,51 @@ public class RelatorioVendas extends javax.swing.JPanel {
         add(jPanel1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDataActionPerformed
+    private void tblSinteticoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblSinteticoMouseClicked
 
-    private void txtData1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtData1ActionPerformed
+        if (tblSintetico.getSelectedRow() != -1) {
+
+            DefaultTableModel modelo = (DefaultTableModel) tblAnalitico.getModel();
+            int idVenda = (int) tblSintetico.getValueAt(tblSintetico.getSelectedRow(), 0);
+            List<RelatorioAnalitico> relatoriosAnaliticos = VendaController.buscaRelatoriosAnaliticos(idVenda);
+
+            modelo.setRowCount(0);
+            for (RelatorioAnalitico relatorioAnalitico : relatoriosAnaliticos) {
+                modelo.addRow(new Object[]{
+                    relatorioAnalitico.getIdProduto(),
+                    relatorioAnalitico.getNome(),
+                    relatorioAnalitico.getMarca()   ,
+                    relatorioAnalitico.getQuantidade(),
+                    relatorioAnalitico.getPrecoUnitario(),
+                    relatorioAnalitico.getTotalProduto()
+                });
+            }
+
+        }
+
+    }//GEN-LAST:event_tblSinteticoMouseClicked
+
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtData1ActionPerformed
+        SimpleDateFormat formatoData = new SimpleDateFormat("YYYY-MM-dd");
+        
+        String dataInicial = formatoData.format(dtInicial.getDate());
+        String dataFinal = formatoData.format(dtFim.getDate());
+        
+        preencheTabela(dataInicial, dataFinal);
+    }//GEN-LAST:event_jLabel11MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.toedter.calendar.JDateChooser dtFim;
+    private com.toedter.calendar.JDateChooser dtInicial;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -351,9 +383,9 @@ public class RelatorioVendas extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane3;
     private com.k33ptoo.components.KGradientPanel kGradientPanel1;
     private com.k33ptoo.components.KGradientPanel kGradientPanel2;
+    private javax.swing.JLabel lblFatura;
+    private javax.swing.JLabel lblTotal;
     private javax.swing.JTable tblAnalitico;
     private javax.swing.JTable tblSintetico;
-    private javax.swing.JFormattedTextField txtData;
-    private javax.swing.JFormattedTextField txtData1;
     // End of variables declaration//GEN-END:variables
 }

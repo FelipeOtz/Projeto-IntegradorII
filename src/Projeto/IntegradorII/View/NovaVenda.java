@@ -192,6 +192,7 @@ public class NovaVenda extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tabelaProdutos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         tabelaProdutos.setFocusable(false);
         tabelaProdutos.setRowHeight(25);
         tabelaProdutos.setSelectionBackground(new java.awt.Color(205, 203, 203));
@@ -490,8 +491,6 @@ public class NovaVenda extends javax.swing.JPanel {
         int idOperador = Integer.parseInt(txtOperador.getText());
         double totalCompra = Double.parseDouble(txtCompra.getText());
         
-        System.out.println(totalCompra);
-        
         ArrayList <ItemVenda> itensVenda = new ArrayList<>();
         DefaultTableModel modelo = (DefaultTableModel) tabelaCarrinho.getModel();
         
@@ -504,7 +503,6 @@ public class NovaVenda extends javax.swing.JPanel {
             
             itensVenda.add(itemVenda);
             
-            System.out.println(itensVenda.toString());
             
         }
         
