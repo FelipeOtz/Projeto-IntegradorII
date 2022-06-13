@@ -4,6 +4,11 @@
  */
 package Projeto.IntegradorII.Model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -11,15 +16,30 @@ import java.util.Date;
  * @author Lenovo
  */
 public class Cliente {
+
     private int codigo;
     private String nome;
     private String sobreNome;
-    private String cpf; 
+    private String cpf;
     private String email;
     private String telefone;
     private Date dataNasc;
+    private LocalDate dataLocal;
     private String sexo;
     private String estadoCivil;
+
+    public String getDataEmTexto() {
+        return dataEmTexto;
+    }
+
+    public void setDataEmTexto(String dataEmTexto) {
+        this.dataEmTexto = dataEmTexto;
+    }
+    private static String dataEmTexto;
+
+
+
+ 
     private String cep;
     private String logradouro;
     private String numero;
@@ -27,10 +47,12 @@ public class Cliente {
     private String bairro;
     private String cidade;
     private String estado;
+
+    public Cliente() {
+    }
+
     
-    
-    
-    
+
 //    public Cliente(int id, String nome, String sobreNome, String cpf, String email, String telefone,
 //        Date dataNasc, String sexo, String estadoCivil, String cep, String logradouro,
 //        String numero, String complemento, String bairro, String cidade, String estado){
@@ -54,9 +76,6 @@ public class Cliente {
 //    this.setCidade(cidade);
 //    this.setEstado(estado);
 //    }
-     
-    
-    
     public int getCodigo() {
         return codigo;
     }
@@ -189,15 +208,33 @@ public class Cliente {
         return sobreNome;
     }
 
- 
+    public Cliente(String nome, String sobreNome, LocalDate dataLocal) {
+        this.nome = nome;
+        this.sobreNome = sobreNome;
+        this.dataLocal = dataLocal;
+    }
 
-  
+    public  int calculaIdade(LocalDate dataAtual) {
+        
+        LocalDate dataDeNascimento = this.dataLocal;
+    
+        if ((dataDeNascimento != null) && (dataAtual != null)) {
+            return Period.between(dataDeNascimento, dataAtual).getYears();
+        } else {
+            return 0;
+        }
+    
+        
+//        SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/YYYY");
+//        
+//        Calendar cData = Calendar.getInstance();
+//        Calendar cHoje = Calendar.getInstance();
+//        cData.setTime(formatoData.parse(dataEmTexto));
+//        cData.set(Calendar.YEAR, cHoje.get(Calendar.YEAR));
+//        int idade = cData.after(cHoje) ? -1 : 0;
+//        cData.setTime(formatoData.parse(dataEmTexto));
+//        idade += cHoje.get(Calendar.YEAR) - cData.get(Calendar.YEAR);
+//        return idade;
+    }
 
-  
-    
-    
-    
-    
-    
-    
 }

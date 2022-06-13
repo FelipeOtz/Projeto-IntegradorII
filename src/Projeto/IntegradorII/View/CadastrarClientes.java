@@ -6,10 +6,12 @@ package Projeto.IntegradorII.View;
 
 import Projeto.IntegradorII.Controller.ClienteController;
 import Projeto.IntegradorII.DAO.*;
+import Projeto.IntegradorII.Model.Cliente;
 import Projeto.IntegradorII.Utils.ValidadorCliente;
 import Projeto.IntegradorII.ViaCep.ViaCEP;
 import Projeto.IntegradorII.ViaCep.ViaCEPException;
 import java.awt.Color;
+import java.text.ParseException;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,8 +26,9 @@ public class CadastrarClientes extends javax.swing.JPanel {
     /**
      * Creates new form Cliente
      */
-    public CadastrarClientes() {
+    public CadastrarClientes() throws ParseException {
         initComponents();
+
     }
 
     public void limparCampos (){
